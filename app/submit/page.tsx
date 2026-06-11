@@ -22,8 +22,15 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CheckCircle2, Loader2, Circle, HandHeart } from "lucide-react";
+import {
+  CheckCircle2,
+  Loader2,
+  Circle,
+  HandHeart,
+  AlertTriangle,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
+import { LatticeBg } from "@/components/public/brand";
 
 type StepState = "pending" | "active" | "done";
 
@@ -145,8 +152,9 @@ export default function SubmitPage() {
 
   if (phase !== "form") {
     return (
-      <main className="flex min-h-screen items-center justify-center bg-muted/30 p-4">
-        <Card className="w-full max-w-md">
+      <main className="relative flex min-h-screen items-center justify-center bg-paper p-4 text-stone-900">
+        <LatticeBg />
+        <Card className="relative w-full max-w-md">
           <CardHeader>
             <CardTitle>
               {phase === "done" ? "Submitted" : "Checking your campaign…"}
@@ -160,19 +168,22 @@ export default function SubmitPage() {
           <CardContent>
             <ul className="space-y-4">
               {steps.map((step) => (
-                <li key={step.key} className="flex items-center gap-3">
+                <li
+                  key={step.key}
+                  className="flex items-center gap-3 transition-colors duration-300"
+                >
                   {step.state === "done" ? (
                     <CheckCircle2 className="size-5 text-emerald-600" />
                   ) : step.state === "active" ? (
-                    <Loader2 className="size-5 animate-spin text-foreground" />
+                    <Loader2 className="size-5 animate-spin text-emerald-700" />
                   ) : (
                     <Circle className="size-5 text-muted-foreground/40" />
                   )}
                   <span
                     className={cn(
-                      "text-sm",
+                      "text-sm transition-colors duration-300",
                       step.state === "pending" && "text-muted-foreground",
-                      step.state === "active" && "font-medium"
+                      step.state === "active" && "font-medium text-emerald-900"
                     )}
                   >
                     {step.label}
@@ -188,8 +199,18 @@ export default function SubmitPage() {
                 </li>
               )}
             </ul>
+            <p
+              className="mt-4 text-xs text-muted-foreground tabular-nums"
+              aria-live="polite"
+            >
+              {steps.filter((s) => s.state === "done").length} of {steps.length}{" "}
+              checks complete
+            </p>
             {warning && (
-              <p className="mt-4 text-xs text-amber-700">{warning}</p>
+              <div className="mt-4 flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
+                <AlertTriangle className="mt-0.5 size-3.5 shrink-0" />
+                {warning}
+              </div>
             )}
           </CardContent>
         </Card>
@@ -198,11 +219,13 @@ export default function SubmitPage() {
   }
 
   return (
-    <main className="min-h-screen bg-muted/30 px-4 py-10">
+    <main className="min-h-screen bg-paper px-4 py-10 text-stone-900">
       <div className="mx-auto max-w-2xl space-y-6">
-        <div className="flex items-center gap-2">
-          <HandHeart className="size-6 text-emerald-600" />
-          <h1 className="text-2xl font-semibold">Submit a campaign</h1>
+        <div className="flex items-center gap-2.5">
+          <HandHeart className="size-6 text-emerald-700" />
+          <h1 className="font-serif text-3xl font-medium tracking-tight">
+            Submit a campaign
+          </h1>
         </div>
         <p className="text-sm text-muted-foreground">
           Every campaign goes through automated checks and is then reviewed by
@@ -240,7 +263,14 @@ export default function SubmitPage() {
                   rows={8}
                   placeholder="Tell donors what you're raising for. Specific, checkable details (quotes, itemized costs, named institutions) help your campaign clear review faster."
                 />
-                <p className="text-right text-xs text-muted-foreground tabular-nums">
+                <p
+                  className={cn(
+                    "text-right text-xs tabular-nums",
+                    description.length > 2800
+                      ? "text-amber-700"
+                      : "text-muted-foreground"
+                  )}
+                >
                   {description.length}/3000
                 </p>
               </div>
@@ -291,7 +321,7 @@ export default function SubmitPage() {
                 />
               </div>
 
-              <div className="rounded-lg border bg-muted/40 p-4">
+              <div className="rounded-lg border border-dashed border-stone-300 bg-stone-50/80 p-4">
                 <p className="text-sm font-medium">Organizer trust signals</p>
                 <p className="mb-3 mt-1 text-xs text-muted-foreground">
                   In production these come from the account system. They&apos;re

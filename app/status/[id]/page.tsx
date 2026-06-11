@@ -8,9 +8,16 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { formatUsd, formatDate, CATEGORY_LABELS } from "@/lib/format";
 import { cn } from "@/lib/utils";
-import { ShieldCheck, Clock, CheckCircle2, XCircle } from "lucide-react";
+import {
+  ShieldCheck,
+  Clock,
+  CheckCircle2,
+  XCircle,
+  ArrowRight,
+} from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -61,11 +68,13 @@ export default async function StatusPage({
   const status = PUBLIC_STATUS[publicKey] ?? PUBLIC_STATUS.pending;
 
   return (
-    <main className="min-h-screen bg-muted/30 px-4 py-10">
+    <main className="min-h-screen bg-paper px-4 py-10 text-stone-900">
       <div className="mx-auto max-w-2xl space-y-6">
-        <Link href="/" className="flex w-fit items-center gap-2 font-semibold">
-          <ShieldCheck className="size-5 text-emerald-600" />
-          Amanah
+        <Link href="/" className="flex w-fit items-center gap-2">
+          <ShieldCheck className="size-5 text-emerald-700" />
+          <span className="font-serif text-xl font-semibold tracking-tight">
+            Amanah
+          </span>
         </Link>
 
         <div
@@ -82,12 +91,11 @@ export default async function StatusPage({
         </div>
 
         {campaign.status === "approved" && (
-          <Link
-            href={`/campaigns/${campaign.id}`}
-            className="flex w-fit items-center gap-1 text-sm font-medium text-emerald-800 underline underline-offset-2 hover:text-emerald-900"
-          >
-            View your live campaign page →
-          </Link>
+          <Button asChild>
+            <Link href={`/campaigns/${campaign.id}`}>
+              View your live campaign page <ArrowRight className="size-4" />
+            </Link>
+          </Button>
         )}
 
         <Card>
