@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ShieldCheck, ArrowDown, ArrowRight } from "lucide-react";
+import { getSession } from "@/lib/session-cookies";
 
 export const metadata = {
   title: "How Amanah works — AI reads every campaign, people decide",
@@ -64,7 +65,8 @@ function Arrow({ label }: { label?: string }) {
   );
 }
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const session = await getSession();
   return (
     <div className="min-h-screen bg-[#faf8f4] text-stone-900">
       <header className="mx-auto flex max-w-4xl items-center justify-between px-5 py-5">
@@ -76,9 +78,18 @@ export default function AboutPage() {
           <Link href="/submit" className="text-stone-600 hover:text-stone-900">
             Submit
           </Link>
-          <Link href="/login" className="text-stone-600 hover:text-stone-900">
-            Reviewer sign-in
-          </Link>
+          {session ? (
+            <Link
+              href="/admin/queue"
+              className="font-medium text-emerald-800 hover:text-emerald-900"
+            >
+              Reviewer console
+            </Link>
+          ) : (
+            <Link href="/login" className="text-stone-600 hover:text-stone-900">
+              Reviewer sign-in
+            </Link>
+          )}
           <a
             href={REPO}
             target="_blank"

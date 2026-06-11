@@ -8,6 +8,7 @@ import {
   UserCheck,
   Quote,
 } from "lucide-react";
+import { getSession } from "@/lib/session-cookies";
 
 const LATTICE = `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230e3b2e' stroke-width='1'%3E%3Cpath d='M40 8 L62 40 L40 72 L18 40 Z'/%3E%3Cpath d='M8 40 L40 18 L72 40 L40 62 Z'/%3E%3C/g%3E%3C/svg%3E")`;
 
@@ -71,7 +72,8 @@ function MockQueueCard() {
   );
 }
 
-export default function LandingPage() {
+export default async function LandingPage() {
+  const session = await getSession();
   return (
     <div className="min-h-screen bg-[#faf8f4] text-stone-900">
       {/* ── Nav ── */}
@@ -89,12 +91,21 @@ export default function LandingPage() {
           >
             How it works
           </Link>
-          <Link
-            href="/login"
-            className="text-sm text-stone-600 hover:text-stone-900"
-          >
-            Reviewer sign-in
-          </Link>
+          {session ? (
+            <Link
+              href="/admin/queue"
+              className="text-sm font-medium text-emerald-800 hover:text-emerald-900"
+            >
+              Reviewer console
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              className="text-sm text-stone-600 hover:text-stone-900"
+            >
+              Reviewer sign-in
+            </Link>
+          )}
           <Button asChild size="sm" className="bg-emerald-700 hover:bg-emerald-800">
             <Link href="/submit">Submit a campaign</Link>
           </Button>
