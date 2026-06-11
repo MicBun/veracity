@@ -6,6 +6,8 @@ every incoming campaign for fraud signals, policy violations, and
 zakat-eligibility claims, cites its evidence, and calibrates its own
 uncertainty — then a human reviewer makes every decision.
 
+**Live demo:** https://amanah.micbun.com
+
 **The boundary is enforced in code, not just UI:** no code path lets the AI
 change a campaign's status, and AI assessments are never served to public
 endpoints.
