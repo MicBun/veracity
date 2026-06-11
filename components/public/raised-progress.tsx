@@ -1,5 +1,6 @@
 import { Progress } from "@/components/ui/progress";
 import { formatUsd } from "@/lib/format";
+import { CheckCircle2 } from "lucide-react";
 
 /** Raised/goal bar shared by the gallery card and the detail page. */
 export function RaisedProgress({
@@ -12,6 +13,8 @@ export function RaisedProgress({
   donorCount: number;
 }) {
   const pct = goal > 0 ? (raised / goal) * 100 : 0;
+  const funded = goal > 0 && raised >= goal;
+  const donors = `${donorCount} ${donorCount === 1 ? "donor" : "donors"}`;
   return (
     <div className="space-y-2">
       <Progress value={Math.min(100, pct)} className="h-2" />
@@ -22,10 +25,15 @@ export function RaisedProgress({
             raised of {formatUsd(goal)}
           </span>
         </p>
-        <p className="text-stone-500">
-          {Math.round(pct)}% funded · {donorCount}{" "}
-          {donorCount === 1 ? "donor" : "donors"}
-        </p>
+        {funded ? (
+          <p className="inline-flex items-center gap-1 font-medium text-amber-700">
+            <CheckCircle2 className="size-3.5" /> Fully funded · {donors}
+          </p>
+        ) : (
+          <p className="text-stone-500">
+            {Math.min(100, Math.round(pct))}% funded · {donors}
+          </p>
+        )}
       </div>
     </div>
   );

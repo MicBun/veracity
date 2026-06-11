@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { formatUsd } from "@/lib/format";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 const PRESETS = [25, 50, 100, 250];
 
@@ -46,7 +47,10 @@ export function DonateForm({ campaignId }: { campaignId: string }) {
         return;
       }
       setStatus("success");
-      setMessage(`Thank you! Your ${formatUsd(value)} demo donation was recorded.`);
+      setMessage(null);
+      toast.success(
+        `Thank you! Your ${formatUsd(value)} demo donation was recorded.`
+      );
       setName("");
       router.refresh(); // re-fetch the server component → bar + supporters update
     } catch {
@@ -67,7 +71,7 @@ export function DonateForm({ campaignId }: { campaignId: string }) {
               "rounded-md border px-2 py-1.5 text-sm font-medium transition-colors",
               Math.floor(Number(amount)) === p
                 ? "border-emerald-600 bg-emerald-50 text-emerald-800"
-                : "border-stone-300 text-stone-600 hover:border-stone-400"
+                : "border-stone-200 bg-stone-50 text-stone-700 hover:border-emerald-300 hover:text-emerald-800"
             )}
           >
             ${p}
@@ -96,22 +100,11 @@ export function DonateForm({ campaignId }: { campaignId: string }) {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-      <Button
-        type="submit"
-        disabled={status === "submitting"}
-        className="w-full bg-emerald-700 hover:bg-emerald-800"
-      >
+      <Button type="submit" disabled={status === "submitting"} className="w-full">
         {status === "submitting" ? "Processing…" : "Donate"}
       </Button>
-      {message && (
-        <p
-          className={cn(
-            "text-sm",
-            status === "success" ? "text-emerald-700" : "text-red-600"
-          )}
-        >
-          {message}
-        </p>
+      {message && status === "error" && (
+        <p className="text-sm text-red-600">{message}</p>
       )}
     </form>
   );

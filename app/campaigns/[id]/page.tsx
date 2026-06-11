@@ -4,6 +4,7 @@ import { getPublicApprovedCampaign } from "@/lib/data";
 import { SiteHeader } from "@/components/public/site-header";
 import { RaisedProgress } from "@/components/public/raised-progress";
 import { DonateForm } from "@/components/public/donate-form";
+import { ZakatChip } from "@/components/public/brand";
 import { CATEGORY_LABELS, formatUsd, formatRelativeTime } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
@@ -19,7 +20,7 @@ export default async function CampaignDetailPage({
   const { campaign, raised, donorCount, recent } = data;
 
   return (
-    <div className="min-h-screen bg-[#faf8f4] text-stone-900">
+    <div className="min-h-screen bg-paper text-stone-900">
       <SiteHeader />
       <main className="mx-auto grid max-w-6xl gap-8 px-5 pb-20 pt-6 lg:grid-cols-[1.6fr_1fr]">
         <article>
@@ -34,9 +35,7 @@ export default async function CampaignDetailPage({
               {CATEGORY_LABELS[campaign.category] ?? campaign.category}
             </span>
             {campaign.zakatClaimed && (
-              <span className="rounded-md bg-stone-100 px-2 py-0.5 text-[11px] font-medium text-stone-600">
-                Zakat-eligible (claimed)
-              </span>
+              <ZakatChip label="Zakat-eligible (claimed)" />
             )}
           </div>
           <h1 className="mt-3 font-serif text-3xl font-medium leading-tight tracking-tight">
@@ -75,19 +74,25 @@ export default async function CampaignDetailPage({
               </p>
             ) : (
               <ul className="mt-3 space-y-2.5">
-                {recent.map((d) => (
-                  <li
-                    key={d.id}
-                    className="flex items-baseline justify-between gap-3 text-sm"
-                  >
-                    <span className="min-w-0 truncate font-medium text-stone-700">
-                      {d.donorName ?? "Anonymous"}
-                    </span>
-                    <span className="shrink-0 text-stone-500">
-                      {formatUsd(d.amount)} · {formatRelativeTime(d.createdAt)}
-                    </span>
-                  </li>
-                ))}
+                {recent.map((d) => {
+                  const name = d.donorName ?? "Anonymous";
+                  return (
+                    <li
+                      key={d.id}
+                      className="flex items-center gap-2.5 text-sm"
+                    >
+                      <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs font-semibold text-emerald-800">
+                        {name.charAt(0).toUpperCase()}
+                      </span>
+                      <span className="min-w-0 flex-1 truncate font-medium text-stone-800">
+                        {name}
+                      </span>
+                      <span className="shrink-0 text-xs text-stone-500">
+                        {formatUsd(d.amount)} · {formatRelativeTime(d.createdAt)}
+                      </span>
+                    </li>
+                  );
+                })}
               </ul>
             )}
           </div>

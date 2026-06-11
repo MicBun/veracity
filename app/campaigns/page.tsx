@@ -2,7 +2,9 @@ import Link from "next/link";
 import { getApprovedCampaigns } from "@/lib/data";
 import { SiteHeader } from "@/components/public/site-header";
 import { RaisedProgress } from "@/components/public/raised-progress";
+import { ZakatChip } from "@/components/public/brand";
 import { CATEGORY_LABELS } from "@/lib/format";
+import { Info } from "lucide-react";
 
 export const dynamic = "force-dynamic";
 
@@ -14,7 +16,7 @@ export default async function CampaignsPage() {
   const live = await getApprovedCampaigns();
 
   return (
-    <div className="min-h-screen bg-[#faf8f4] text-stone-900">
+    <div className="min-h-screen bg-paper text-stone-900">
       <SiteHeader />
       <main className="mx-auto max-w-6xl px-5 pb-20 pt-6">
         <div className="max-w-2xl">
@@ -25,7 +27,8 @@ export default async function CampaignsPage() {
             Every campaign here passed Amanah&apos;s AI triage and was approved by
             a human reviewer. Support one directly.
           </p>
-          <p className="mt-2 text-xs text-stone-500">
+          <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-stone-500">
+            <Info className="size-3.5 text-stone-400" />
             Demo — donations are simulated and no real payment is processed.
           </p>
         </div>
@@ -40,17 +43,13 @@ export default async function CampaignsPage() {
               <Link
                 key={campaign.id}
                 href={`/campaigns/${campaign.id}`}
-                className="flex flex-col rounded-xl border border-stone-200 bg-white p-5 transition-shadow hover:shadow-[0_18px_50px_-26px_rgba(12,46,36,0.4)]"
+                className="flex flex-col rounded-xl border border-stone-200 bg-white p-5 transition-all hover:-translate-y-0.5 hover:shadow-card"
               >
                 <div className="flex items-center gap-2">
                   <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-800">
                     {CATEGORY_LABELS[campaign.category] ?? campaign.category}
                   </span>
-                  {campaign.zakatClaimed && (
-                    <span className="rounded-md bg-stone-100 px-2 py-0.5 text-[11px] font-medium text-stone-600">
-                      Zakat
-                    </span>
-                  )}
+                  {campaign.zakatClaimed && <ZakatChip />}
                 </div>
                 <h2 className="mt-3 font-serif text-lg font-medium leading-snug">
                   {campaign.title}
