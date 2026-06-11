@@ -26,6 +26,17 @@ export function formatPercent(p: number): string {
   return `${Math.round(p * 100)}%`;
 }
 
+/** Coarse relative time for the recent-supporters list (e.g. "3 days ago"). */
+export function formatRelativeTime(d: Date | string): string {
+  const date = typeof d === "string" ? new Date(d) : d;
+  const days = Math.floor((Date.now() - date.getTime()) / 86_400_000);
+  if (days <= 0) return "today";
+  if (days === 1) return "yesterday";
+  if (days < 30) return `${days} days ago`;
+  const months = Math.floor(days / 30);
+  return months === 1 ? "a month ago" : `${months} months ago`;
+}
+
 export const FLAG_LABELS: Record<string, string> = {
   urgency_manipulation: "Urgency manipulation",
   story_inconsistency: "Story inconsistency",
