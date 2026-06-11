@@ -8,7 +8,9 @@ import {
   timestamp,
   jsonb,
   doublePrecision,
+  check,
 } from "drizzle-orm/pg-core";
+import { sql } from "drizzle-orm";
 
 export const campaignStatusEnum = pgEnum("campaign_status", [
   "pending",
@@ -106,7 +108,12 @@ export const donations = pgTable("donations", {
   createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
     .defaultNow(),
-});
+}, (table) => [
+  // Defense-in-depth: a donation is always a positive amount. The /api/donate
+  // Zod schema enforces 1..100000 at the only write path; this DB-level guard
+  // backs that up against any non-app writer.
+  check("donations_amount_positive", sql`${table.amount} >= 1`),
+]);
 
 export const evalRuns = pgTable("eval_runs", {
   id: uuid("id").primaryKey().defaultRandom(),

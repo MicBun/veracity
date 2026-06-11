@@ -1,0 +1,1 @@
+ALTER TABLE "donations" ADD CONSTRAINT "donations_amount_positive" CHECK ("donations"."amount" >= 1);
