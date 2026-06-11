@@ -86,6 +86,12 @@ export default async function LandingPage() {
         </Link>
         <nav className="flex items-center gap-2 sm:gap-5">
           <Link
+            href="/campaigns"
+            className="hidden text-sm text-stone-600 hover:text-stone-900 sm:block"
+          >
+            Browse campaigns
+          </Link>
+          <Link
             href="/about"
             className="hidden text-sm text-stone-600 hover:text-stone-900 sm:block"
           >
@@ -142,6 +148,9 @@ export default async function LandingPage() {
               </Button>
               <Button asChild size="lg" variant="outline" className="border-stone-300 bg-white/60">
                 <Link href="/login">Open the reviewer console</Link>
+              </Button>
+              <Button asChild size="lg" variant="ghost">
+                <Link href="/campaigns">Browse live campaigns</Link>
               </Button>
             </div>
             <p className="rise rise-5 mt-4 text-xs text-stone-500">

@@ -81,6 +81,15 @@ export default async function StatusPage({
           </div>
         </div>
 
+        {campaign.status === "approved" && (
+          <Link
+            href={`/campaigns/${campaign.id}`}
+            className="flex w-fit items-center gap-1 text-sm font-medium text-emerald-800 underline underline-offset-2 hover:text-emerald-900"
+          >
+            View your live campaign page →
+          </Link>
+        )}
+
         <Card>
           <CardHeader>
             <CardTitle>{campaign.title}</CardTitle>

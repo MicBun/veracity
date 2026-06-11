@@ -544,5 +544,176 @@
         }
       ]
     }
+  ],
+  "live_campaigns": [
+    {
+      "key": "live-01",
+      "class": "clean",
+      "title": "Winter heating fund for Bosnian refugee families in Utica",
+      "description": "Eleven resettled families on Utica's east side share aging furnaces that failed inspection this fall. Working with the Mohawk Valley Resource Center for Refugees, we have a written quote from Bartell Heating to repair or replace six units before the first freeze. MVRCR is administering the funds and every receipt is posted to our updates page.",
+      "goal_amount": 12000,
+      "category": "emergency-relief",
+      "organizer_name": "Selma Begovic",
+      "organizer_history": { "prior_campaigns": 2, "account_age_days": 980, "prior_flags": 0 },
+      "zakat_claimed": true,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v3",
+          "input_tokens": 742,
+          "output_tokens": 92,
+          "cost_usd": 0.0012,
+          "latency_ms": 1310,
+          "output": {
+            "risk_score": 9,
+            "category_flags": [],
+            "confidence": 0.9,
+            "summary": "Named partner org administering funds, written contractor quote, established organizer; no risk signals."
+          }
+        }
+      ],
+      "review": {
+        "reviewer_name": "Aisha Rahman",
+        "note": "Verified MVRCR partnership and contractor quote. Zakat-eligible need is clear. Approved."
+      },
+      "donations": [
+        { "donor_name": null, "amount": 500, "days_ago": 9 },
+        { "donor_name": "Imran S.", "amount": 250, "days_ago": 8 },
+        { "donor_name": "Fatima K.", "amount": 100, "days_ago": 7 },
+        { "donor_name": null, "amount": 1000, "days_ago": 6 },
+        { "donor_name": "The Yusuf family", "amount": 2000, "days_ago": 5 },
+        { "donor_name": "Bilal R.", "amount": 250, "days_ago": 5 },
+        { "donor_name": null, "amount": 5000, "days_ago": 3 },
+        { "donor_name": "Sara M.", "amount": 450, "days_ago": 2 },
+        { "donor_name": "Omar H.", "amount": 500, "days_ago": 1 },
+        { "donor_name": null, "amount": 1000, "days_ago": 0 }
+      ]
+    },
+    {
+      "key": "live-02",
+      "class": "clean",
+      "title": "Rebuild Masjid As-Salam's wudu facilities after the flood",
+      "description": "June flash flooding ruined the ablution area and two restrooms at our 200-family mosque in Poughkeepsie. The board approved a repair plan and we have a $26,400 bid from Hudson Valley Plumbing; insurance is covering the difference above this campaign's goal. Plans and the bid are available to any donor on request.",
+      "goal_amount": 20000,
+      "category": "community",
+      "organizer_name": "Tariq Mahmood",
+      "organizer_history": { "prior_campaigns": 4, "account_age_days": 2100, "prior_flags": 0 },
+      "zakat_claimed": false,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v3",
+          "input_tokens": 738,
+          "output_tokens": 88,
+          "cost_usd": 0.0012,
+          "latency_ms": 1280,
+          "output": {
+            "risk_score": 7,
+            "category_flags": [],
+            "confidence": 0.91,
+            "summary": "Long-standing organizer, board-approved repair with an itemized bid; goal sits below the total cost. No concerns."
+          }
+        }
+      ],
+      "review": {
+        "reviewer_name": "Daniyal Osei",
+        "note": "Board-approved scope, itemized bid, insurance covers the remainder. Approved."
+      },
+      "donations": [
+        { "donor_name": null, "amount": 2000, "days_ago": 12 },
+        { "donor_name": "Hudson Valley MSA", "amount": 3000, "days_ago": 10 },
+        { "donor_name": "Nadia A.", "amount": 500, "days_ago": 8 },
+        { "donor_name": null, "amount": 250, "days_ago": 6 },
+        { "donor_name": "Yousef T.", "amount": 1500, "days_ago": 5 },
+        { "donor_name": "Layla B.", "amount": 300, "days_ago": 4 },
+        { "donor_name": null, "amount": 1000, "days_ago": 2 },
+        { "donor_name": "Kareem D.", "amount": 750, "days_ago": 1 },
+        { "donor_name": null, "amount": 500, "days_ago": 0 }
+      ]
+    },
+    {
+      "key": "live-03",
+      "class": "clean",
+      "title": "Tuition gap for Amina's final year of nursing school",
+      "description": "Amina is a first-generation student one year from her RN at SUNY Broome. A reduction in her father's work hours left a $7,800 tuition gap for her final two semesters. The financial-aid office can confirm enrollment and the outstanding balance; funds will be paid directly to the bursar.",
+      "goal_amount": 8000,
+      "category": "education",
+      "organizer_name": "Halima Yusuf",
+      "organizer_history": { "prior_campaigns": 0, "account_age_days": 410, "prior_flags": 0 },
+      "zakat_claimed": true,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v3",
+          "input_tokens": 726,
+          "output_tokens": 96,
+          "cost_usd": 0.0011,
+          "latency_ms": 1240,
+          "output": {
+            "risk_score": 14,
+            "category_flags": [],
+            "confidence": 0.84,
+            "summary": "Specific institution and verifiable balance, funds paid to bursar; first-time organizer is the only mild uncertainty."
+          }
+        }
+      ],
+      "review": {
+        "reviewer_name": "Sana Iqbal",
+        "note": "Direct-to-bursar disbursement and verifiable enrollment offset the first-time-organizer flag. Zakat-eligible. Approved."
+      },
+      "donations": [
+        { "donor_name": null, "amount": 100, "days_ago": 3 },
+        { "donor_name": "Mrs. Halima", "amount": 250, "days_ago": 2 },
+        { "donor_name": null, "amount": 50, "days_ago": 2 },
+        { "donor_name": "J. Idris", "amount": 300, "days_ago": 1 },
+        { "donor_name": null, "amount": 150, "days_ago": 0 },
+        { "donor_name": "Tariq", "amount": 100, "days_ago": 0 }
+      ]
+    },
+    {
+      "key": "live-04",
+      "class": "clean",
+      "title": "Emergency surgery for baby Zayd's congenital heart defect",
+      "description": "Zayd was born with tetralogy of Fallot and needs corrective surgery at Boston Children's Hospital. After insurance, the family faces $14,200 in out-of-pocket costs for travel, lodging near the hospital, and the deductible. The hospital social worker can verify the treatment plan and cost estimate.",
+      "goal_amount": 15000,
+      "category": "medical",
+      "organizer_name": "Yasmin Al-Rashid",
+      "organizer_history": { "prior_campaigns": 1, "account_age_days": 1320, "prior_flags": 0 },
+      "zakat_claimed": false,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v3",
+          "input_tokens": 751,
+          "output_tokens": 99,
+          "cost_usd": 0.0013,
+          "latency_ms": 1360,
+          "output": {
+            "risk_score": 12,
+            "category_flags": [],
+            "confidence": 0.88,
+            "summary": "Named hospital and condition, itemized post-insurance costs, verifiable via hospital social worker. No fraud signals."
+          }
+        }
+      ],
+      "review": {
+        "reviewer_name": "Aisha Rahman",
+        "note": "Named facility and condition with a verifiable cost breakdown. Approved."
+      },
+      "donations": [
+        { "donor_name": null, "amount": 5000, "days_ago": 7 },
+        { "donor_name": "The Rahman family", "amount": 1000, "days_ago": 6 },
+        { "donor_name": "Dr. Suleiman", "amount": 500, "days_ago": 5 },
+        { "donor_name": null, "amount": 1500, "days_ago": 4 },
+        { "donor_name": "Mariam O.", "amount": 250, "days_ago": 3 },
+        { "donor_name": "Khalid", "amount": 750, "days_ago": 2 },
+        { "donor_name": null, "amount": 1000, "days_ago": 1 },
+        { "donor_name": "Noor S.", "amount": 500, "days_ago": 0 }
+      ]
+    }
   ]
 }

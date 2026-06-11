@@ -1,13 +1,15 @@
-import { eq, ne, inArray, sum, desc } from "drizzle-orm";
+import { eq, ne, inArray, sum, count, desc } from "drizzle-orm";
 import { db } from "@/db";
 import {
   campaigns,
   aiAssessments,
   reviews,
   evalRuns,
+  donations,
   type Campaign,
   type AiAssessment,
   type Review,
+  type Donation,
 } from "@/db/schema";
 import { bundleAssessments, type AssessmentBundle } from "./assessments";
 
@@ -142,6 +144,89 @@ export async function getTotalAiSpend(): Promise<number> {
   }
 
   return Number(assessmentTotal?.total ?? 0) + evalTotal;
+}
+
+export type ApprovedCampaign = {
+  campaign: Campaign;
+  raised: number;
+  donorCount: number;
+};
+
+/**
+ * Public gallery source: approved campaigns only, newest first, each with its
+ * derived raised total and donor count. Exposes campaign content + aggregates
+ * only — never assessment data.
+ */
+export async function getApprovedCampaigns(): Promise<ApprovedCampaign[]> {
+  const approved = await db
+    .select()
+    .from(campaigns)
+    .where(eq(campaigns.status, "approved"))
+    .orderBy(desc(campaigns.createdAt));
+  if (approved.length === 0) return [];
+
+  const agg = await db
+    .select({
+      campaignId: donations.campaignId,
+      raised: sum(donations.amount),
+      donorCount: count(donations.id),
+    })
+    .from(donations)
+    .where(
+      inArray(
+        donations.campaignId,
+        approved.map((c) => c.id)
+      )
+    )
+    .groupBy(donations.campaignId);
+
+  const byId = new Map(agg.map((a) => [a.campaignId, a]));
+  return approved.map((campaign) => {
+    const a = byId.get(campaign.id);
+    return {
+      campaign,
+      raised: Number(a?.raised ?? 0),
+      donorCount: Number(a?.donorCount ?? 0),
+    };
+  });
+}
+
+/**
+ * Public donor detail source. Returns null if the campaign is missing OR not
+ * approved — pending/rejected/escalated never render here (the detail route
+ * turns null into notFound()). Recent supporters are the latest 8 donations.
+ */
+export async function getPublicApprovedCampaign(id: string): Promise<{
+  campaign: Campaign;
+  raised: number;
+  donorCount: number;
+  recent: Donation[];
+} | null> {
+  const [campaign] = await db
+    .select()
+    .from(campaigns)
+    .where(eq(campaigns.id, id))
+    .limit(1);
+  if (!campaign || campaign.status !== "approved") return null;
+
+  const [agg] = await db
+    .select({ raised: sum(donations.amount), donorCount: count(donations.id) })
+    .from(donations)
+    .where(eq(donations.campaignId, id));
+
+  const recent = await db
+    .select()
+    .from(donations)
+    .where(eq(donations.campaignId, id))
+    .orderBy(desc(donations.createdAt))
+    .limit(8);
+
+  return {
+    campaign,
+    raised: Number(agg?.raised ?? 0),
+    donorCount: Number(agg?.donorCount ?? 0),
+    recent,
+  };
 }
 
 /** Public view: status only, never assessment data. */
