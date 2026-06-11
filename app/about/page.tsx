@@ -75,6 +75,9 @@ export default async function AboutPage() {
           <span className="font-serif text-xl font-semibold tracking-tight">Amanah</span>
         </Link>
         <nav className="flex items-center gap-4 text-sm">
+          <Link href="/campaigns" className="text-stone-600 hover:text-stone-900">
+            Browse campaigns
+          </Link>
           <Link href="/submit" className="text-stone-600 hover:text-stone-900">
             Submit
           </Link>
