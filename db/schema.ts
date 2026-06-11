@@ -33,6 +33,8 @@ export const evalRunStatusEnum = pgEnum("eval_run_status", [
   "failed",
 ]);
 
+export const donationSourceEnum = pgEnum("donation_source", ["seed", "user"]);
+
 export type OrganizerHistory = {
   prior_campaigns: number;
   account_age_days: number;
@@ -90,6 +92,22 @@ export const reviews = pgTable("reviews", {
     .defaultNow(),
 });
 
+// Mock donations. Insert-only for the public flow; "raised" is always a
+// derived SUM over these rows — never stored on campaigns. This table is the
+// ONLY thing the public donate endpoint writes to.
+export const donations = pgTable("donations", {
+  id: uuid("id").primaryKey().defaultRandom(),
+  campaignId: uuid("campaign_id")
+    .notNull()
+    .references(() => campaigns.id, { onDelete: "cascade" }),
+  amount: integer("amount").notNull(), // whole USD, matches campaigns.goalAmount
+  donorName: text("donor_name"), // null → displayed as "Anonymous"
+  source: donationSourceEnum("source").notNull().default("user"),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
 export const evalRuns = pgTable("eval_runs", {
   id: uuid("id").primaryKey().defaultRandom(),
   promptVersion: text("prompt_version").notNull(),
@@ -114,3 +132,5 @@ export type AiAssessment = typeof aiAssessments.$inferSelect;
 export type NewAiAssessment = typeof aiAssessments.$inferInsert;
 export type Review = typeof reviews.$inferSelect;
 export type EvalRun = typeof evalRuns.$inferSelect;
+export type Donation = typeof donations.$inferSelect;
+export type NewDonation = typeof donations.$inferInsert;
