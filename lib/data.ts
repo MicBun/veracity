@@ -1,4 +1,4 @@
-import { eq, inArray, sum, desc } from "drizzle-orm";
+import { eq, ne, inArray, sum, desc } from "drizzle-orm";
 import { db } from "@/db";
 import {
   campaigns,
@@ -70,6 +70,58 @@ export async function getCampaignWithAssessments(id: string): Promise<{
   ]);
 
   return { campaign, bundle: bundleAssessments(assessmentRows), auditLog };
+}
+
+export type HistoryEntry = {
+  campaign: Campaign;
+  review: Review | null;
+};
+
+/**
+ * Reviewer-only history: every campaign that has left the pending queue
+ * (approved / rejected / escalated), each paired with its latest review row,
+ * newest decision first. The conditional UPDATE in the action route writes the
+ * status and the review together, so a decided campaign normally has a review;
+ * `review` is nullable only defensively.
+ */
+export async function getDecidedCampaigns(): Promise<HistoryEntry[]> {
+  const decided = await db
+    .select()
+    .from(campaigns)
+    .where(ne(campaigns.status, "pending"));
+
+  if (decided.length === 0) return [];
+
+  const reviewRows = await db
+    .select()
+    .from(reviews)
+    .where(
+      inArray(
+        reviews.campaignId,
+        decided.map((c) => c.id)
+      )
+    )
+    .orderBy(desc(reviews.createdAt));
+
+  // Rows arrive newest-first, so the first one seen per campaign is its latest.
+  const latestReview = new Map<string, Review>();
+  for (const r of reviewRows) {
+    if (!latestReview.has(r.campaignId)) latestReview.set(r.campaignId, r);
+  }
+
+  const entries: HistoryEntry[] = decided.map((campaign) => ({
+    campaign,
+    review: latestReview.get(campaign.id) ?? null,
+  }));
+
+  // Order by decision time (fall back to submission time if a review is missing).
+  entries.sort((a, b) => {
+    const at = (a.review?.createdAt ?? a.campaign.createdAt).getTime();
+    const bt = (b.review?.createdAt ?? b.campaign.createdAt).getTime();
+    return bt - at;
+  });
+
+  return entries;
 }
 
 /** Total AI spend: every assessment ever made plus completed eval runs. */

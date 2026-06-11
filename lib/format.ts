@@ -50,3 +50,11 @@ export const STATUS_LABELS: Record<string, string> = {
   rejected: "Rejected",
   escalated: "Escalated",
 };
+
+// Past-tense labels for a recorded reviewer action (reviews.action stores the
+// imperative verb: approve | reject | escalate).
+export const ACTION_LABELS: Record<string, string> = {
+  approve: "Approved",
+  reject: "Rejected",
+  escalate: "Escalated",
+};

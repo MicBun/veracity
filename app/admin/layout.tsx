@@ -26,6 +26,9 @@ export default async function AdminLayout({
               <Link href="/admin/queue" className="text-muted-foreground hover:text-foreground">
                 Queue
               </Link>
+              <Link href="/admin/history" className="text-muted-foreground hover:text-foreground">
+                History
+              </Link>
               <Link href="/admin/evals" className="text-muted-foreground hover:text-foreground">
                 Evals
               </Link>
