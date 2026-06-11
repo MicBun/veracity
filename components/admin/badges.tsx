@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/badge";
 import { FLAG_LABELS, STATUS_LABELS } from "@/lib/format";
 import { cn } from "@/lib/utils";
 
@@ -12,11 +11,12 @@ export function RiskBadge({ score }: { score: number }) {
   return (
     <span
       className={cn(
-        "inline-flex items-center gap-1 rounded-md border px-2 py-0.5 text-xs font-semibold tabular-nums",
+        "inline-flex items-center gap-1 rounded-md border px-2 py-0.5 font-mono text-xs font-semibold tabular-nums",
         tone
       )}
     >
       Risk {score}
+      <span className="opacity-60">/100</span>
     </span>
   );
 }
@@ -42,9 +42,9 @@ export function StatusBadge({ status }: { status: string }) {
 
 export function FlagBadge({ flag }: { flag: string }) {
   return (
-    <Badge variant="secondary" className="text-[11px] font-medium">
+    <span className="inline-flex items-center rounded-md border border-amber-200/70 bg-amber-50 px-1.5 py-0.5 text-[11px] font-medium text-amber-900">
       {FLAG_LABELS[flag] ?? flag}
-    </Badge>
+    </span>
   );
 }
 

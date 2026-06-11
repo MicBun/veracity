@@ -15,12 +15,17 @@ export default async function AdminLayout({
 
   return (
     <div className="min-h-screen bg-muted/30">
-      <header className="sticky top-0 z-40 border-b bg-background">
+      <header className="sticky top-0 z-40 border-b border-t-2 border-t-emerald-700 bg-background">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4">
           <div className="flex items-center gap-6">
-            <Link href="/admin/queue" className="flex items-center gap-2 font-semibold">
-              <ShieldCheck className="size-5 text-emerald-600" />
-              Amanah <span className="text-muted-foreground font-normal">· Reviewer console</span>
+            <Link href="/admin/queue" className="flex items-center gap-2">
+              <ShieldCheck className="size-5 text-emerald-700" />
+              <span className="font-serif text-lg font-semibold tracking-tight">
+                Amanah
+              </span>
+              <span className="text-sm font-normal text-muted-foreground">
+                · Reviewer console
+              </span>
             </Link>
             <nav className="flex items-center gap-4 text-sm">
               <Link href="/admin/queue" className="text-muted-foreground hover:text-foreground">
