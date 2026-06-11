@@ -9,8 +9,7 @@ import {
   Quote,
 } from "lucide-react";
 import { getSession } from "@/lib/session-cookies";
-
-const LATTICE = `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%230e3b2e' stroke-width='1'%3E%3Cpath d='M40 8 L62 40 L40 72 L18 40 Z'/%3E%3Cpath d='M8 40 L40 18 L72 40 L40 62 Z'/%3E%3C/g%3E%3C/svg%3E")`;
+import { LatticeBg } from "@/components/public/brand";
 
 function MockQueueCard() {
   return (
@@ -112,7 +111,7 @@ export default async function LandingPage() {
               Reviewer sign-in
             </Link>
           )}
-          <Button asChild size="sm" className="bg-emerald-700 hover:bg-emerald-800">
+          <Button asChild size="sm">
             <Link href="/submit">Submit a campaign</Link>
           </Button>
         </nav>
@@ -120,10 +119,7 @@ export default async function LandingPage() {
 
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-[0.045]"
-          style={{ backgroundImage: LATTICE }}
-        />
+        <LatticeBg />
         <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 pb-20 pt-14 lg:grid-cols-[1.15fr_0.85fr]">
           <div>
             <p className="rise rise-1 text-xs font-semibold uppercase tracking-[0.18em] text-emerald-800">
@@ -141,7 +137,7 @@ export default async function LandingPage() {
               verify — then hands the decision to a human reviewer. Every time.
             </p>
             <div className="rise rise-4 mt-7 flex flex-wrap items-center gap-3">
-              <Button asChild size="lg" className="bg-emerald-700 hover:bg-emerald-800">
+              <Button asChild size="lg" className="shadow-lg shadow-emerald-900/15">
                 <Link href="/submit">
                   Submit a campaign <ArrowRight className="size-4" />
                 </Link>
@@ -159,6 +155,9 @@ export default async function LandingPage() {
             </p>
           </div>
           <div className="rise rise-4 relative">
+            <p className="mb-3 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-stone-400">
+              Reviewer console preview
+            </p>
             <MockQueueCard />
           </div>
         </div>
@@ -224,7 +223,7 @@ export default async function LandingPage() {
             </p>
             <div className="mt-6 rounded-xl border border-emerald-900/15 bg-emerald-900 p-5 text-emerald-50">
               <div className="flex items-start gap-3">
-                <Quote className="mt-1 size-4 shrink-0 opacity-60" />
+                <Quote className="mt-1 size-4 shrink-0 opacity-80" />
                 <div>
                   <p className="font-serif text-lg italic leading-relaxed">
                     &ldquo;Insufficient information to distinguish an urgent
@@ -240,7 +239,7 @@ export default async function LandingPage() {
             </div>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-stone-200 bg-white p-5">
+            <div className="rounded-xl border border-emerald-300 bg-emerald-50/60 p-5">
               <p className="text-xs font-semibold uppercase tracking-wide text-emerald-800">
                 The AI owns
               </p>
@@ -252,11 +251,11 @@ export default async function LandingPage() {
                 <li>Ordering the queue so people look at the right things first</li>
               </ul>
             </div>
-            <div className="rounded-xl border border-stone-200 bg-white p-5">
-              <p className="text-xs font-semibold uppercase tracking-wide text-stone-900">
+            <div className="rounded-xl border border-stone-800 bg-stone-900 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-stone-200">
                 Humans own
               </p>
-              <ul className="mt-3 space-y-2 text-sm text-stone-700">
+              <ul className="mt-3 space-y-2 text-sm text-stone-300">
                 <li>Every approve, reject, and escalate</li>
                 <li>Judgment on genuinely ambiguous cases</li>
                 <li>Zakat-eligibility calls that need documentation</li>
@@ -295,7 +294,7 @@ export default async function LandingPage() {
             the audit trail.
           </p>
           <div className="mt-2 flex flex-wrap justify-center gap-3">
-            <Button asChild size="lg" className="bg-emerald-700 hover:bg-emerald-800">
+            <Button asChild size="lg">
               <Link href="/submit">Submit a campaign</Link>
             </Button>
             <Button asChild size="lg" variant="outline">

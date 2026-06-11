@@ -59,8 +59,8 @@ function DiagramBox({
 function Arrow({ label }: { label?: string }) {
   return (
     <div className="flex items-center justify-center gap-2 py-1 text-stone-400">
-      <ArrowDown className="size-4" />
-      {label && <span className="text-[11px]">{label}</span>}
+      <ArrowDown className="size-5" />
+      {label && <span className="text-xs">{label}</span>}
     </div>
   );
 }
@@ -69,7 +69,7 @@ export default async function AboutPage() {
   const session = await getSession();
   return (
     <div className="min-h-screen bg-[#faf8f4] text-stone-900">
-      <header className="mx-auto flex max-w-4xl items-center justify-between px-5 py-5">
+      <header className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5">
         <Link href="/" className="flex items-center gap-2">
           <ShieldCheck className="size-5 text-emerald-700" />
           <span className="font-serif text-xl font-semibold tracking-tight">Amanah</span>
@@ -104,7 +104,7 @@ export default async function AboutPage() {
         </nav>
       </header>
 
-      <main className="mx-auto max-w-4xl space-y-14 px-5 pb-20 pt-6">
+      <main className="mx-auto max-w-5xl space-y-14 px-5 pb-20 pt-6">
         <section>
           <h1 className="font-serif text-4xl font-medium tracking-tight">
             How Amanah works
@@ -263,7 +263,7 @@ export default async function AboutPage() {
 
         {/* ── Built in the open ── */}
         <section>
-          <div className="rounded-xl border border-stone-300 bg-white p-6">
+          <div className="rounded-xl border border-stone-300 border-l-4 border-l-emerald-700 bg-white p-6">
             <div className="flex items-start gap-3">
               <GitHubMark className="mt-0.5 size-5 shrink-0 text-stone-700" />
               <div>
@@ -285,7 +285,7 @@ export default async function AboutPage() {
                   cover the architecture, cost model, and evaluation in depth.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <Button asChild className="bg-emerald-700 hover:bg-emerald-800">
+                  <Button asChild>
                     <a href={REPO} target="_blank" rel="noreferrer">
                       <GitHubMark className="size-4" /> View the code on GitHub
                     </a>
