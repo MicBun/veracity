@@ -28,6 +28,7 @@ import {
 } from "@/lib/format";
 import type { ScreeningOutput, DeepReviewOutput } from "@/lib/ai/schemas";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 import {
   Check,
   X,
@@ -36,7 +37,14 @@ import {
   ShieldAlert,
   ShieldCheck,
   History,
+  Loader2,
 } from "lucide-react";
+
+const ACTION_DONE: Record<string, string> = {
+  approve: "approved",
+  reject: "rejected",
+  escalate: "escalated",
+};
 
 type StageMeta = {
   model: string;
@@ -135,7 +143,7 @@ function FieldRow({
 
 function StageFooter({ meta }: { meta: StageMeta }) {
   return (
-    <p className="text-[11px] text-muted-foreground">
+    <p className="font-mono text-[11px] text-muted-foreground">
       {meta.model} · prompt {meta.promptVersion} · {meta.inputTokens}/
       {meta.outputTokens} tokens · {formatCost(meta.costUsd)} ·{" "}
       {(meta.latencyMs / 1000).toFixed(1)}s
@@ -148,11 +156,14 @@ function ConfidenceMeter({ value }: { value: number }) {
     <div className="space-y-1">
       <div className="flex items-center justify-between text-xs">
         <span className="text-muted-foreground">Confidence</span>
-        <span className="font-medium tabular-nums">{formatPercent(value)}</span>
+        <span className="font-mono font-medium tabular-nums">
+          {formatPercent(value)}
+        </span>
       </div>
       <Progress value={value * 100} className="h-1.5" />
       {value < 0.6 && (
         <p className="text-[11px] text-violet-700">
+          <ShieldAlert className="mr-1 inline size-3" />
           Low confidence — the AI is telling you it doesn&apos;t have enough
           information. Your judgment matters most here.
         </p>
@@ -198,6 +209,7 @@ export function CampaignReview({
         setError(data.error ?? "Action failed");
         return;
       }
+      toast.success(`Decision recorded — campaign ${ACTION_DONE[action]}.`);
       router.refresh();
     } catch {
       setError("Network error — please try again.");
@@ -333,8 +345,8 @@ export function CampaignReview({
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div>
-                  <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+                <div className="rounded-lg border border-amber-200/70 bg-amber-50/40 p-3">
+                  <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-amber-900">
                     Evidence — click to highlight the cited field
                   </p>
                   <ul className="space-y-1.5">
@@ -344,15 +356,15 @@ export function CampaignReview({
                           type="button"
                           onClick={() => citeEvidence(ev.source_field, ev.quote)}
                           className={cn(
-                            "w-full rounded-md border p-2 text-left text-xs transition-colors hover:bg-amber-50",
+                            "w-full rounded-md border bg-white p-2 text-left text-xs transition-colors hover:bg-amber-50",
                             highlight?.field === ev.source_field &&
                               highlight?.quote === ev.quote &&
                               "border-amber-300 bg-amber-50"
                           )}
                         >
-                          <span className="font-medium">{ev.claim}</span>
+                          <span className="font-semibold">{ev.claim}</span>
                           <span className="mt-1 flex items-start gap-1 text-muted-foreground">
-                            <Quote className="mt-0.5 size-3 shrink-0" />
+                            <Quote className="mt-0.5 size-3.5 shrink-0 text-amber-700" />
                             <span>
                               &ldquo;{ev.quote}&rdquo;{" "}
                               <span className="font-mono text-[10px]">
@@ -367,7 +379,7 @@ export function CampaignReview({
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <div>
+                  <div className="rounded-lg border border-red-200 bg-red-50/50 p-3">
                     <p className="mb-1 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-red-700">
                       <ShieldAlert className="size-3.5" /> Risk factors
                     </p>
@@ -377,7 +389,7 @@ export function CampaignReview({
                       ))}
                     </ul>
                   </div>
-                  <div>
+                  <div className="rounded-lg border border-emerald-200 bg-emerald-50/50 p-3">
                     <p className="mb-1 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-emerald-700">
                       <ShieldCheck className="size-3.5" /> Mitigating factors
                     </p>
@@ -436,9 +448,12 @@ export function CampaignReview({
                     onClick={() => act("approve")}
                     disabled={pendingAction !== null}
                     variant={fastTrack ? "default" : "outline"}
-                    className={cn(fastTrack && "bg-emerald-600 hover:bg-emerald-700")}
                   >
-                    <Check className="size-4" />
+                    {pendingAction === "approve" ? (
+                      <Loader2 className="size-4 animate-spin" />
+                    ) : (
+                      <Check className="size-4" />
+                    )}
                     {pendingAction === "approve" ? "Approving…" : "Approve"}
                   </Button>
                   <Button
@@ -447,7 +462,11 @@ export function CampaignReview({
                     variant="outline"
                     className="border-red-200 text-red-700 hover:bg-red-50 hover:text-red-800"
                   >
-                    <X className="size-4" />
+                    {pendingAction === "reject" ? (
+                      <Loader2 className="size-4 animate-spin" />
+                    ) : (
+                      <X className="size-4" />
+                    )}
                     {pendingAction === "reject" ? "Rejecting…" : "Reject"}
                   </Button>
                   <Button
@@ -456,7 +475,11 @@ export function CampaignReview({
                     variant="outline"
                     className="border-violet-200 text-violet-700 hover:bg-violet-50 hover:text-violet-800"
                   >
-                    <ArrowUpRight className="size-4" />
+                    {pendingAction === "escalate" ? (
+                      <Loader2 className="size-4 animate-spin" />
+                    ) : (
+                      <ArrowUpRight className="size-4" />
+                    )}
                     {pendingAction === "escalate" ? "Escalating…" : "Escalate"}
                   </Button>
                 </div>
@@ -519,9 +542,35 @@ export function CampaignReview({
                             {snap.deep_review?.output?.recommendation &&
                               `, ${snap.deep_review.output.recommendation}`}
                           </summary>
-                          <pre className="mt-2 max-h-64 overflow-auto rounded-md bg-muted p-3 text-[11px]">
-                            {JSON.stringify(snap, null, 2)}
-                          </pre>
+                          <div className="mt-2 space-y-1 rounded-md bg-muted p-3">
+                            {snap.screening?.output?.risk_score !== undefined && (
+                              <p>
+                                Screening risk score:{" "}
+                                <span className="font-mono font-semibold text-foreground">
+                                  {snap.screening.output.risk_score}/100
+                                </span>
+                              </p>
+                            )}
+                            {snap.deep_review?.output?.recommendation && (
+                              <p>
+                                Deep-review recommendation:{" "}
+                                <span className="font-semibold text-foreground">
+                                  {snap.deep_review.output.recommendation}
+                                </span>
+                              </p>
+                            )}
+                            {snap.deep_review?.output?.reasoning && (
+                              <p>“{snap.deep_review.output.reasoning}”</p>
+                            )}
+                            <details className="pt-1">
+                              <summary className="cursor-pointer select-none">
+                                Raw snapshot
+                              </summary>
+                              <pre className="mt-2 max-h-64 overflow-auto rounded-md bg-background p-3 text-[11px]">
+                                {JSON.stringify(snap, null, 2)}
+                              </pre>
+                            </details>
+                          </div>
                         </details>
                       )}
                     </div>
