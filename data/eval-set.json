@@ -1,0 +1,545 @@
+{
+  "comment": "Labeled eval dataset: 30 campaigns across 4 ground-truth classes (8 clean, 8 subtle_fraud, 7 obvious_fraud, 7 ambiguous), each with a one-line label rationale. These never appear in the live queue; they exist only for eval runs (lib/evals.ts). Adversarially reviewed to avoid metadata shortcuts and cross-class entity collisions.",
+  "cases": [
+    {
+      "id": "eval-clean-01",
+      "label": "clean",
+      "rationale": "CLEAN: named contractor with a specific quote, itemized total matching goal, verifiable 501(c)(3), seasoned organizer, and correctly declines zakat for infrastructure.",
+      "campaign": {
+        "title": "Replace Masjid An-Noor's failing roof before winter",
+        "description": "I serve on the board of Masjid An-Noor on Cleveland Ave in Columbus, Ohio. Our roof is 26 years old and last spring we had water coming through into the sisters' prayer hall during Jummah. We got three quotes and went with the middle one: $43,800 from Buckeye Commercial Roofing for a full tear-off and TPO membrane replacement. Add $3,200 to repair the water-damaged drywall and insulation in two rooms, plus $1,500 for the city permit and contingency, and we need $48,500 total. The signed quote and our 501(c)(3) letter are posted in the updates, and you can call the masjid office to verify anything. To be clear, we are NOT collecting zakat for this — it's sadaqah jariyah for a building over 300 families pray in every week.",
+        "goal_amount": 48500,
+        "category": "community",
+        "organizer_name": "Yusuf Abdirahman",
+        "organizer_history": {
+          "prior_campaigns": 6,
+          "account_age_days": 2200,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-clean-02",
+      "label": "clean",
+      "rationale": "CLEAN first-timer: detail quality compensates for new account — named clinic quote, OHIP/ADP eligibility logic that checks out (pre-window failure explains the full out-of-pocket quote), family contribution disclosed, goal equals the documented gap.",
+      "campaign": {
+        "title": "Cochlear implant processor for my daughter Maryam",
+        "description": "My daughter Maryam is 7 and profoundly deaf. She received a cochlear implant at SickKids in Toronto when she was 2, and it changed everything — she's in a mainstream grade 2 class at Ridgewood Public School in Mississauga and reading above grade level. Her external sound processor is now failing (it cuts out several times a day, her audiologist has documented it) and it's out of warranty. OHIP covered her surgery, and because the processor failed two years before the Assistive Devices Program's five-year replacement window, ADP will not contribute until 2027 — so the SickKids cochlear implant clinic's full quote of $9,840 falls on us. My husband and I have saved $2,840 and can show our deposit. We're asking for the remaining $7,000. I'll post the audiology report and the invoice as updates. Anything over the goal will be donated to SickKids' hearing program.",
+        "goal_amount": 7000,
+        "category": "medical",
+        "organizer_name": "Lamia Chowdhury",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 38,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-clean-03",
+      "label": "clean",
+      "rationale": "CLEAN with valid zakat claim: refugees are classical zakat recipients, the IRCC Group of Five framework is independently verifiable, sponsors fund the majority themselves, and the itemized remainder sums to the goal.",
+      "campaign": {
+        "title": "Help our Group of Five welcome the Rahimi family to Ottawa",
+        "description": "Five of us from the Kanata Muslim Association — myself, my wife, and three neighbours — were approved by IRCC as a Group of Five to privately sponsor the Rahimis, an Afghan family of five waiting in Islamabad. The father was a mechanic for a Canadian contractor in Kandahar. IRCC requires us to demonstrate about $32,000 in first-year settlement support; we have committed $21,000 of our own money (proof was submitted with our application, file number available to the platform on request). We're raising the last $11,000: first and last month's rent on a 3-bedroom in Barrhaven ($4,400), beds and furnishings ($2,600), winter clothing for three kids ($900), groceries for the first three months ($2,400), and OC Transpo passes plus phone setup ($700). As newly arrived refugees with no assets, the Rahimis qualify for zakat under the categories of the poor and the wayfarer, and our imam has confirmed this.",
+        "goal_amount": 11000,
+        "category": "emergency-relief",
+        "organizer_name": "Imran Sheikh",
+        "organizer_history": {
+          "prior_campaigns": 4,
+          "account_age_days": 1650,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-clean-04",
+      "label": "clean",
+      "rationale": "CLEAN: registered charity number, per-unit pricing that sums exactly to the goal, named supplier, and a track record of posting receipts in prior campaigns.",
+      "campaign": {
+        "title": "Laptops and tutor stipends for Iqra Supplementary School, Leeds",
+        "description": "Salaam — I coordinate the Saturday programme at Iqra Supplementary School in Harehills, Leeds. We run GCSE maths and English catch-up classes for 45 kids, most from Roma and Pakistani families in LS8 and LS9. This year we need £6,600 (about $8,400): 15 refurbished Lenovo ThinkPads at £165 each from Leeds Tech Recycle (£2,475), stipends for two qualified tutors for 30 Saturdays at £50 per week each (£3,000), and exam-board practice papers plus workbooks (£1,125). We're a registered charity (no. 1187654) and our accounts are filed with the Charity Commission every year. Last year's appeal bought the projector and the heaters we still use. Receipts for every laptop will be posted, same as we did in 2024 and 2025.",
+        "goal_amount": 8400,
+        "category": "education",
+        "organizer_name": "Hafsa Iqbal",
+        "organizer_history": {
+          "prior_campaigns": 3,
+          "account_age_days": 1100,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-clean-05",
+      "label": "clean",
+      "rationale": "CLEAN with valid zakat claim: a needy widow assessed by a named community centre, beneficiary consent stated, specific equipment model and itemized costs matching a modest goal, organized by a veteran caseworker account.",
+      "campaign": {
+        "title": "An industrial sewing machine so Shamim can support her four kids",
+        "description": "I'm a volunteer caseworker at the Khidmat Centre in Bradford, raising this on behalf of Shamim, a widow raising four children in Manningham (she has given written permission and the centre can verify her case). Shamim worked as a seamstress in Karachi for 15 years. Since her husband died she's been doing alterations by hand for neighbours, earning maybe £40 a week. With proper equipment she could take regular work from two local boutiques who have agreed in writing. We need £1,900 (about $2,400): a Juki DDL-8700 industrial machine (£650), an overlocker (£380), a cutting table and shears (£170), opening stock of fabric and thread (£300), and six months of stall fees at Oastler Market (£400). She receives Universal Credit and the centre has assessed her as zakat-eligible under the category of the needy.",
+        "goal_amount": 2400,
+        "category": "livelihood",
+        "organizer_name": "Nadia Hussain",
+        "organizer_history": {
+          "prior_campaigns": 7,
+          "account_age_days": 2350,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-clean-06",
+      "label": "clean",
+      "rationale": "CLEAN with valid zakat claim: al-gharimin (debt-ridden) is a classical category, a masjid zakat committee independently reviewed documentation, funds are paid directly to the hospital, and the goal equals the written settlement amount.",
+      "campaign": {
+        "title": "Clear the hospital debt crushing Brother Andre",
+        "description": "Assalamu alaikum. I'm raising this for my friend Andre Salaam, a custodian with the School District of Philadelphia for 11 years and a brother from my masjid in West Philly. In January Andre had an emergency triple bypass at Temple University Hospital. He has insurance through the district, but between his deductible and the coinsurance up to his plan's out-of-pocket maximum he came out owing Temple $14,300, now in collections. The hospital's financial office agreed in writing to settle the full balance for $9,500 if paid within 90 days. I have the letter and shared it with our zakat committee at Masjid As-Sabur, who reviewed his bills and pay stubs and confirmed he qualifies as a debtor (al-gharimin). Every dollar goes straight to the hospital, paid by the committee — not to me or Andre. Anything over the settlement goes to the masjid's zakat fund.",
+        "goal_amount": 9500,
+        "category": "medical",
+        "organizer_name": "Tariq Johnson",
+        "organizer_history": {
+          "prior_campaigns": 5,
+          "account_age_days": 1900,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-clean-07",
+      "label": "clean",
+      "rationale": "CLEAN: verifiable fire incident report and Red Cross involvement, coherent insurance-gap explanation, itemized needs summing to the goal, and a longstanding neighbor relationship rather than an anonymous fundraiser.",
+      "campaign": {
+        "title": "Fire took everything from the Haddad family — help them restart",
+        "description": "On May 28 there was a kitchen fire in the unit below my neighbours, the Haddads, on Barton Street East in Hamilton (the Hamilton Fire incident report number is posted in updates). Smoke and water destroyed almost everything the family of six owned. The Red Cross put them in a hotel for 72 hours, which has run out, and the landlord's insurance doesn't cover tenants' belongings — they had no contents insurance. I've known this family eight years; their kids walk to school with mine. Here's exactly what we're raising: first and last month's rent on a new unit ($3,600), beds and basic furniture from Habitat ReStore ($1,800), clothes and school supplies for the four kids ($900), and replacing Samir's HVAC apprentice tools so he can keep working ($1,200). That's $7,500. Receipts will be posted for everything.",
+        "goal_amount": 7500,
+        "category": "emergency-relief",
+        "organizer_name": "Grace Nguyen",
+        "organizer_history": {
+          "prior_campaigns": 2,
+          "account_age_days": 740,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-clean-08",
+      "label": "clean",
+      "rationale": "CLEAN first-timer: school-verifiable teacher identity, named team and event, line-item travel budget that sums to the goal, and an explicit plan for unused funds offsets the new account.",
+      "campaign": {
+        "title": "Get the Circuit Hawks robotics team to the Washington State Championship",
+        "description": "I teach 8th grade science at Aki Kurose Middle School in south Seattle and coach our robotics team, the Circuit Hawks (FTC Team 21487). Last weekend the kids qualified for the Washington State Championship in Spokane — first time in school history. Now I have to get 12 students there, and most of our families can't cover it; about 70% of our students qualify for free or reduced lunch. The budget, line by line: charter bus to Spokane and back $1,850, eight hotel rooms for two nights at $165/night $2,640, event registration $300, meals for students and three chaperones $710. Total: $5,500. Our PTA already covered this season's robot parts, so this is purely travel. The district has approved the trip and any unused funds go back to the school's ASB account. Happy to verify through the school office.",
+        "goal_amount": 5500,
+        "category": "education",
+        "organizer_name": "Chidi Eze",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 120,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-subtle-01",
+      "label": "subtle_fraud",
+      "rationale": "Subtle fraud: financial_anomaly — 200 kits x $40 = $8,000 of stated contents (which genuinely cost about $40), but the goal is $23,000 with no explanation for the $15,000 gap.",
+      "campaign": {
+        "title": "Winter Warm Kits for Newly Arrived Refugee Families in Scarborough",
+        "description": "Salaam everyone. Every winter our volunteer group puts together warm kits for newly arrived refugee families in Scarborough — a warm hat, gloves, a thermal base-layer set, and a $20 grocery gift card. Last year we ran out in the first week and had to turn families away, including a mum with a newborn who came in just a hoodie. This year we want to prepare 200 kits at $40 per kit so nobody leaves empty handed. We work directly with settlement caseworkers who refer families to us, so every kit goes to someone who genuinely needs it. We've done this for three winters out of our own pockets and it's gotten too big for us. Donations are zakat eligible as all recipients are low-income newcomers. Jazakallah khair for anything you can give, and please share with your masjid groups.",
+        "goal_amount": 23000,
+        "category": "emergency-relief",
+        "organizer_name": "Khadija Osmani",
+        "organizer_history": {
+          "prior_campaigns": 3,
+          "account_age_days": 1140,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-subtle-02",
+      "label": "subtle_fraud",
+      "rationale": "Subtle fraud: story_inconsistency — 'mother to our three children' contradicts 'all four of our kids' later in the same pitch.",
+      "campaign": {
+        "title": "Help Sumaya's Family Through Her Cancer Treatment",
+        "description": "I'm raising money for my wife Sumaya who was diagnosed with stage 3 breast cancer in January. She is the heart of our home and mother to our three children. The NHS covers her treatment but I've had to drop to part time at the warehouse to take her to appointments in Leeds three times a week, and rent doesn't wait. We are behind two months already. The money would cover rent, travel and childcare for the next six months while she finishes chemo. Anyone who knows Sumaya knows she'd never ask for herself — she's the one who used to cook for half the street during Ramadan. All four of our kids are too young to understand why mum is always tired. Please keep her in your duas. Every pound helps and donations count as zakat as we are genuinely struggling.",
+        "goal_amount": 12500,
+        "category": "medical",
+        "organizer_name": "Omar Farouk",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 45,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-subtle-03",
+      "label": "subtle_fraud",
+      "rationale": "Subtle fraud: story_inconsistency — diagnosed 'six weeks ago' yet has 'already been through four months of chemotherapy,' a timeline impossibility; the hospital is also never named.",
+      "campaign": {
+        "title": "Support 7-Year-Old Mateo's Fight Against Leukemia",
+        "description": "Our nephew Mateo is 7 and he was diagnosed with acute lymphoblastic leukemia six weeks ago. Since then our whole family's world has stopped. He has already been through four months of chemotherapy and the doctors at the children's hospital say he is responding well, but my sister Mariana had to leave her job at the school cafeteria to be with him full time. Her husband drives trucks and is gone most weeks. The bills are piling up — copays, parking at the medical center, gas, meals, and now they're behind on their apartment. We are asking for help to cover six months of their basic living costs so Mariana can stay by Mateo's side without losing their home. Thank you for reading and for any help, it means more than you know.",
+        "goal_amount": 30000,
+        "category": "medical",
+        "organizer_name": "Maria Delgado",
+        "organizer_history": {
+          "prior_campaigns": 1,
+          "account_age_days": 610,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-subtle-04",
+      "label": "subtle_fraud",
+      "rationale": "Subtle fraud: identity_mismatch — organizer calls Amadou 'my son' in the opening, then slips to 'my nephew is the sweetest boy' with no explanation.",
+      "campaign": {
+        "title": "Amadou's Recovery Fund After His Accident",
+        "description": "On May 19th my son Amadou was hit by a car crossing Warren Avenue on his way home from Quran class. He's 11. Broken pelvis, two surgeries so far, and a long road of physical therapy ahead. Alhamdulillah he is alive. I drive for a rideshare company and have no insurance through work. The hospital social worker helped us apply for charity care but it won't cover everything. I'm asking the community to help with the gap — therapy sessions, a wheelchair ramp for the house, and the weeks I can't work while caring for him. My nephew is the sweetest boy, he memorized two juz already and his teachers love him. We just want to get him back on his feet. May Allah reward everyone who shares or gives.",
+        "goal_amount": 18000,
+        "category": "medical",
+        "organizer_name": "Ibrahim Diallo",
+        "organizer_history": {
+          "prior_campaigns": 2,
+          "account_age_days": 820,
+          "prior_flags": 1
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-subtle-05",
+      "label": "subtle_fraud",
+      "rationale": "Subtle fraud: zakat_eligibility_doubt (chandelier, marble, landscaping and parking for a prosperous congregation fits no classical zakat category) compounded by an $85,000 goal with no cost breakdown and donations routed to the organizer's personal account instead of the masjid.",
+      "campaign": {
+        "title": "Beautify Masjid Al-Falah Before Eid",
+        "description": "Assalamu alaikum. Masjid Al-Falah has served our Naperville community for over twenty years, alhamdulillah. Our congregation has grown to more than 600 families and it is time the masjid reflected the dignity of this house of Allah. This campaign will fund a new crystal chandelier for the main prayer hall, marble flooring to replace the worn carpet at the entrance, professional landscaping for the front gardens, and resurfacing of the parking lot before Eid. These upgrades will make the masjid more welcoming for our families and for neighbors who visit during open houses. Donations come to my personal account and I will pass them to the building committee as the work is arranged. All donations are zakat-eligible and you will receive a tax receipt. The Prophet (pbuh) said whoever builds a masjid for Allah, Allah builds for him a house in Paradise.",
+        "goal_amount": 85000,
+        "category": "community",
+        "organizer_name": "Faisal Qureshi",
+        "organizer_history": {
+          "prior_campaigns": 4,
+          "account_age_days": 2200,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-subtle-06",
+      "label": "subtle_fraud",
+      "rationale": "Subtle fraud: zakat_eligibility_doubt — expansion capital for a thriving, profitable business is not zakat-eligible, and the pitch even says 'your support isn't charity' while claiming zakat status.",
+      "campaign": {
+        "title": "Help Amina's Catering Take the Next Step",
+        "description": "Five years ago I started cooking biryani out of my home kitchen in Mississauga to support my family after my divorce. Alhamdulillah, the business has grown beyond anything I imagined — we now cater three to four weddings and corporate events every weekend and I employ two sisters from the community part time. To take the next step I need a refrigerated delivery van and a deposit on a small commercial kitchen unit, because the home kitchen cannot keep up with the orders we are turning away. I'm raising $24,000 to cover the van, the deposit and new equipment. Your support isn't charity — it's an investment in a sister-owned business that gives back; we donate leftover food to the shelter every month. Donations are zakat-eligible. JazakAllah khair.",
+        "goal_amount": 24000,
+        "category": "livelihood",
+        "organizer_name": "Amina Begum",
+        "organizer_history": {
+          "prior_campaigns": 1,
+          "account_age_days": 920,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-subtle-07",
+      "label": "subtle_fraud",
+      "rationale": "Subtle fraud: unverifiable_claims — precise-sounding partners ('registered local NGO,' 'registered charity,' 'respected local imam,' '300 families reached') with no names or registration numbers, plus five campaigns on a 200-day-old account.",
+      "campaign": {
+        "title": "Emergency Flood Relief for Villages in Northern Pakistan",
+        "description": "The floods in northern Pakistan last month destroyed entire villages — homes, crops, livestock, everything. My team and I have been coordinating relief from London since the first week. Through our partner organization on the ground, a registered local NGO, we have already delivered food parcels and clean water to over 300 families, and a respected local imam has personally verified every distribution. We are now raising $40,000 to fund emergency shelter kits and a month of food for 500 more families before the next rains. We work through a registered charity so your donation is in safe hands, and it is fully zakat-eligible as the recipients have lost everything. Receipts and photos available on request. Please give what you can.",
+        "goal_amount": 40000,
+        "category": "emergency-relief",
+        "organizer_name": "Junaid Mansour",
+        "organizer_history": {
+          "prior_campaigns": 5,
+          "account_age_days": 200,
+          "prior_flags": 1
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-subtle-08",
+      "label": "subtle_fraud",
+      "rationale": "Subtle fraud: financial_anomaly + story_inconsistency — 45 laptops x $180 plus a dozen internet plans totals roughly $11,700 against a $21,000 goal, and '45 students' becomes 'these sixty kids' later in the pitch.",
+      "campaign": {
+        "title": "Laptops for Weekend Homework Club Students in Calgary",
+        "description": "I teach at a weekend homework program in northeast Calgary that serves kids from low-income and refugee families. When schools went hybrid we realized most of our 45 students don't have a computer at home — they were typing essays on their mums' phones. We've found a local supplier of refurbished laptops at $180 each with charger and a one-year warranty, and we want to put one in every student's hands, plus cover a year of mobile internet for about a dozen families who need it. Our goal is $21,000. These sixty kids show up every Saturday morning in minus 30 weather because they want to learn — the least we can do is give them the tools. Many of the families qualify for zakat so we are accepting zakat donations as well. Thank you.",
+        "goal_amount": 21000,
+        "category": "education",
+        "organizer_name": "Rukhsana Mirza",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 30,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-obvious-01",
+      "label": "obvious_fraud",
+      "rationale": "Obvious fraud: 48-hour deadline pressure, contradiction (6-month-old fighting for two years), unnamed hospital, guaranteed 100% cure, scroll-past guilt coercion; the modest goal shows the textual signals, not the dollar size, carry the verdict. 6-day-old account with 2 prior flags.",
+      "campaign": {
+        "title": "URGENT!! Baby Ayaan needs heart surgery in 48 HOURS or we lose him",
+        "description": "I am begging anyone with a heart to read this. My nephew Ayaan is 6 months old and the doctors gave us 48 hours to pay for his surgery or they will stop treatment. He has been fighting this disease for two years and we cannot give up now. The hospital needs $9,800 by Friday IN FULL, no payment plan, nothing. I can't share the hospital name for privacy reasons but I promise every dollar goes to the surgery. If you scroll past this post you are choosing to let a baby die, I'm sorry but it's the truth. The doctors said if we do the operation he will be 100% cured and live a totally normal life, GUARANTEED. Please donate and share, Allah sees everything. We only have 48 hours left. May God bless you.",
+        "goal_amount": 9800,
+        "category": "medical",
+        "organizer_name": "Bilal Hashmi",
+        "organizer_history": {
+          "prior_campaigns": 2,
+          "account_age_days": 6,
+          "prior_flags": 2
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-obvious-02",
+      "label": "obvious_fraud",
+      "rationale": "Obvious fraud: weaponizes zakat obligation and Day of Judgment guilt, refuses to name camp or partner org, impossible 100%-delivery-in-24-hours guarantee, $250k round goal on an 8-day-old flagged account.",
+      "campaign": {
+        "title": "1000 ORPHANS WILL STARVE BY FRIDAY - Your Zakat Can Save Them TONIGHT",
+        "description": "Assalamu alaikum brothers and sisters. I am on the ground right now and what I see will haunt you. 1000 orphans have NO food and by Friday it will be too late. I am personally guaranteeing that 100% of your donation reaches them within 24 hours, no middlemen, no admin fees, nothing - straight from your pocket into their hands. I cannot say which camp or which organization we work with because of security but trust me, wallahi every penny gets there. This counts as your zakat - and remember, if you have zakat you haven't paid and you scroll past this, that is between you and Allah on the Day of Judgment. Don't let it be on your scales. We need $250,000 by Friday. Donate NOW before it's too late.",
+        "goal_amount": 250000,
+        "category": "emergency-relief",
+        "organizer_name": "Mariam El-Sayed",
+        "organizer_history": {
+          "prior_campaigns": 1,
+          "account_age_days": 8,
+          "prior_flags": 1
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-obvious-03",
+      "label": "obvious_fraud",
+      "rationale": "Obvious fraud: guaranteed miracle cure for stage 4 cancer at an unnamed overseas clinic, big-pharma conspiracy framing, beneficiary switches from mum to aunt mid-pitch, $200k upfront by Monday. The four-year-old account with prior ordinary campaigns is consistent with a compromised or sold account — metadata alone cannot clear this; the text convicts it.",
+      "campaign": {
+        "title": "Help my mum beat stage 4 cancer - clinic GUARANTEES full recovery",
+        "description": "I never thought I'd be doing this but here we are. My mum was diagnosed with stage 4 pancreatic cancer in March and the NHS told us there's nothing more they can do. But we found a private clinic abroad whose doctors have GUARANTEED a 100% full recovery using a new treatment big pharma doesn't want you to know about. They have cured every single patient they've ever treated. The treatment costs $200,000 and they need it all upfront by Monday or my aunt loses her spot on the list forever. I can't post the clinic's name because they asked us not to, but I will post updates. Please, my mum raised 4 of us alone. If 20,000 people give $10 she lives. If you ignore this, I hope you can sleep at night.",
+        "goal_amount": 200000,
+        "category": "medical",
+        "organizer_name": "Gemma Calloway",
+        "organizer_history": {
+          "prior_campaigns": 3,
+          "account_age_days": 1460,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-obvious-04",
+      "label": "obvious_fraud",
+      "rationale": "Obvious fraud: false zakat eligibility (mosque infrastructure is not a classical zakat category), 72-hour demolition ultimatum payable in cash, contradiction (building paid in full with no debts yet facing seizure), unnamed city department, 4 campaigns and 3 flags on a 9-day-old account.",
+      "campaign": {
+        "title": "Our masjid will be DEMOLISHED in 72 hours - $180k or it's gone forever",
+        "description": "Brothers and sisters, the city has given us 72 HOURS. If we do not hand over $180,000 in cash by Thursday the bulldozers come and our masjid - the only masjid for 50 miles - is gone forever. I won't name the city department involved because we are in legal proceedings, just trust me that this is real. Every donation counts as ZAKAT - the scholars I spoke to confirmed building this masjid purifies your wealth, and whoever lets a house of Allah fall will answer for it. We bought this building 3 years ago alhamdulillah, paid in full with no debts - but now we need $180,000 by Thursday or we lose everything. There is no plan B. Whoever builds a masjid, Allah builds him a house in Jannah - GUARANTEED. Don't scroll past. This is your test.",
+        "goal_amount": 180000,
+        "category": "community",
+        "organizer_name": "Abdikarim Warsame",
+        "organizer_history": {
+          "prior_campaigns": 4,
+          "account_age_days": 9,
+          "prior_flags": 3
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-obvious-05",
+      "label": "obvious_fraud",
+      "rationale": "Obvious fraud: guaranteed 2x financial returns on a donation platform (financial anomaly / Ponzi pattern), 100% success claims, unverifiable beneficiaries and suppliers, 5-day artificial scarcity, 4-day-old account.",
+      "campaign": {
+        "title": "Halal business fund for 100 widows - DOUBLE your donation guaranteed",
+        "description": "I'm starting something that has never been done. With $120,000 I will set up import businesses for 100 widowed sisters and within 6 months every business will be in profit, that is guaranteed - I have done this before in 3 countries and it worked 100% of the time. Here is the special part: anyone who donates $500 or more gets DOUBLE their money back within 90 days from the profits, so it's not even a donation, you literally cannot lose. I can't reveal the supplier contracts or which sisters are enrolled (privacy) but screenshots will come after we hit the goal. We have 5 days before the supplier gives our slot away. This opportunity will never come again. Allah loves those who help widows - be one of them.",
+        "goal_amount": 120000,
+        "category": "livelihood",
+        "organizer_name": "Shahid Chaudhry",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 4,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-obvious-06",
+      "label": "obvious_fraud",
+      "rationale": "Obvious fraud: 24-hour deadline, headcount contradiction (300 orphans vs all 45 children), unnamed academy, guaranteed university admission for all, scroll-past blame coercion, flagged 15-day-old account.",
+      "campaign": {
+        "title": "24 HOURS: 300 orphans lose their school placements FOREVER",
+        "description": "Please stop scrolling. I have 24 hours to save the futures of 300 orphan students. A private academy has agreed to take all 45 of our children on full scholarships - we just have to pay a one-time placement fee of $95,000 by tomorrow night or every single placement is cancelled permanently and these kids end up on the street. I can't name the academy yet because of the contract, but it is one of the top schools in the country and they GUARANTEE every graduate gets into university. Every child who misses this chance, that's on the people who scrolled past. I have never asked for anything in my life but I am begging now. $95,000. 24 hours. That's it. Share if you can't give - but if you can give and you don't, remember these kids.",
+        "goal_amount": 95000,
+        "category": "education",
+        "organizer_name": "Fatima Noor",
+        "organizer_history": {
+          "prior_campaigns": 1,
+          "account_age_days": 15,
+          "prior_flags": 1
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-obvious-07",
+      "label": "obvious_fraud",
+      "rationale": "Obvious fraud: family size contradiction (family of 9 vs household of 5), insurance both denied and paying out, fake share-equals-donation mechanic, refusal to show any evidence, 48-hour eviction pressure, 3 campaigns and 2 flags on a 6-day-old account.",
+      "campaign": {
+        "title": "Fire took EVERYTHING from my family of 9 - 48hrs before we're on the street",
+        "description": "Last Tuesday a fire destroyed our home and everything we own. Me, my wife and our 3 kids got out with the clothes on our backs. The motel kicks us out in 48 hours and after that my family of 9 is on the street, period. Insurance denied our claim completely, even though they also told us a payout is coming next month - either way we can't wait. We need $85,000 to be made whole again and I promise we will never ask for anything again. Also every single SHARE of this campaign = $10 donated automatically by our sponsor, so even broke people have no excuse. I'm not posting photos of the house because it's too painful for my kids to see online. God knows our situation even if you don't believe me. 48 hours. Please.",
+        "goal_amount": 85000,
+        "category": "emergency-relief",
+        "organizer_name": "Marcus Bell",
+        "organizer_history": {
+          "prior_campaigns": 3,
+          "account_age_days": 6,
+          "prior_flags": 2
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-ambiguous-01",
+      "label": "ambiguous",
+      "rationale": "Entirely plausible fire emergency, but a 4-day-old account with no fire department incident number, no building address, no renter's insurance status, and an $18k goal with no breakdown - nothing to verify, nothing to reject.",
+      "campaign": {
+        "title": "Fire Took Everything - Help My Kids and Me Start Over",
+        "description": "Assalamu alaikum. On Saturday night there was a fire in our apartment building on the north side of Minneapolis. Alhamdulillah my three kids and I got out safe but we lost basically everything - clothes, the kids school stuff, my work uniforms, our documents. Right now we are staying with my cousin but she has her own family and we can't stay long. I am asking for help with a deposit for a new place, beds and clothes for the kids, and replacing our papers. I never asked for help like this before and honestly it's hard for me to even write this. Anything helps and if you can't give please make dua for us. May Allah reward you.",
+        "goal_amount": 18000,
+        "category": "emergency-relief",
+        "organizer_name": "Hodan Abdullahi",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 4,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-ambiguous-02",
+      "label": "ambiguous",
+      "rationale": "Believable redundancy story with a modest goal, but no employer name, termination letter, or arrears figure, and the zakat claim ('nothing left in savings') rests entirely on the organizer's own unverified assertion of asset position.",
+      "campaign": {
+        "title": "Laid Off After 6 Years - Behind on Rent With a Baby Coming",
+        "description": "I worked at the same distribution centre in Bradford for six years until last month when they let a load of us go with barely any notice. I've been applying everywhere, doing the odd delivery shift, but it's not covering things. We're now two months behind on rent and the landlord is talking about notice. My wife is expecting our second child in August and I'll be honest, I'm not sleeping. I'm not asking for much, just enough to clear the arrears and keep us afloat until I find steady work - I have an interview at a warehouse in Leeds next week inshallah. I've worked my whole life and never claimed anything off anyone. This is zakat eligible as we have nothing left in savings. JazakAllah khair.",
+        "goal_amount": 6500,
+        "category": "livelihood",
+        "organizer_name": "Zubair Mahmood",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 47,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-ambiguous-03",
+      "label": "ambiguous",
+      "rationale": "Detention and legal-fee numbers are realistic and internally consistent, but a 9-day-old account names no attorney or firm, gives no detainee A-number or detention facility, and offers no way to confirm funds would go to legal representation.",
+      "campaign": {
+        "title": "Keep My Father Home - Legal Defense Fund for My Dad",
+        "description": "Three weeks ago my dad was picked up by ICE on his way to work in Houston. He's been here over 20 years and he's the only income for my mom and my little brothers. We found a lawyer who says my dad has a real case to stay, but the retainer is $8,000 up front plus filing fees, and bond could be another $5,000 on top of that. We've sold what we can and my aunt loaned us some but we are still way short. My dad has never been in trouble, he coaches my brother's soccer team, everybody on our street knows him. I'm 22 and I'm trying to hold this together for my family. Please, anything helps, even just sharing this. Thank you and God bless.",
+        "goal_amount": 13000,
+        "category": "emergency-relief",
+        "organizer_name": "Daniela Reyes",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 9,
+          "prior_flags": 0
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-ambiguous-04",
+      "label": "ambiguous",
+      "rationale": "The debt story is coherent and the account has clean history, but no itemized bill, hospital name, or charity-care/financial-assistance application is shown, so whether this is a zakat-eligible debt (gharimin) versus a negotiable bill the family could partly bear is undeterminable.",
+      "campaign": {
+        "title": "Clear My Mother's Hospital Debt Before Collections Ruins Her",
+        "description": "Last November my mother had emergency gallbladder surgery at a hospital here in Paterson. She works part time at a tailoring shop and has no insurance - we always thought she was healthy alhamdulillah. The original bill was over $34,000. After months of calling they reduced it to around $21,000, but they want a payment plan she simply cannot afford, and now a collections agency has started calling her, which is making her sick with stress all over again. I am her oldest son, I work but I have my own family and rent. We are raising money to settle this debt directly with the hospital. My mother is too proud to ask so I am asking for her. Scholars I spoke to said paying the debt of someone who cannot pay is zakat. May Allah accept it from you.",
+        "goal_amount": 21000,
+        "category": "medical",
+        "organizer_name": "Naveed Qadri",
+        "organizer_history": {
+          "prior_campaigns": 1,
+          "account_age_days": 410,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-ambiguous-05",
+      "label": "ambiguous",
+      "rationale": "Credible organizer with community track record, but $36,000 sits at the high end with no contractor quotes attached, no masjid name or board authorization letter, plus one prior flag that needs reviewing — request documentation rather than approve or reject.",
+      "campaign": {
+        "title": "Urgent Roof and Mold Repairs for Our Scarborough Masjid",
+        "description": "Our masjid in Scarborough has served the community for almost 15 years and the building is showing it. This winter the roof started leaking over the main entrance lobby and now there is mold in the basement where the weekend madrasah classes meet - some parents have already pulled their kids out. We had two contractors come look and both said the roof needs replacing, not patching, plus mold remediation and new drywall downstairs. The committee asked me to run this fundraiser since I organized the Ramadan food drive the past two years. We need to start work before the spring rains. Every dollar goes to the building and we will post photos as the work happens inshallah.",
+        "goal_amount": 36000,
+        "category": "community",
+        "organizer_name": "Aisha Demir",
+        "organizer_history": {
+          "prior_campaigns": 3,
+          "account_age_days": 820,
+          "prior_flags": 1
+        },
+        "zakat_claimed": false
+      }
+    },
+    {
+      "id": "eval-ambiguous-06",
+      "label": "ambiguous",
+      "rationale": "The privacy rationale for an anonymous beneficiary is legitimate and common, but it also means the widow's existence, need, and zakat eligibility are unverifiable, and funds flow through the organizer personally with no settlement agency or charity named as intermediary.",
+      "campaign": {
+        "title": "A Year of Stability for a Syrian Widow and Her 3 Children in Calgary",
+        "description": "I volunteer with newcomer families in Calgary and I want to tell you about a sister who arrived four months ago from Syria with her three children after her husband was killed. Her government support barely covers their apartment in the northeast, and she came to us when she couldn't pay February's heating bill. She doesn't speak English yet and can't work until her documents are processed. I'm not using her name or photo here for her safety and dignity, which I hope you understand. The goal covers roughly a year of rent top-ups, groceries, and winter clothes for the kids. I will personally make sure every dollar reaches her, and as a widow with no income she is clearly eligible for your zakat.",
+        "goal_amount": 14000,
+        "category": "emergency-relief",
+        "organizer_name": "Anas Khalil",
+        "organizer_history": {
+          "prior_campaigns": 1,
+          "account_age_days": 150,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    },
+    {
+      "id": "eval-ambiguous-07",
+      "label": "ambiguous",
+      "rationale": "Specific, plausible figures and a hard deadline, but no school name, enrollment verification, or bursar statement, and zakat eligibility turns on whether she is genuinely poor under the faqir/miskin categories or facing an ordinary cash-flow gap before a secured job - a fact not in evidence.",
+      "campaign": {
+        "title": "One Semester From My Nursing Degree - $7,800 Stands in the Way",
+        "description": "I am one semester away from finishing my nursing degree in Philadelphia. I've gotten this far working nights as a home health aide while in school full time, but this year my hours got cut and my financial aid maxed out. The bursar's office says I owe $7,800 by July 3rd or I can't register for my final clinical rotation, which would set me back a full year because of how rotations are scheduled. I came to this country from Guinea when I was nine, my mom cleans offices, there is no family money to fall back on. I have a job offer waiting at a hospital that starts after I pass my boards. I just need to get over this last wall. As a student with genuine need I'm told I qualify for zakat, but any help - sadaqah or even dua - means everything.",
+        "goal_amount": 7800,
+        "category": "education",
+        "organizer_name": "Fanta Kourouma",
+        "organizer_history": {
+          "prior_campaigns": 0,
+          "account_age_days": 26,
+          "prior_flags": 0
+        },
+        "zakat_claimed": true
+      }
+    }
+  ]
+}
