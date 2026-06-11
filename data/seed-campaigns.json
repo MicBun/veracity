@@ -1,0 +1,548 @@
+{
+  "comment": "Queue seed campaigns with committed, pre-generated AI assessments. Committing assessment JSON keeps seeding free and deterministic (no API calls). Evidence quotes are verbatim substrings of the cited field. 'class' is documentation only and is never stored or shown.",
+  "campaigns": [
+    {
+      "key": "seed-01",
+      "class": "clean",
+      "title": "Rebuild the Al-Noor Community Center kitchen",
+      "description": "Our community kitchen at Al-Noor Community Center in Columbus, Ohio has served free Friday meals for eleven years. In March a burst pipe flooded the kitchen and we lost most of our equipment. We have a written quote from Hardin Restaurant Supply for $14,200 covering two commercial ranges, a walk-in cooler compressor, and stainless prep tables, plus $4,300 from Mendel Brothers Plumbing for repiping. The center's board has approved the repair plan and our 501(c)(3) documents and both quotes are available to any donor on request. Every meal we serve is cooked by volunteers; your help puts us back in the kitchen by Ramadan.",
+      "goal_amount": 18500,
+      "category": "community",
+      "organizer_name": "Yusuf Abdallah",
+      "organizer_history": { "prior_campaigns": 3, "account_age_days": 1460, "prior_flags": 0 },
+      "zakat_claimed": false,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 720,
+          "output_tokens": 96,
+          "cost_usd": 0.0012,
+          "latency_ms": 1340,
+          "output": {
+            "risk_score": 8,
+            "category_flags": [],
+            "confidence": 0.92,
+            "summary": "Established organizer with itemized contractor quotes that sum exactly to the goal; no risk signals."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-02",
+      "class": "clean",
+      "title": "Help Maryam finish her final year of nursing school",
+      "description": "I am raising funds for my niece Maryam Hassan, a third-year nursing student at Wayne State University in Detroit. Her father passed away last spring and the family used their savings for funeral costs and rent. Maryam needs $4,800 to cover her final two semesters: $3,950 tuition balance (her student account statement is available on request) and $850 for clinical uniforms and licensing exam fees. She works twenty hours a week at a pharmacy but it is not enough to close the gap. Our masjid's education committee has verified the family's situation and will receive the funds directly.",
+      "goal_amount": 4800,
+      "category": "education",
+      "organizer_name": "Fatima Hassan",
+      "organizer_history": { "prior_campaigns": 2, "account_age_days": 980, "prior_flags": 0 },
+      "zakat_claimed": true,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 705,
+          "output_tokens": 102,
+          "cost_usd": 0.001215,
+          "latency_ms": 1180,
+          "output": {
+            "risk_score": 14,
+            "category_flags": [],
+            "confidence": 0.88,
+            "summary": "Specific, verifiable education costs with third-party verification by a masjid committee; zakat claim is consistent with a family in financial need."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-03",
+      "class": "clean",
+      "title": "Winter coats for 200 refugee children in Dearborn",
+      "description": "Salaam Relief Network is buying winter coats, boots, and gloves for 200 newly arrived refugee children in Dearborn, Michigan before the cold sets in. We have negotiated a bulk price of $38 per child with Hanover Outfitters, which covers a coat, boots, and a glove-and-hat set ($7,600 total), plus $1,400 for sorting, sizing days, and delivery to three resettlement apartment complexes we already serve. We are a registered 501(c)(3) (EIN available on request) and have run this drive for five winters. Donations are zakat-eligible: every family we serve is within 130% of the federal poverty line.",
+      "goal_amount": 9000,
+      "category": "emergency-relief",
+      "organizer_name": "Salaam Relief Network",
+      "organizer_history": { "prior_campaigns": 6, "account_age_days": 2100, "prior_flags": 0 },
+      "zakat_claimed": true,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 740,
+          "output_tokens": 98,
+          "cost_usd": 0.00123,
+          "latency_ms": 1420,
+          "output": {
+            "risk_score": 10,
+            "category_flags": [],
+            "confidence": 0.9,
+            "summary": "Registered organization with a five-year track record, per-unit pricing that sums to the goal, and a zakat claim grounded in stated poverty criteria."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-04",
+      "class": "clean",
+      "title": "Masjid Al-Rahma roof repair after April storm",
+      "description": "The April 14 hailstorm tore through the roof membrane over our prayer hall at Masjid Al-Rahma in Tulsa. We have patched the leaks with tarps, but the engineer's inspection found the decking under two sections must be replaced before winter. Crown Roofing's written estimate is $29,400; our insurance approved only $6,000 because of the roof's age, leaving $23,400. The masjid board voted to repair rather than rebuild, and we are publishing the estimate, the insurance letter, and monthly spending updates on our website. Jumu'ah attendance is over 400 — help us keep the roof over their heads.",
+      "goal_amount": 23400,
+      "category": "community",
+      "organizer_name": "Masjid Al-Rahma Board",
+      "organizer_history": { "prior_campaigns": 4, "account_age_days": 2350, "prior_flags": 0 },
+      "zakat_claimed": false,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 760,
+          "output_tokens": 100,
+          "cost_usd": 0.00126,
+          "latency_ms": 1300,
+          "output": {
+            "risk_score": 12,
+            "category_flags": [],
+            "confidence": 0.9,
+            "summary": "Goal equals the contractor estimate minus the disclosed insurance payout, with documents published; long-standing institutional organizer."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-05",
+      "class": "subtle_fraud",
+      "title": "Emergency heart surgery for my daughter Amira",
+      "description": "My daughter Amira is six years old and was born with a ventricular septal defect. Her cardiologist says she needs corrective surgery within the next few months. We are working with the hospital's financial aid office, which quoted us $12,000 as our out-of-pocket responsibility after assistance. I am a single father working two jobs and I cannot cover it alone. Anything you give goes straight to the hospital billing department. Please keep Amira in your prayers and share this with anyone who can help us reach our goal.",
+      "goal_amount": 45000,
+      "category": "medical",
+      "organizer_name": "Karim Said",
+      "organizer_history": { "prior_campaigns": 0, "account_age_days": 28, "prior_flags": 0 },
+      "zakat_claimed": false,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 730,
+          "output_tokens": 118,
+          "cost_usd": 0.00132,
+          "latency_ms": 1510,
+          "output": {
+            "risk_score": 58,
+            "category_flags": ["financial_anomaly"],
+            "confidence": 0.74,
+            "summary": "Plausible medical story, but the goal is nearly four times the stated out-of-pocket hospital quote."
+          }
+        },
+        {
+          "stage": "deep_review",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 1280,
+          "output_tokens": 360,
+          "cost_usd": 0.00308,
+          "latency_ms": 4100,
+          "output": {
+            "recommendation": "flag_for_review",
+            "evidence": [
+              {
+                "claim": "The stated medical need is far below the campaign goal",
+                "source_field": "description",
+                "quote": "quoted us $12,000 as our out-of-pocket responsibility after assistance"
+              },
+              {
+                "claim": "The campaign goal exceeds the stated need by $33,000 with no explanation",
+                "source_field": "goal_amount",
+                "quote": "45000"
+              },
+              {
+                "claim": "Brand-new organizer account with no campaign history",
+                "source_field": "organizer_history.account_age_days",
+                "quote": "28"
+              }
+            ],
+            "risk_factors": [
+              "Goal amount is 3.75x the stated hospital quote with no explanation for the difference",
+              "Account was created less than a month before the campaign",
+              "No hospital or cardiologist is named, so the quoted figure cannot be verified"
+            ],
+            "mitigating_factors": [
+              "The congenital diagnosis is specific and medically plausible",
+              "Organizer states funds go directly to hospital billing"
+            ],
+            "confidence": 0.72,
+            "reasoning": "The medical story itself is plausible and specific, but the only dollar figure in the description accounts for roughly a quarter of the goal. Legitimate campaigns usually explain costs beyond the hospital bill (travel, lost wages); this one does not. A reviewer should request the hospital's financial aid letter before this campaign is allowed to collect."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-06",
+      "class": "subtle_fraud",
+      "title": "School kits for 150 orphans this Eid",
+      "description": "Alhamdulillah, with your support we have done this for three years running. This Eid we are preparing school kits for 150 orphans in our care: each kit has a backpack, uniform, shoes, and a full stationery set, sourced in bulk at $38 per child. Last year's distribution reached three cities and every donor received photos. We handle everything ourselves so there are no administration fees, and one hundred percent of what you give reaches a child. Donations qualify as zakat. Give your zakat where you can see it work.",
+      "goal_amount": 28000,
+      "category": "education",
+      "organizer_name": "Bilal Osman",
+      "organizer_history": { "prior_campaigns": 4, "account_age_days": 210, "prior_flags": 1 },
+      "zakat_claimed": true,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 745,
+          "output_tokens": 124,
+          "cost_usd": 0.001365,
+          "latency_ms": 1490,
+          "output": {
+            "risk_score": 52,
+            "category_flags": ["financial_anomaly", "unverifiable_claims", "duplicate_pattern"],
+            "confidence": 0.71,
+            "summary": "Itemized kit cost accounts for about a fifth of the goal, the operating organization is never named, and the organizer has run four similar campaigns in seven months."
+          }
+        },
+        {
+          "stage": "deep_review",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 1320,
+          "output_tokens": 392,
+          "cost_usd": 0.00328,
+          "latency_ms": 4400,
+          "output": {
+            "recommendation": "flag_for_review",
+            "evidence": [
+              {
+                "claim": "The itemized cost does not support the goal",
+                "source_field": "description",
+                "quote": "school kits for 150 orphans in our care: each kit has a backpack, uniform, shoes, and a full stationery set, sourced in bulk at $38 per child"
+              },
+              {
+                "claim": "150 kits at $38 each totals $5,700, yet the goal is $28,000",
+                "source_field": "goal_amount",
+                "quote": "28000"
+              },
+              {
+                "claim": "No organization, orphanage, or registration is named that could be verified",
+                "source_field": "description",
+                "quote": "We handle everything ourselves"
+              },
+              {
+                "claim": "Four prior campaigns on a seven-month-old account, one previously flagged",
+                "source_field": "organizer_history.prior_flags",
+                "quote": "1"
+              }
+            ],
+            "risk_factors": [
+              "Stated per-kit cost times beneficiary count covers only about 20% of the goal",
+              "Organizer has run four similar campaigns in seven months, one previously flagged",
+              "\"Orphans in our care\" implies an institution but none is named or registered",
+              "The zakat claim rests on the same unverifiable orphan-care claim"
+            ],
+            "mitigating_factors": [
+              "Per-kit pricing and donor photos suggest some real past activity",
+              "Tone and structure are consistent with legitimate seasonal drives"
+            ],
+            "confidence": 0.68,
+            "reasoning": "The campaign borrows the shape of a legitimate annual drive, but the arithmetic gap between the itemized kits and the goal is large and unexplained, and the cadence of similar campaigns from a young, previously-flagged account fits a recycled-story pattern. A reviewer should request the operating organization's name and registration and last year's distribution records before approval."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-07",
+      "class": "obvious_fraud",
+      "title": "URGENT: my family will be on the street in 48 hours",
+      "description": "I don't have time to make this pretty. The bank has given us 48 hours before they change the locks on our home. I have three children and my wife is pregnant. If we do not raise $85,000 by Friday we lose everything we have ever worked for. I can't share the bank documents here for privacy reasons but I swear on everything that this is real. Every minute you wait is a minute my children get closer to sleeping in our van. Please, if you are reading this, do not scroll past. Allah sees what you do. Donate now and share, there is no time.",
+      "goal_amount": 85000,
+      "category": "emergency-relief",
+      "organizer_name": "Adam Whitfield",
+      "organizer_history": { "prior_campaigns": 0, "account_age_days": 4, "prior_flags": 0 },
+      "zakat_claimed": false,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 735,
+          "output_tokens": 126,
+          "cost_usd": 0.001365,
+          "latency_ms": 1450,
+          "output": {
+            "risk_score": 91,
+            "category_flags": ["urgency_manipulation", "unverifiable_claims", "financial_anomaly"],
+            "confidence": 0.93,
+            "summary": "Extreme manufactured deadline, an explicit refusal to provide any verifiable detail, and a large round goal from a four-day-old account."
+          }
+        },
+        {
+          "stage": "deep_review",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 1290,
+          "output_tokens": 368,
+          "cost_usd": 0.00313,
+          "latency_ms": 3900,
+          "output": {
+            "recommendation": "escalate",
+            "evidence": [
+              {
+                "claim": "An artificial 48-hour deadline is used as pressure",
+                "source_field": "description",
+                "quote": "The bank has given us 48 hours before they change the locks"
+              },
+              {
+                "claim": "The organizer pre-emptively declines to provide documentation",
+                "source_field": "description",
+                "quote": "I can't share the bank documents here for privacy reasons"
+              },
+              {
+                "claim": "Donors are coerced emotionally and religiously",
+                "source_field": "description",
+                "quote": "do not scroll past. Allah sees what you do"
+              },
+              {
+                "claim": "Large round goal with no breakdown of any kind",
+                "source_field": "goal_amount",
+                "quote": "85000"
+              },
+              {
+                "claim": "The account is four days old with no history",
+                "source_field": "organizer_history.account_age_days",
+                "quote": "4"
+              }
+            ],
+            "risk_factors": [
+              "Countdown pressure is the campaign's central device",
+              "$85,000 with zero itemization; mortgage defaults are negotiated with lenders over months, not resolved by crowdfunding in 48 hours",
+              "Pre-emptive excuse for why nothing can be verified",
+              "Brand-new account with no platform history"
+            ],
+            "mitigating_factors": ["None identified"],
+            "confidence": 0.9,
+            "reasoning": "Nearly every sentence is a pressure device and the single concrete number is an unitemized $85,000. The pre-emptive explanation for why no document can be shared is characteristic of fabricated emergencies. Recommend escalation with account review rather than a quiet rejection, in case other campaigns share this device pattern."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-08",
+      "class": "obvious_fraud",
+      "title": "Guaranteed cure for my wife's cancer at overseas clinic",
+      "description": "Doctors here gave up on my wife but we found a clinic in Europe that guarantees complete remission with a new treatment that hospitals don't want you to know about. The clinic has a 100% success rate and has already reserved her place, but we must wire $120,000 within ten days or my sister loses her spot. We will sell our car but it is not enough. I cannot say the clinic's name publicly because the medical industry will pressure them. God will repay every donor ten times over. Please hurry, her life is literally in your hands.",
+      "goal_amount": 120000,
+      "category": "medical",
+      "organizer_name": "Daniel Okafor",
+      "organizer_history": { "prior_campaigns": 1, "account_age_days": 16, "prior_flags": 2 },
+      "zakat_claimed": false,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 750,
+          "output_tokens": 130,
+          "cost_usd": 0.0014,
+          "latency_ms": 1380,
+          "output": {
+            "risk_score": 95,
+            "category_flags": ["unverifiable_claims", "urgency_manipulation", "story_inconsistency"],
+            "confidence": 0.95,
+            "summary": "Guaranteed-cure claim from an unnameable clinic, a wire-transfer deadline, and the patient changes from wife to sister mid-story."
+          }
+        },
+        {
+          "stage": "deep_review",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 1310,
+          "output_tokens": 380,
+          "cost_usd": 0.00321,
+          "latency_ms": 4000,
+          "output": {
+            "recommendation": "escalate",
+            "evidence": [
+              {
+                "claim": "A medically impossible guarantee is the campaign's premise",
+                "source_field": "description",
+                "quote": "guarantees complete remission"
+              },
+              {
+                "claim": "A perfect success rate is claimed",
+                "source_field": "description",
+                "quote": "The clinic has a 100% success rate"
+              },
+              {
+                "claim": "The patient's identity changes mid-story",
+                "source_field": "description",
+                "quote": "or my sister loses her spot"
+              },
+              {
+                "claim": "The clinic cannot be verified by design",
+                "source_field": "description",
+                "quote": "I cannot say the clinic's name publicly"
+              },
+              {
+                "claim": "Two prior flags on a sixteen-day-old account",
+                "source_field": "organizer_history.prior_flags",
+                "quote": "2"
+              }
+            ],
+            "risk_factors": [
+              "\"Guaranteed\" oncology outcomes do not exist; this is a hallmark of treatment scams",
+              "Wire-transfer framing with a ten-day deadline",
+              "The beneficiary is 'my wife' in one sentence and 'my sister' in another",
+              "An unnameable clinic forecloses all verification",
+              "Account is sixteen days old and already flagged twice"
+            ],
+            "mitigating_factors": ["None identified"],
+            "confidence": 0.92,
+            "reasoning": "This combines the strongest fraud signatures in the rubric — impossible guarantees, identity inconsistency, and enforced unverifiability — on an account that is two weeks old with two prior flags. Escalate for account-level action and pattern matching against the previously flagged campaigns."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-09",
+      "class": "ambiguous",
+      "title": "Help us get through the month after the fire",
+      "description": "Two weeks ago there was a fire in our apartment building and we lost almost everything in the smoke and water damage. The Red Cross put us in a hotel for three nights and since then we have been staying with my cousin, six of us in a two-bedroom apartment. I am asking for help with one month of rent and a deposit on a new place, clothes for my kids for school, and replacing my work boots and tools so I can keep doing electrical jobs. I have never asked for help like this before and I don't have paperwork from the fire department yet. May Allah reward anyone who helps us.",
+      "goal_amount": 7500,
+      "category": "emergency-relief",
+      "organizer_name": "Hamza Aziz",
+      "organizer_history": { "prior_campaigns": 0, "account_age_days": 47, "prior_flags": 0 },
+      "zakat_claimed": true,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 725,
+          "output_tokens": 120,
+          "cost_usd": 0.001325,
+          "latency_ms": 1560,
+          "output": {
+            "risk_score": 44,
+            "category_flags": ["unverifiable_claims"],
+            "confidence": 0.58,
+            "summary": "Plausible, modest fire-recovery request, but with no documentation and a new account it is hard to distinguish from fabricated urgency."
+          }
+        },
+        {
+          "stage": "deep_review",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 1295,
+          "output_tokens": 372,
+          "cost_usd": 0.003155,
+          "latency_ms": 4300,
+          "output": {
+            "recommendation": "escalate",
+            "evidence": [
+              {
+                "claim": "No documentation is currently available",
+                "source_field": "description",
+                "quote": "I don't have paperwork from the fire department yet"
+              },
+              {
+                "claim": "The account is new with no prior activity",
+                "source_field": "organizer_history.account_age_days",
+                "quote": "47"
+              },
+              {
+                "claim": "The request is itemized and modest, consistent with real displacement",
+                "source_field": "description",
+                "quote": "one month of rent and a deposit on a new place"
+              }
+            ],
+            "risk_factors": [
+              "Nothing in the campaign can currently be verified — no fire report, address, or named building",
+              "Account is seven weeks old with no prior activity"
+            ],
+            "mitigating_factors": [
+              "The goal is modest and itemized toward concrete recovery needs rather than a round number",
+              "The Red Cross hotel placement is a checkable detail if the organizer is asked",
+              "Requesting work tools suggests intent to return to self-sufficiency"
+            ],
+            "confidence": 0.42,
+            "reasoning": "There is insufficient information to distinguish an urgent legitimate need from fabricated urgency: every detail is plausible and the modest, itemized goal weighs against fraud, but nothing is independently verifiable yet. This is exactly the kind of case a human should decide — recommend escalating with a request for the Red Cross case number or the fire department report rather than approving or rejecting on the current record."
+          }
+        }
+      ]
+    },
+    {
+      "key": "seed-10",
+      "class": "ambiguous",
+      "title": "Zakat for my brother's dialysis transport and care",
+      "description": "My brother Idris has been on dialysis three times a week since his kidneys failed last year. Medicaid covers the sessions but not the medical transport he needs to get to them, his renal diet, or the months of bills that piled up while he could not work. I am asking for $15,000 to cover a year of transport at roughly $220 a week, help with his food costs, and part of the debt. He lives alone in Newark and I am his only family nearby. I believe this qualifies for zakat as he has no income right now, and I will share receipts with any donor who asks.",
+      "goal_amount": 15000,
+      "category": "medical",
+      "organizer_name": "Salim Diallo",
+      "organizer_history": { "prior_campaigns": 1, "account_age_days": 410, "prior_flags": 0 },
+      "zakat_claimed": true,
+      "assessments": [
+        {
+          "stage": "screening",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 755,
+          "output_tokens": 122,
+          "cost_usd": 0.001365,
+          "latency_ms": 1480,
+          "output": {
+            "risk_score": 41,
+            "category_flags": ["zakat_eligibility_doubt", "unverifiable_claims"],
+            "confidence": 0.64,
+            "summary": "Coherent costs for a plausible chronic-care need, but the zakat eligibility and the underlying situation rest on unverified facts."
+          }
+        },
+        {
+          "stage": "deep_review",
+          "model": "claude-haiku-4-5",
+          "prompt_version": "v1",
+          "input_tokens": 1340,
+          "output_tokens": 376,
+          "cost_usd": 0.00322,
+          "latency_ms": 4250,
+          "output": {
+            "recommendation": "escalate",
+            "evidence": [
+              {
+                "claim": "Zakat eligibility depends on an income status that is asserted but not evidenced",
+                "source_field": "description",
+                "quote": "I believe this qualifies for zakat as he has no income right now"
+              },
+              {
+                "claim": "The cost arithmetic is broadly consistent with the goal",
+                "source_field": "description",
+                "quote": "a year of transport at roughly $220 a week"
+              },
+              {
+                "claim": "The campaign is presented to donors as zakat-eligible",
+                "source_field": "zakat_claimed",
+                "quote": "true"
+              }
+            ],
+            "risk_factors": [
+              "The beneficiary's income and debt status — the entire basis of the zakat claim — cannot be verified from the campaign",
+              "Mixed use of funds (transport, food, unspecified debt) blurs how much goes where"
+            ],
+            "mitigating_factors": [
+              "The weekly transport figure times 52 weeks roughly matches the goal",
+              "Organizer offers receipts to any donor who asks",
+              "Account is over a year old with one prior campaign and no flags"
+            ],
+            "confidence": 0.55,
+            "reasoning": "The need is plausible and the arithmetic is honest, but the zakat designation raises the bar: donors fulfilling a religious obligation rely on the platform's eligibility judgment, and the facts that make this zakat-eligible (no income, qualifying debt) are asserted without evidence. Recommend escalation to request income documentation before the zakat label is shown to donors."
+          }
+        }
+      ]
+    }
+  ]
+}
