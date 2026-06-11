@@ -14,7 +14,8 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Info } from "lucide-react";
+import { LatticeBg } from "@/components/public/brand";
 
 function LoginForm() {
   const router = useRouter();
@@ -50,10 +51,10 @@ function LoginForm() {
   }
 
   return (
-    <Card className="w-full max-w-md">
+    <Card className="relative w-full max-w-md">
       <CardHeader>
         <div className="flex items-center gap-2">
-          <ShieldCheck className="size-5 text-emerald-600" />
+          <ShieldCheck className="size-5 text-emerald-700" />
           <CardTitle>Reviewer sign-in</CardTitle>
         </div>
         <CardDescription>
@@ -62,15 +63,21 @@ function LoginForm() {
       </CardHeader>
       <form onSubmit={handleSubmit}>
         <CardContent className="space-y-4">
-          <div className="rounded-md border border-amber-200 bg-amber-50 p-3 text-sm text-amber-900">
-            <p className="font-medium">Demo credentials — shown on purpose</p>
-            <p className="mt-1">
-              Use <span className="font-mono font-semibold">any username</span>{" "}
-              with the password{" "}
-              <span className="font-mono font-semibold">demo</span>. Your
-              username appears in the audit trail, so multiple visitors show up
-              as distinct reviewers.
-            </p>
+          <div className="flex items-start gap-2 rounded-md border border-stone-200 bg-stone-100/70 p-3 text-sm text-stone-700">
+            <Info className="mt-0.5 size-4 shrink-0 text-stone-400" />
+            <div>
+              <p className="font-medium text-stone-900">
+                Demo credentials — shown on purpose
+              </p>
+              <p className="mt-1">
+                Use{" "}
+                <span className="font-mono font-semibold">any username</span>{" "}
+                with the password{" "}
+                <span className="font-mono font-semibold">demo</span>. Your
+                username appears in the audit trail, so multiple visitors show
+                up as distinct reviewers.
+              </p>
+            </div>
           </div>
           <div className="space-y-2">
             <Label htmlFor="username">Username</Label>
@@ -121,7 +128,8 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-muted/30 p-4">
+    <main className="relative flex min-h-screen items-center justify-center bg-paper p-4 text-stone-900">
+      <LatticeBg />
       <Suspense>
         <LoginForm />
       </Suspense>
