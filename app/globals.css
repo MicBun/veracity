@@ -47,27 +47,32 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --color-paper: #faf8f4;
+  --color-gold: oklch(0.828 0.189 84.429);
+  --shadow-card: 0 18px 50px -26px rgb(12 46 36 / 0.4);
 }
 
+/* Brand: deep emerald primary over warm stone neutrals — the palette the
+   landing page and OG image established, promoted to the token level. */
 :root {
   --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
+  --foreground: oklch(0.216 0.006 56.043); /* stone-900 */
   --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
+  --card-foreground: oklch(0.216 0.006 56.043);
   --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.216 0.006 56.043);
+  --primary: oklch(0.508 0.118 165.612); /* emerald-700 */
+  --primary-foreground: oklch(0.985 0.001 106.423); /* stone-50 */
+  --secondary: oklch(0.97 0.001 106.424); /* stone-100 */
+  --secondary-foreground: oklch(0.268 0.007 34.298); /* stone-800 */
+  --muted: oklch(0.97 0.001 106.424);
+  --muted-foreground: oklch(0.553 0.013 58.071); /* stone-500 */
+  --accent: oklch(0.979 0.021 166.113); /* emerald-50 */
+  --accent-foreground: oklch(0.378 0.077 168.94); /* emerald-900 */
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --border: oklch(0.923 0.003 48.717); /* stone-200 */
+  --input: oklch(0.923 0.003 48.717);
+  --ring: oklch(0.596 0.145 163.225); /* emerald-600 */
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -91,7 +96,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
+  --primary: oklch(0.696 0.17 162.48); /* emerald-500 */
   --primary-foreground: oklch(0.205 0 0);
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
@@ -102,7 +107,7 @@
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
+  --ring: oklch(0.596 0.145 163.225);
   --chart-1: oklch(0.87 0 0);
   --chart-2: oklch(0.556 0 0);
   --chart-3: oklch(0.439 0 0);
@@ -124,9 +129,6 @@
   }
   body {
     @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-mono;
   }
 }
 /* ── Landing/about reveal animation (CSS only) ── */
