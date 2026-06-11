@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     locale: "en_US",
   },
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Amanah — AI triage copilot for campaign trust & safety",
     description:
       "AI reads every crowdfunding campaign and cites its evidence. People make every decision.",
