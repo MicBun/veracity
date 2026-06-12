@@ -99,6 +99,11 @@ export function EvalDashboard({ cached }: Props) {
         <div>
           <h1 className="flex items-center gap-2 text-xl font-semibold">
             <FlaskConical className="size-5" /> Eval dashboard
+            {cached && (
+              <span className="rounded-full border px-2.5 py-0.5 text-xs font-normal text-muted-foreground">
+                Last run {formatDate(cached.startedAt)}
+              </span>
+            )}
           </h1>
           <p className="text-sm text-muted-foreground">
             The full pipeline runs against 30 labeled campaigns (8 clean, 8
@@ -110,15 +115,13 @@ export function EvalDashboard({ cached }: Props) {
           {running && progress && (
             <div className="w-44">
               <Progress value={(progress.done / progress.total) * 100} className="h-2" />
-              <p className="mt-1 text-center text-xs text-muted-foreground tabular-nums">
-                {progress.done}/{progress.total} cases
-              </p>
             </div>
           )}
           <Button onClick={runEvals} disabled={running}>
             {running ? (
               <>
-                <Loader2 className="size-4 animate-spin" /> Running…
+                <Loader2 className="size-4 animate-spin" /> Running
+                {progress ? ` ${progress.done}/${progress.total}` : ""}…
               </>
             ) : (
               <>
@@ -163,14 +166,16 @@ export function EvalDashboard({ cached }: Props) {
               <Card key={stat.label}>
                 <CardContent className="px-4">
                   <p className="text-xs text-muted-foreground">{stat.label}</p>
-                  <p className="text-xl font-semibold tabular-nums">{stat.value}</p>
+                  <p className="font-mono text-xl font-semibold tabular-nums">
+                    {stat.value}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
           <p className="text-xs text-muted-foreground">
-            Last run {formatDate(cached!.startedAt)} · re-running replaces these
-            cached results on completion; failures keep them.
+            Re-running replaces these cached results on completion; failures
+            keep them.
           </p>
 
           <div className="grid gap-6 lg:grid-cols-2">
@@ -186,24 +191,37 @@ export function EvalDashboard({ cached }: Props) {
               <CardContent>
                 <table className="w-full text-sm">
                   <thead>
-                    <tr className="border-b text-left text-xs text-muted-foreground">
-                      <th className="pb-2 font-medium">Class</th>
-                      <th className="pb-2 font-medium">Precision</th>
-                      <th className="pb-2 font-medium">Recall</th>
-                      <th className="pb-2 font-medium">F1</th>
-                      <th className="pb-2 font-medium">n</th>
+                    <tr className="border-b text-left text-xs font-semibold text-foreground">
+                      <th className="pb-2">Class</th>
+                      <th className="pb-2">Precision</th>
+                      <th className="pb-2 text-emerald-800">Recall</th>
+                      <th className="pb-2">F1</th>
+                      <th className="pb-2">n</th>
                     </tr>
                   </thead>
                   <tbody>
                     {CLASSES.map((cls) => {
                       const row = m.per_class[cls];
+                      const fraud =
+                        cls === "subtle_fraud" || cls === "obvious_fraud";
                       return (
                         <tr key={cls} className="border-b last:border-0">
                           <td className="py-2 font-medium">{CLASS_LABELS[cls]}</td>
-                          <td className="py-2 tabular-nums">{pct(row.precision)}</td>
-                          <td className="py-2 tabular-nums">{pct(row.recall)}</td>
-                          <td className="py-2 tabular-nums">{pct(row.f1)}</td>
-                          <td className="py-2 tabular-nums">
+                          <td className="py-2 font-mono tabular-nums">
+                            {pct(row.precision)}
+                          </td>
+                          <td
+                            className={cn(
+                              "py-2 font-mono tabular-nums",
+                              fraud && "font-semibold text-emerald-900"
+                            )}
+                          >
+                            {pct(row.recall)}
+                          </td>
+                          <td className="py-2 font-mono tabular-nums">
+                            {pct(row.f1)}
+                          </td>
+                          <td className="py-2 font-mono tabular-nums">
                             {row.support}
                             {row.errored > 0 && (
                               <span className="ml-1 text-xs text-red-600">
@@ -229,13 +247,16 @@ export function EvalDashboard({ cached }: Props) {
                 <div className="grid grid-cols-5 gap-1 text-center text-xs">
                   <div />
                   {CLASSES.map((p) => (
-                    <div key={p} className="px-1 py-1 font-medium text-muted-foreground">
+                    <div
+                      key={p}
+                      className="px-1 py-1 text-[10px] font-semibold uppercase tracking-wide text-stone-500"
+                    >
                       {CLASS_LABELS[p]}
                     </div>
                   ))}
                   {CLASSES.map((t) => (
                     <div key={t} className="contents">
-                      <div className="flex items-center justify-end px-1 py-1 text-right font-medium text-muted-foreground">
+                      <div className="flex items-center justify-end px-1 py-1 text-right text-[10px] font-semibold uppercase tracking-wide text-stone-500">
                         {CLASS_LABELS[t]}
                       </div>
                       {CLASSES.map((p) => {
@@ -245,15 +266,19 @@ export function EvalDashboard({ cached }: Props) {
                           <div
                             key={p}
                             className={cn(
-                              "rounded-md py-2.5 font-semibold tabular-nums",
-                              v === 0 && "bg-muted/50 text-muted-foreground/50",
-                              v > 0 && onDiagonal && "bg-emerald-100 text-emerald-900",
-                              v > 0 && !onDiagonal && "bg-amber-100 text-amber-900",
+                              "rounded-md py-2.5 font-mono tabular-nums",
+                              v === 0 && "bg-muted/40 text-muted-foreground/40",
+                              v > 0 &&
+                                onDiagonal &&
+                                "bg-emerald-100 font-bold text-emerald-900",
+                              v > 0 &&
+                                !onDiagonal &&
+                                "bg-amber-100 font-semibold text-amber-900",
                               v > 0 &&
                                 !onDiagonal &&
                                 t !== "clean" &&
                                 p === "clean" &&
-                                "bg-red-100 text-red-900"
+                                "bg-red-100 font-bold text-red-900"
                             )}
                           >
                             {v}
@@ -262,6 +287,20 @@ export function EvalDashboard({ cached }: Props) {
                       })}
                     </div>
                   ))}
+                </div>
+                <div className="mt-3 flex flex-wrap gap-x-4 gap-y-1 text-[11px] text-muted-foreground">
+                  <span className="flex items-center gap-1.5">
+                    <span className="size-2.5 rounded-sm bg-emerald-100 ring-1 ring-emerald-300" />
+                    correct
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="size-2.5 rounded-sm bg-amber-100 ring-1 ring-amber-300" />
+                    misclassified
+                  </span>
+                  <span className="flex items-center gap-1.5">
+                    <span className="size-2.5 rounded-sm bg-red-100 ring-1 ring-red-300" />
+                    fraud predicted clean
+                  </span>
                 </div>
               </CardContent>
             </Card>
