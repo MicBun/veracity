@@ -9,6 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { formatUsd, formatDate, CATEGORY_LABELS } from "@/lib/format";
 import { cn } from "@/lib/utils";
 import {
@@ -37,20 +38,20 @@ const PUBLIC_STATUS: Record<
     description:
       "This campaign is being reviewed by our trust & safety team. Decisions are made by human reviewers.",
     icon: <Clock className="size-5" />,
-    cls: "bg-amber-50 border-amber-200 text-amber-900",
+    cls: "bg-amber-50 dark:bg-amber-950/40 border-amber-200 dark:border-amber-800/60 text-amber-900 dark:text-amber-200",
   },
   approved: {
     label: "Approved",
     description: "This campaign passed review and is live.",
     icon: <CheckCircle2 className="size-5" />,
-    cls: "bg-emerald-50 border-emerald-200 text-emerald-900",
+    cls: "bg-emerald-50 dark:bg-emerald-950/40 border-emerald-200 dark:border-emerald-800/60 text-emerald-900 dark:text-emerald-200",
   },
   rejected: {
     label: "Not approved",
     description:
       "This campaign did not pass review. The organizer can contact support for details.",
     icon: <XCircle className="size-5" />,
-    cls: "bg-red-50 border-red-200 text-red-900",
+    cls: "bg-red-50 dark:bg-red-950/40 border-red-200 dark:border-red-800/60 text-red-900 dark:text-red-200",
   },
 };
 
@@ -68,10 +69,13 @@ export default async function StatusPage({
   const status = PUBLIC_STATUS[publicKey] ?? PUBLIC_STATUS.pending;
 
   return (
-    <main className="min-h-screen bg-paper px-4 py-10 text-stone-900">
+    <main className="min-h-screen bg-paper px-4 py-10 text-stone-900 dark:text-stone-100">
+      <div className="fixed right-4 top-4 z-50">
+        <ThemeToggle />
+      </div>
       <div className="mx-auto max-w-2xl space-y-6">
         <Link href="/" className="flex w-fit items-center gap-2">
-          <ShieldCheck className="size-5 text-emerald-700" />
+          <ShieldCheck className="size-5 text-emerald-700 dark:text-emerald-400" />
           <span className="font-serif text-xl font-semibold tracking-tight">
             Amanah
           </span>

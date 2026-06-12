@@ -70,8 +70,8 @@ export function DonateForm({ campaignId }: { campaignId: string }) {
             className={cn(
               "rounded-md border px-2 py-1.5 text-sm font-medium transition-colors",
               Math.floor(Number(amount)) === p
-                ? "border-emerald-600 bg-emerald-50 text-emerald-800"
-                : "border-stone-200 bg-stone-50 text-stone-700 hover:border-emerald-300 hover:text-emerald-800"
+                ? "border-emerald-600 bg-emerald-50 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300"
+                : "border-stone-200 dark:border-stone-700 bg-stone-50 dark:bg-stone-900/40 text-stone-700 dark:text-stone-300 hover:border-emerald-300 dark:hover:border-emerald-700 hover:text-emerald-800 dark:hover:text-emerald-300"
             )}
           >
             ${p}
@@ -104,7 +104,7 @@ export function DonateForm({ campaignId }: { campaignId: string }) {
         {status === "submitting" ? "Processing…" : "Donate"}
       </Button>
       {message && status === "error" && (
-        <p className="text-sm text-red-600">{message}</p>
+        <p className="text-sm text-red-600 dark:text-red-400">{message}</p>
       )}
     </form>
   );

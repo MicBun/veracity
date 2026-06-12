@@ -32,22 +32,22 @@ const LANES: Array<{
     key: "fast_track",
     title: "Fast-track",
     hint: "Low risk, confident screening — pre-filled approve suggestion, still needs one human click.",
-    icon: <Zap className="size-4 text-emerald-600" />,
-    cls: "border-emerald-200/70 bg-emerald-50/40",
+    icon: <Zap className="size-4 text-emerald-600 dark:text-emerald-400" />,
+    cls: "border-emerald-200/70 dark:border-emerald-800/60 bg-emerald-50/40 dark:bg-emerald-950/40",
   },
   {
     key: "needs_review",
     title: "Needs review",
     hint: "The AI found specific, evidence-backed concerns to weigh.",
-    icon: <Eye className="size-4 text-amber-600" />,
-    cls: "border-amber-200/70 bg-amber-50/40",
+    icon: <Eye className="size-4 text-amber-600 dark:text-amber-400" />,
+    cls: "border-amber-200/70 dark:border-amber-800/60 bg-amber-50/40 dark:bg-amber-950/40",
   },
   {
     key: "escalated",
     title: "Escalated",
     hint: "Severe signals or genuinely insufficient information — judgment required.",
-    icon: <AlertTriangle className="size-4 text-violet-600" />,
-    cls: "border-violet-200/70 bg-violet-50/40",
+    icon: <AlertTriangle className="size-4 text-violet-600 dark:text-violet-400" />,
+    cls: "border-violet-200/70 dark:border-violet-800/60 bg-violet-50/40 dark:bg-violet-950/40",
   },
 ];
 
@@ -145,7 +145,7 @@ export default async function QueuePage() {
               ))}
               {byLane[lane.key].length === 0 && (
                 <p className="rounded-lg border border-dashed p-4 text-center text-xs text-muted-foreground">
-                  <CheckCircle2 className="mx-auto mb-1 size-4 text-emerald-600" />
+                  <CheckCircle2 className="mx-auto mb-1 size-4 text-emerald-600 dark:text-emerald-400" />
                   All clear — nothing waiting.
                 </p>
               )}

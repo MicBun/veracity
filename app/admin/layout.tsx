@@ -2,6 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { getSession } from "@/lib/session-cookies";
 import { LogoutButton } from "@/components/admin/logout-button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { ShieldCheck } from "lucide-react";
 
 export default async function AdminLayout({
@@ -15,11 +16,11 @@ export default async function AdminLayout({
 
   return (
     <div className="min-h-screen bg-muted/30">
-      <header className="sticky top-0 z-40 border-b border-t-2 border-t-emerald-700 bg-background">
+      <header className="sticky top-0 z-40 border-b border-t-2 border-t-emerald-700 bg-background dark:border-t-emerald-500">
         <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-4 px-4">
           <div className="flex items-center gap-6">
             <Link href="/admin/queue" className="flex items-center gap-2">
-              <ShieldCheck className="size-5 text-emerald-700" />
+              <ShieldCheck className="size-5 text-emerald-700 dark:text-emerald-400" />
               <span className="font-serif text-lg font-semibold tracking-tight">
                 Amanah
               </span>
@@ -42,7 +43,10 @@ export default async function AdminLayout({
               </Link>
             </nav>
           </div>
-          <LogoutButton username={session.username} />
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <LogoutButton username={session.username} />
+          </div>
         </div>
       </header>
       <main className="mx-auto max-w-7xl px-4 py-6">{children}</main>

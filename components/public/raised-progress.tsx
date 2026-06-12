@@ -19,18 +19,18 @@ export function RaisedProgress({
     <div className="space-y-2">
       <Progress value={Math.min(100, pct)} className="h-2" />
       <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1 text-sm">
-        <p className="font-semibold text-emerald-900">
+        <p className="font-semibold text-emerald-900 dark:text-emerald-200">
           {formatUsd(raised)}{" "}
-          <span className="font-normal text-stone-500">
+          <span className="font-normal text-stone-500 dark:text-stone-400">
             raised of {formatUsd(goal)}
           </span>
         </p>
         {funded ? (
-          <p className="inline-flex items-center gap-1 font-medium text-amber-700">
+          <p className="inline-flex items-center gap-1 font-medium text-amber-700 dark:text-amber-400">
             <CheckCircle2 className="size-3.5" /> Fully funded · {donors}
           </p>
         ) : (
-          <p className="text-stone-500">
+          <p className="text-stone-500 dark:text-stone-400">
             {Math.min(100, Math.round(pct))}% funded · {donors}
           </p>
         )}

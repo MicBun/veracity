@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
   Card,
   CardContent,
@@ -152,8 +153,11 @@ export default function SubmitPage() {
 
   if (phase !== "form") {
     return (
-      <main className="relative flex min-h-screen items-center justify-center bg-paper p-4 text-stone-900">
+      <main className="relative flex min-h-screen items-center justify-center bg-paper p-4 text-stone-900 dark:text-stone-100">
         <LatticeBg />
+        <div className="fixed right-4 top-4 z-50">
+          <ThemeToggle />
+        </div>
         <Card className="relative w-full max-w-md">
           <CardHeader>
             <CardTitle>
@@ -173,9 +177,9 @@ export default function SubmitPage() {
                   className="flex items-center gap-3 transition-colors duration-300"
                 >
                   {step.state === "done" ? (
-                    <CheckCircle2 className="size-5 text-emerald-600" />
+                    <CheckCircle2 className="size-5 text-emerald-600 dark:text-emerald-400" />
                   ) : step.state === "active" ? (
-                    <Loader2 className="size-5 animate-spin text-emerald-700" />
+                    <Loader2 className="size-5 animate-spin text-emerald-700 dark:text-emerald-400" />
                   ) : (
                     <Circle className="size-5 text-muted-foreground/40" />
                   )}
@@ -183,7 +187,7 @@ export default function SubmitPage() {
                     className={cn(
                       "text-sm transition-colors duration-300",
                       step.state === "pending" && "text-muted-foreground",
-                      step.state === "active" && "font-medium text-emerald-900"
+                      step.state === "active" && "font-medium text-emerald-900 dark:text-emerald-200"
                     )}
                   >
                     {step.label}
@@ -192,7 +196,7 @@ export default function SubmitPage() {
               ))}
               {phase === "done" && (
                 <li className="flex items-center gap-3">
-                  <CheckCircle2 className="size-5 text-emerald-600" />
+                  <CheckCircle2 className="size-5 text-emerald-600 dark:text-emerald-400" />
                   <span className="text-sm font-medium">
                     In the review queue
                   </span>
@@ -207,7 +211,7 @@ export default function SubmitPage() {
               checks complete
             </p>
             {warning && (
-              <div className="mt-4 flex items-start gap-2 rounded-md border border-amber-200 bg-amber-50 p-3 text-xs text-amber-900">
+              <div className="mt-4 flex items-start gap-2 rounded-md border border-amber-200 dark:border-amber-800/60 bg-amber-50 dark:bg-amber-950/40 p-3 text-xs text-amber-900 dark:text-amber-200">
                 <AlertTriangle className="mt-0.5 size-3.5 shrink-0" />
                 {warning}
               </div>
@@ -219,10 +223,13 @@ export default function SubmitPage() {
   }
 
   return (
-    <main className="min-h-screen bg-paper px-4 py-10 text-stone-900">
+    <main className="min-h-screen bg-paper px-4 py-10 text-stone-900 dark:text-stone-100">
+      <div className="fixed right-4 top-4 z-50">
+        <ThemeToggle />
+      </div>
       <div className="mx-auto max-w-2xl space-y-6">
         <div className="flex items-center gap-2.5">
-          <HandHeart className="size-6 text-emerald-700" />
+          <HandHeart className="size-6 text-emerald-700 dark:text-emerald-400" />
           <h1 className="font-serif text-3xl font-medium tracking-tight">
             Submit a campaign
           </h1>
@@ -267,7 +274,7 @@ export default function SubmitPage() {
                   className={cn(
                     "text-right text-xs tabular-nums",
                     description.length > 2800
-                      ? "text-amber-700"
+                      ? "text-amber-700 dark:text-amber-400"
                       : "text-muted-foreground"
                   )}
                 >
@@ -321,7 +328,7 @@ export default function SubmitPage() {
                 />
               </div>
 
-              <div className="rounded-lg border border-dashed border-stone-300 bg-stone-50/80 p-4">
+              <div className="rounded-lg border border-dashed border-stone-300 dark:border-stone-700 bg-stone-50/80 dark:bg-stone-900/40 p-4">
                 <p className="text-sm font-medium">Organizer trust signals</p>
                 <p className="mb-3 mt-1 text-xs text-muted-foreground">
                   In production these come from the account system. They&apos;re
@@ -388,7 +395,7 @@ export default function SubmitPage() {
                 </div>
               </div>
 
-              {error && <p className="text-sm text-red-600">{error}</p>}
+              {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
 
               <Button type="submit" className="w-full" size="lg">
                 Submit for review

@@ -106,7 +106,7 @@ function HighlightedText({
   return (
     <>
       {text.slice(0, idx)}
-      <mark className="rounded bg-amber-200 px-0.5 py-0.5 text-foreground">
+      <mark className="rounded bg-amber-200 dark:bg-amber-900/60 px-0.5 py-0.5 text-foreground">
         {text.slice(idx, idx + quote.length)}
       </mark>
       {text.slice(idx + quote.length)}
@@ -130,7 +130,7 @@ function FieldRow({
       id={fieldAnchor(field)}
       className={cn(
         "rounded-md px-2 py-1.5 transition-colors",
-        highlighted && "bg-amber-100 ring-2 ring-amber-300"
+        highlighted && "bg-amber-100 dark:bg-amber-900/40 ring-2 ring-amber-300 dark:ring-amber-800/60"
       )}
     >
       <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">
@@ -162,7 +162,7 @@ function ConfidenceMeter({ value }: { value: number }) {
       </div>
       <Progress value={value * 100} className="h-1.5" />
       {value < 0.6 && (
-        <p className="text-[11px] text-violet-700">
+        <p className="text-[11px] text-violet-700 dark:text-violet-400">
           <ShieldAlert className="mr-1 inline size-3" />
           Low confidence — the AI is telling you it doesn&apos;t have enough
           information. Your judgment matters most here.
@@ -345,8 +345,8 @@ export function CampaignReview({
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
-                <div className="rounded-lg border border-amber-200/70 bg-amber-50/40 p-3">
-                  <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-amber-900">
+                <div className="rounded-lg border border-amber-200/70 dark:border-amber-800/60 bg-amber-50/40 dark:bg-amber-950/40 p-3">
+                  <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-amber-900 dark:text-amber-200">
                     Evidence — click to highlight the cited field
                   </p>
                   <ul className="space-y-1.5">
@@ -356,15 +356,15 @@ export function CampaignReview({
                           type="button"
                           onClick={() => citeEvidence(ev.source_field, ev.quote)}
                           className={cn(
-                            "w-full rounded-md border bg-white p-2 text-left text-xs transition-colors hover:bg-amber-50",
+                            "w-full rounded-md border bg-white dark:bg-stone-900 p-2 text-left text-xs transition-colors hover:bg-amber-50 dark:hover:bg-amber-950/40",
                             highlight?.field === ev.source_field &&
                               highlight?.quote === ev.quote &&
-                              "border-amber-300 bg-amber-50"
+                              "border-amber-300 dark:border-amber-800/60 bg-amber-50 dark:bg-amber-950/40"
                           )}
                         >
                           <span className="font-semibold">{ev.claim}</span>
                           <span className="mt-1 flex items-start gap-1 text-muted-foreground">
-                            <Quote className="mt-0.5 size-3.5 shrink-0 text-amber-700" />
+                            <Quote className="mt-0.5 size-3.5 shrink-0 text-amber-700 dark:text-amber-400" />
                             <span>
                               &ldquo;{ev.quote}&rdquo;{" "}
                               <span className="font-mono text-[10px]">
@@ -379,8 +379,8 @@ export function CampaignReview({
                 </div>
 
                 <div className="grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-lg border border-red-200 bg-red-50/50 p-3">
-                    <p className="mb-1 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-red-700">
+                  <div className="rounded-lg border border-red-200 dark:border-red-800/60 bg-red-50/50 dark:bg-red-950/40 p-3">
+                    <p className="mb-1 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-red-700 dark:text-red-300">
                       <ShieldAlert className="size-3.5" /> Risk factors
                     </p>
                     <ul className="list-disc space-y-1 pl-4 text-xs">
@@ -389,8 +389,8 @@ export function CampaignReview({
                       ))}
                     </ul>
                   </div>
-                  <div className="rounded-lg border border-emerald-200 bg-emerald-50/50 p-3">
-                    <p className="mb-1 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-emerald-700">
+                  <div className="rounded-lg border border-emerald-200 dark:border-emerald-800/60 bg-emerald-50/50 dark:bg-emerald-950/40 p-3">
+                    <p className="mb-1 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-emerald-700 dark:text-emerald-400">
                       <ShieldCheck className="size-3.5" /> Mitigating factors
                     </p>
                     <ul className="list-disc space-y-1 pl-4 text-xs">
@@ -442,7 +442,7 @@ export function CampaignReview({
                     className="min-h-16 text-sm"
                   />
                 </div>
-                {error && <p className="text-sm text-red-600">{error}</p>}
+                {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
                 <div className="flex flex-wrap gap-2">
                   <Button
                     onClick={() => act("approve")}
@@ -460,7 +460,7 @@ export function CampaignReview({
                     onClick={() => act("reject")}
                     disabled={pendingAction !== null}
                     variant="outline"
-                    className="border-red-200 text-red-700 hover:bg-red-50 hover:text-red-800"
+                    className="border-red-200 dark:border-red-800/60 text-red-700 dark:text-red-300 hover:bg-red-50 dark:hover:bg-red-950/40 hover:text-red-800 dark:hover:text-red-200"
                   >
                     {pendingAction === "reject" ? (
                       <Loader2 className="size-4 animate-spin" />
@@ -473,7 +473,7 @@ export function CampaignReview({
                     onClick={() => act("escalate")}
                     disabled={pendingAction !== null}
                     variant="outline"
-                    className="border-violet-200 text-violet-700 hover:bg-violet-50 hover:text-violet-800"
+                    className="border-violet-200 dark:border-violet-800/60 text-violet-700 dark:text-violet-300 hover:bg-violet-50 dark:hover:bg-violet-950/40 hover:text-violet-800 dark:hover:text-violet-200"
                   >
                     {pendingAction === "escalate" ? (
                       <Loader2 className="size-4 animate-spin" />

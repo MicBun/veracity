@@ -16,6 +16,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ShieldCheck, Info } from "lucide-react";
 import { LatticeBg } from "@/components/public/brand";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 function LoginForm() {
   const router = useRouter();
@@ -54,7 +55,7 @@ function LoginForm() {
     <Card className="relative w-full max-w-md">
       <CardHeader>
         <div className="flex items-center gap-2">
-          <ShieldCheck className="size-5 text-emerald-700" />
+          <ShieldCheck className="size-5 text-emerald-700 dark:text-emerald-400" />
           <CardTitle>Reviewer sign-in</CardTitle>
         </div>
         <CardDescription>
@@ -63,10 +64,10 @@ function LoginForm() {
       </CardHeader>
       <form onSubmit={handleSubmit}>
         <CardContent className="space-y-4">
-          <div className="flex items-start gap-2 rounded-md border border-stone-200 bg-stone-100/70 p-3 text-sm text-stone-700">
-            <Info className="mt-0.5 size-4 shrink-0 text-stone-500" />
+          <div className="flex items-start gap-2 rounded-md border border-stone-200 dark:border-stone-700 bg-stone-100/70 dark:bg-stone-800 p-3 text-sm text-stone-700 dark:text-stone-300">
+            <Info className="mt-0.5 size-4 shrink-0 text-stone-500 dark:text-stone-400" />
             <div>
-              <p className="font-medium text-stone-900">
+              <p className="font-medium text-stone-900 dark:text-stone-100">
                 Demo credentials — shown on purpose
               </p>
               <p className="mt-1">
@@ -101,7 +102,7 @@ function LoginForm() {
               autoComplete="current-password"
             />
           </div>
-          {error && <p className="text-sm text-red-600">{error}</p>}
+          {error && <p className="text-sm text-red-600 dark:text-red-400">{error}</p>}
         </CardContent>
         <CardFooter className="mt-6 flex flex-col gap-3">
           <Button type="submit" className="w-full" disabled={loading}>
@@ -128,8 +129,11 @@ function LoginForm() {
 
 export default function LoginPage() {
   return (
-    <main className="relative flex min-h-screen items-center justify-center bg-paper p-4 text-stone-900">
+    <main className="relative flex min-h-screen items-center justify-center bg-paper p-4 text-stone-900 dark:text-stone-100">
       <LatticeBg />
+      <div className="fixed right-4 top-4 z-50">
+        <ThemeToggle />
+      </div>
       <Suspense>
         <LoginForm />
       </Suspense>
