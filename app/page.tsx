@@ -302,7 +302,7 @@ export default async function LandingPage() {
             <Button asChild size="lg" variant="outline">
               <Link href="/login">Reviewer sign-in</Link>
             </Button>
-            <Button asChild size="lg" variant="ghost">
+            <Button asChild size="lg" variant="outline">
               <Link href="/about">
                 See how it works <ArrowRight className="size-4" />
               </Link>
