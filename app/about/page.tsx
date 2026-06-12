@@ -75,22 +75,22 @@ export default async function AboutPage() {
           <ShieldCheck className="size-5 text-emerald-700 dark:text-emerald-400" />
           <span className="font-serif text-xl font-semibold tracking-tight">Amanah</span>
         </Link>
-        <nav className="flex items-center gap-4 text-sm">
-          <Link href="/campaigns" className="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">
+        <nav className="flex items-center gap-1">
+          <Link href="/campaigns" className="rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100">
             Browse campaigns
           </Link>
-          <Link href="/submit" className="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">
+          <Link href="/submit" className="rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100">
             Submit
           </Link>
           {session ? (
             <Link
               href="/admin/queue"
-              className="font-medium text-emerald-800 dark:text-emerald-300 hover:text-emerald-900 dark:hover:text-emerald-200"
+              className="rounded-md px-2.5 py-1 text-sm font-medium text-emerald-800 transition-colors hover:bg-emerald-900/5 hover:text-emerald-900 dark:text-emerald-300 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-200"
             >
               Reviewer console
             </Link>
           ) : (
-            <Link href="/login" className="text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100">
+            <Link href="/login" className="rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100">
               Reviewer sign-in
             </Link>
           )}
@@ -98,7 +98,7 @@ export default async function AboutPage() {
             href={REPO}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center gap-1.5 text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100"
+            className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100"
           >
             <GitHubMark className="size-4" /> Code
           </a>

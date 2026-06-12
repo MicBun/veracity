@@ -84,30 +84,30 @@ export default async function LandingPage() {
             Amanah
           </span>
         </Link>
-        <nav className="flex items-center gap-2 sm:gap-5">
+        <nav className="flex items-center gap-1 sm:gap-2">
           <Link
             href="/campaigns"
-            className="hidden text-sm text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 sm:block"
+            className="hidden rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 sm:block dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100"
           >
             Browse campaigns
           </Link>
           <Link
             href="/about"
-            className="hidden text-sm text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100 sm:block"
+            className="hidden rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 sm:block dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100"
           >
             How it works
           </Link>
           {session ? (
             <Link
               href="/admin/queue"
-              className="text-sm font-medium text-emerald-800 dark:text-emerald-300 hover:text-emerald-900 dark:hover:text-emerald-200"
+              className="rounded-md px-2.5 py-1 text-sm font-medium text-emerald-800 transition-colors hover:bg-emerald-900/5 hover:text-emerald-900 dark:text-emerald-300 dark:hover:bg-emerald-400/10 dark:hover:text-emerald-200"
             >
               Reviewer console
             </Link>
           ) : (
             <Link
               href="/login"
-              className="text-sm text-stone-600 dark:text-stone-400 hover:text-stone-900 dark:hover:text-stone-100"
+              className="rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100"
             >
               Reviewer sign-in
             </Link>
@@ -147,7 +147,7 @@ export default async function LandingPage() {
               <Button asChild size="lg" variant="outline" className="border-stone-300 dark:border-stone-700 bg-white/60 dark:bg-stone-900/60">
                 <Link href="/login">Open the reviewer console</Link>
               </Button>
-              <Button asChild size="lg" variant="ghost">
+              <Button asChild size="lg" variant="outline" className="border-stone-300 dark:border-stone-700 bg-white/60 dark:bg-stone-900/60">
                 <Link href="/campaigns">Browse live campaigns</Link>
               </Button>
             </div>
