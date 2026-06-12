@@ -42,7 +42,7 @@ export async function SiteHeader() {
             Reviewer sign-in
           </Link>
         )}
-        <Button asChild size="sm" className="bg-emerald-700 hover:bg-emerald-800">
+        <Button asChild size="sm">
           <Link href="/submit">Submit a campaign</Link>
         </Button>
       </nav>

@@ -64,7 +64,7 @@ function LoginForm() {
       <form onSubmit={handleSubmit}>
         <CardContent className="space-y-4">
           <div className="flex items-start gap-2 rounded-md border border-stone-200 bg-stone-100/70 p-3 text-sm text-stone-700">
-            <Info className="mt-0.5 size-4 shrink-0 text-stone-400" />
+            <Info className="mt-0.5 size-4 shrink-0 text-stone-500" />
             <div>
               <p className="font-medium text-stone-900">
                 Demo credentials — shown on purpose

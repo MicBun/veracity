@@ -74,7 +74,7 @@ function MockQueueCard() {
 export default async function LandingPage() {
   const session = await getSession();
   return (
-    <div className="min-h-screen bg-[#faf8f4] text-stone-900">
+    <div className="min-h-screen bg-paper text-stone-900">
       {/* ── Nav ── */}
       <header className="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
         <Link href="/" className="flex items-center gap-2">

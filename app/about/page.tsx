@@ -68,7 +68,7 @@ function Arrow({ label }: { label?: string }) {
 export default async function AboutPage() {
   const session = await getSession();
   return (
-    <div className="min-h-screen bg-[#faf8f4] text-stone-900">
+    <div className="min-h-screen bg-paper text-stone-900">
       <header className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5">
         <Link href="/" className="flex items-center gap-2">
           <ShieldCheck className="size-5 text-emerald-700" />

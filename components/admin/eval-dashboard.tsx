@@ -249,14 +249,14 @@ export function EvalDashboard({ cached }: Props) {
                   {CLASSES.map((p) => (
                     <div
                       key={p}
-                      className="px-1 py-1 text-[10px] font-semibold uppercase tracking-wide text-stone-500"
+                      className="px-1 py-1 text-[10px] font-semibold uppercase tracking-wide text-stone-600"
                     >
                       {CLASS_LABELS[p]}
                     </div>
                   ))}
                   {CLASSES.map((t) => (
                     <div key={t} className="contents">
-                      <div className="flex items-center justify-end px-1 py-1 text-right text-[10px] font-semibold uppercase tracking-wide text-stone-500">
+                      <div className="flex items-center justify-end px-1 py-1 text-right text-[10px] font-semibold uppercase tracking-wide text-stone-600">
                         {CLASS_LABELS[t]}
                       </div>
                       {CLASSES.map((p) => {
