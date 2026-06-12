@@ -31,7 +31,7 @@ export async function SiteHeader() {
         {session ? (
           <Link
             href="/admin/queue"
-            className="text-sm font-medium text-emerald-800 hover:text-emerald-900 dark:text-emerald-400 dark:hover:text-emerald-300"
+            className="text-sm font-medium text-emerald-800 hover:text-emerald-900 dark:text-emerald-300 dark:hover:text-emerald-200"
           >
             Reviewer console
           </Link>

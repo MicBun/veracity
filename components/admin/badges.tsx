@@ -16,7 +16,7 @@ export function RiskBadge({ score }: { score: number }) {
       )}
     >
       Risk {score}
-      <span className="opacity-60">/100</span>
+      <span className="opacity-60 dark:opacity-80">/100</span>
     </span>
   );
 }

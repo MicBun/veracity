@@ -278,7 +278,7 @@ export function EvalDashboard({ cached }: Props) {
                                 !onDiagonal &&
                                 t !== "clean" &&
                                 p === "clean" &&
-                                "bg-red-100 dark:bg-red-900/40 font-bold text-red-900 dark:text-red-200"
+                                "bg-red-100 dark:bg-red-900/40 font-bold text-red-900 dark:text-red-200 dark:ring-1 dark:ring-red-400/50"
                             )}
                           >
                             {v}
@@ -298,7 +298,7 @@ export function EvalDashboard({ cached }: Props) {
                     misclassified
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <span className="size-2.5 rounded-sm bg-red-100 dark:bg-red-900/40 ring-1 ring-red-300 dark:ring-red-800/60" />
+                    <span className="size-2.5 rounded-sm bg-red-100 dark:bg-red-900/40 ring-1 ring-red-300 dark:ring-red-400/60" />
                     fraud predicted clean
                   </span>
                 </div>

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, JetBrains_Mono, Newsreader } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
@@ -20,6 +20,15 @@ const newsreader = Newsreader({
   style: ["normal", "italic"],
   variable: "--font-newsreader",
 });
+
+// Tracks the OS preference (media queries can't see the in-page class
+// toggle) — correct for the system-default majority, harmless otherwise.
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#faf8f4" },
+    { media: "(prefers-color-scheme: dark)", color: "#0f0c0a" },
+  ],
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://amanah.micbun.com"),

@@ -55,6 +55,7 @@
 /* Brand: deep emerald primary over warm stone neutrals — the palette the
    landing page and OG image established, promoted to the token level. */
 :root {
+  color-scheme: light;
   --paper: #faf8f4;
   --shadow-card-value: 0 18px 50px -26px rgb(12 46 36 / 0.4);
   --background: oklch(1 0 0);
@@ -95,6 +96,7 @@
    not neutral gray), brightened emerald, emerald-tinted accent. Paper sits
    deepest so cards lift above it. */
 .dark {
+  color-scheme: dark; /* native scrollbars, form controls, autofill */
   --paper: oklch(0.158 0.006 65); /* deepest base behind cards */
   --shadow-card-value: 0 18px 50px -26px rgb(0 0 0 / 0.6);
   --background: oklch(0.172 0.006 65);

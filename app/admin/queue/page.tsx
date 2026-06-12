@@ -56,7 +56,7 @@ function QueueCard({ entry }: { entry: QueueEntry }) {
   const flags = flagsOf(bundle);
   return (
     <Link href={`/admin/campaign/${campaign.id}`} className="block">
-      <Card className="transition-shadow hover:shadow-md">
+      <Card className="transition-shadow hover:shadow-md dark:hover:ring-foreground/25">
         <CardContent className="space-y-2.5 px-4">
           <div className="flex items-start justify-between gap-2">
             <p className="line-clamp-2 text-sm font-semibold leading-snug">

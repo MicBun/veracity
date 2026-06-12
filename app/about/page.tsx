@@ -34,7 +34,7 @@ function DiagramBox({
   const tones = {
     neutral: "border-stone-300 dark:border-stone-700 bg-white dark:bg-stone-900",
     ai: "border-emerald-300 dark:border-emerald-800/60 bg-emerald-50/60 dark:bg-emerald-950/40",
-    human: "border-stone-800 bg-stone-900 text-stone-50",
+    human: "border-stone-800 dark:border-stone-700 bg-stone-900 dark:bg-stone-800 text-stone-50",
   };
   return (
     <div className={`rounded-xl border p-4 ${tones[tone]}`}>
