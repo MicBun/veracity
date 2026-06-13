@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { getSession } from "@/lib/session-cookies";
 import { LatticeBg } from "@/components/public/brand";
+import { SiteFooter } from "@/components/public/site-footer";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 function MockQueueCard() {
@@ -309,27 +310,7 @@ export default async function LandingPage() {
             </Button>
           </div>
         </div>
-        <footer className="border-t border-stone-200 dark:border-stone-700">
-          <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-5 py-6 text-xs text-stone-500 dark:text-stone-400 sm:flex-row">
-            <p>
-              Amanah — a working product demo. All campaigns are fictional; the
-              AI pipeline and audit trail are real.
-            </p>
-            <p className="flex items-center gap-4">
-              <Link href="/about" className="underline underline-offset-2">
-                How it works
-              </Link>
-              <a
-                href="https://github.com/MicBun/amanah"
-                target="_blank"
-                rel="noreferrer"
-                className="underline underline-offset-2"
-              >
-                Code on GitHub
-              </a>
-            </p>
-          </div>
-        </footer>
+        <SiteFooter />
       </section>
     </div>
   );

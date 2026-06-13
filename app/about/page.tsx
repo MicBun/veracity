@@ -1,7 +1,10 @@
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { ShieldCheck, ArrowDown, ArrowRight } from "lucide-react";
 import { getSession } from "@/lib/session-cookies";
+import { GitHubMark } from "@/components/public/brand";
+import { RepoLink } from "@/components/public/private-repo-link";
+import { SiteFooter } from "@/components/public/site-footer";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export const metadata = {
@@ -10,15 +13,6 @@ export const metadata = {
 
 const REPO = "https://github.com/MicBun/amanah";
 const DOCS = `${REPO}/tree/main/docs`;
-
-// lucide-react dropped its brand icons, so the GitHub mark is inlined here.
-function GitHubMark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden className={className}>
-      <path d="M12 .5C5.73.5.5 5.73.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56 0-.27-.01-.99-.02-1.95-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.3-1.7-1.3-1.7-1.06-.72.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.79 2.73 1.27 3.4.97.1-.76.41-1.27.74-1.56-2.55-.29-5.23-1.28-5.23-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.25 5.69.42.36.8 1.08.8 2.18 0 1.58-.01 2.85-.01 3.24 0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z" />
-    </svg>
-  );
-}
 
 function DiagramBox({
   label,
@@ -94,14 +88,12 @@ export default async function AboutPage() {
               Reviewer sign-in
             </Link>
           )}
-          <a
+          <RepoLink
             href={REPO}
-            target="_blank"
-            rel="noreferrer"
             className="flex items-center gap-1.5 rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100"
           >
             <GitHubMark className="size-4" /> Code
-          </a>
+          </RepoLink>
           <ThemeToggle />
         </nav>
       </header>
@@ -255,11 +247,12 @@ export default async function AboutPage() {
                 See live eval metrics (reviewer sign-in) <ArrowRight className="size-4" />
               </Link>
             </Button>
-            <Button asChild variant="ghost">
-              <a href={`${DOCS}/evaluation.md`} target="_blank" rel="noreferrer">
-                Read the evaluation write-up <ArrowRight className="size-4" />
-              </a>
-            </Button>
+            <RepoLink
+              href={`${DOCS}/evaluation.md`}
+              className={buttonVariants({ variant: "ghost" })}
+            >
+              Read the evaluation write-up <ArrowRight className="size-4" />
+            </RepoLink>
           </div>
         </section>
 
@@ -276,45 +269,38 @@ export default async function AboutPage() {
                   Want the engineering perspective — the two-stage pipeline, the
                   cost model, the schema, the boundaries enforced in code? It all
                   lives in the repository, not bolted onto this page. The{" "}
-                  <a
+                  <RepoLink
                     href={DOCS}
-                    target="_blank"
-                    rel="noreferrer"
                     className="font-medium text-emerald-800 dark:text-emerald-300 underline underline-offset-2"
                   >
                     docs
-                  </a>{" "}
+                  </RepoLink>{" "}
                   cover the architecture, cost model, and evaluation in depth.
                 </p>
                 <div className="mt-4 flex flex-wrap gap-3">
-                  <Button asChild>
-                    <a href={REPO} target="_blank" rel="noreferrer">
-                      <GitHubMark className="size-4" /> View the code on GitHub
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline">
-                    <a href={`${DOCS}/architecture.md`} target="_blank" rel="noreferrer">
-                      Architecture <ArrowRight className="size-4" />
-                    </a>
-                  </Button>
-                  <Button asChild variant="outline">
-                    <a href={`${DOCS}/cost-model.md`} target="_blank" rel="noreferrer">
-                      Cost model <ArrowRight className="size-4" />
-                    </a>
-                  </Button>
+                  <RepoLink href={REPO} className={buttonVariants()}>
+                    <GitHubMark className="size-4" /> View the code on GitHub
+                  </RepoLink>
+                  <RepoLink
+                    href={`${DOCS}/architecture.md`}
+                    className={buttonVariants({ variant: "outline" })}
+                  >
+                    Architecture <ArrowRight className="size-4" />
+                  </RepoLink>
+                  <RepoLink
+                    href={`${DOCS}/cost-model.md`}
+                    className={buttonVariants({ variant: "outline" })}
+                  >
+                    Cost model <ArrowRight className="size-4" />
+                  </RepoLink>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        <footer className="border-t border-stone-200 dark:border-stone-700 pt-6 text-xs text-stone-500 dark:text-stone-400">
-          <p>
-            Amanah — a working product demo. All campaigns are fictional; the AI
-            pipeline and audit trail are real.
-          </p>
-        </footer>
       </main>
+      <SiteFooter />
     </div>
   );
 }

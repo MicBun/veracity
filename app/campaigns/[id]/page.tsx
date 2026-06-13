@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPublicApprovedCampaign } from "@/lib/data";
 import { SiteHeader } from "@/components/public/site-header";
+import { SiteFooter } from "@/components/public/site-footer";
 import { RaisedProgress } from "@/components/public/raised-progress";
 import { DonateForm } from "@/components/public/donate-form";
 import { ZakatChip } from "@/components/public/brand";
@@ -98,6 +99,7 @@ export default async function CampaignDetailPage({
           </div>
         </aside>
       </main>
+      <SiteFooter />
     </div>
   );
 }

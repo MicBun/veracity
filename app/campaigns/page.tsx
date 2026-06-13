@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getApprovedCampaigns } from "@/lib/data";
 import { SiteHeader } from "@/components/public/site-header";
+import { SiteFooter } from "@/components/public/site-footer";
 import { RaisedProgress } from "@/components/public/raised-progress";
 import { ZakatChip } from "@/components/public/brand";
 import { CATEGORY_LABELS } from "@/lib/format";
@@ -71,6 +72,7 @@ export default async function CampaignsPage() {
           </div>
         )}
       </main>
+      <SiteFooter />
     </div>
   );
 }
