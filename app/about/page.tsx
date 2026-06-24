@@ -8,10 +8,10 @@ import { SiteFooter } from "@/components/public/site-footer";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export const metadata = {
-  title: "How Amanah works — AI reads every campaign, people decide",
+  title: "How Veracity works — AI reads every campaign, people decide",
 };
 
-const REPO = "https://github.com/MicBun/amanah";
+const REPO = "https://github.com/MicBun/veracity";
 const DOCS = `${REPO}/tree/main/docs`;
 
 function DiagramBox({
@@ -67,7 +67,7 @@ export default async function AboutPage() {
       <header className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5">
         <Link href="/" className="flex items-center gap-2">
           <ShieldCheck className="size-5 text-emerald-700 dark:text-emerald-400" />
-          <span className="font-serif text-xl font-semibold tracking-tight">Amanah</span>
+          <span className="font-serif text-xl font-semibold tracking-tight">Veracity</span>
         </Link>
         <nav className="flex items-center gap-1">
           <Link href="/campaigns" className="rounded-md px-2.5 py-1 text-sm font-medium text-stone-600 transition-colors hover:bg-stone-900/5 hover:text-stone-900 dark:text-stone-300 dark:hover:bg-white/10 dark:hover:text-stone-100">
@@ -101,12 +101,12 @@ export default async function AboutPage() {
       <main className="mx-auto max-w-5xl space-y-14 px-5 pb-20 pt-6">
         <section>
           <h1 className="font-serif text-4xl font-medium tracking-tight">
-            How Amanah works
+            How Veracity works
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-stone-600 dark:text-stone-400">
-            Amanah triages incoming crowdfunding campaigns for fraud signals,
-            policy violations, and zakat-eligibility claims. AI reads every
-            submission and lays out what it found — but it never decides. A human
+            Veracity triages incoming crowdfunding campaigns for fraud signals
+            and policy violations. AI reads every submission and lays out what it
+            found — but it never decides. A human
             reviewer approves, rejects, or escalates every campaign. This page
             explains how that works and where the line between the two is drawn.
           </p>
@@ -121,14 +121,14 @@ export default async function AboutPage() {
             <DiagramBox
               label="Public"
               title="Campaign submitted"
-              body="Title, story, goal, category, organizer profile, zakat claim. Anyone can submit; submissions are rate-limited."
+              body="Title, story, goal, category, organizer profile. Anyone can submit; submissions are rate-limited."
             />
             <Arrow label="every campaign" />
             <DiagramBox
               tone="ai"
               label="AI · first pass"
               title="Screening"
-              body="A fast model scores fraud risk against a seven-category rubric, reports how confident it is, and writes a one-line summary — in a few seconds, for every campaign."
+              body="A fast model scores fraud risk against a six-category rubric, reports how confident it is, and writes a one-line summary — in a few seconds, for every campaign."
             />
             <Arrow label="when risk or uncertainty is high" />
             <DiagramBox
@@ -172,7 +172,7 @@ export default async function AboutPage() {
               <ul className="mt-3 space-y-2 text-sm text-stone-700 dark:text-stone-300">
                 <li>Every approve, reject, and escalate</li>
                 <li>Judgment on genuinely ambiguous cases</li>
-                <li>Zakat-eligibility calls that need documentation</li>
+                <li>Eligibility and policy calls that need off-platform proof</li>
                 <li>Accountability — names in the audit log</li>
                 <li>The rubric itself</li>
               </ul>
@@ -189,7 +189,7 @@ export default async function AboutPage() {
               human should decide.&rdquo;
             </p>
             <p className="mt-3 text-xs text-emerald-200/80">
-              — an actual deep-review output from the demo queue. Amanah is built
+              — an actual deep-review output from the demo queue. Veracity is built
               to admit what it can&apos;t verify. Calibrated uncertainty is a
               feature, not a failure: when the AI isn&apos;t sure, it says so and
               hands the case up, rather than guessing.
@@ -235,7 +235,7 @@ export default async function AboutPage() {
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-stone-600 dark:text-stone-400">
             The hard case is subtle fraud — a calm, plausible story with one quiet
             inconsistency. A fast model can read past it. That is exactly why no
-            campaign is ever approved without a human, and why Amanah runs against
+            campaign is ever approved without a human, and why Veracity runs against
             a labeled test set and shows reviewers its own error rates — including
             the fraud it would have missed — after every run. The dataset, the
             metrics, and the failure modes we still wrestle with are documented

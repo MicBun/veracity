@@ -59,7 +59,7 @@ function LoginForm() {
           <CardTitle>Reviewer sign-in</CardTitle>
         </div>
         <CardDescription>
-          Access the Amanah trust &amp; safety console.
+          Access the Veracity trust &amp; safety console.
         </CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit}>
@@ -119,7 +119,7 @@ function LoginForm() {
             href="/"
             className="text-xs text-muted-foreground underline underline-offset-2"
           >
-            ← Back to Amanah
+            ← Back to Veracity
           </Link>
         </CardFooter>
       </form>

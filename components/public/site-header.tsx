@@ -12,7 +12,7 @@ export async function SiteHeader() {
       <Link href="/" className="flex items-center gap-2">
         <ShieldCheck className="size-5 text-emerald-700 dark:text-emerald-400" />
         <span className="font-serif text-xl font-semibold tracking-tight">
-          Amanah
+          Veracity
         </span>
       </Link>
       <nav className="flex items-center gap-1 sm:gap-2">

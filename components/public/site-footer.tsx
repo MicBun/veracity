@@ -10,14 +10,14 @@ export function SiteFooter() {
     <footer className="border-t border-stone-200 dark:border-stone-700">
       <div className="mx-auto flex max-w-6xl flex-col gap-3 px-5 py-6 text-xs text-stone-500 dark:text-stone-400 sm:flex-row sm:items-center sm:justify-between">
         <p>
-          Amanah — a working product demo. All campaigns are fictional; the AI
+          Veracity — a working product demo. All campaigns are fictional; the AI
           pipeline and audit trail are real.
         </p>
         <div className="flex flex-wrap items-center gap-x-4 gap-y-1">
           <Link href="/about" className={linkCls}>
             How it works
           </Link>
-          <RepoLink href="https://github.com/MicBun/amanah" className={linkCls}>
+          <RepoLink href="https://github.com/MicBun/veracity" className={linkCls}>
             Code on GitHub
           </RepoLink>
           <span aria-hidden className="text-stone-300 dark:text-stone-600">

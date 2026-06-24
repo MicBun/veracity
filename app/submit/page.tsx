@@ -238,7 +238,7 @@ export default function SubmitPage() {
           Every campaign goes through automated checks and is then reviewed by
           a human before any decision is made.{" "}
           <Link href="/" className="underline underline-offset-2">
-            Back to Amanah
+            Back to Veracity
           </Link>
         </p>
 

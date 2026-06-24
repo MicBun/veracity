@@ -10,7 +10,7 @@ import { Info } from "lucide-react";
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Live campaigns — Amanah",
+  title: "Live campaigns — Veracity",
 };
 
 export default async function CampaignsPage() {
@@ -25,7 +25,7 @@ export default async function CampaignsPage() {
             Live campaigns
           </h1>
           <p className="mt-3 text-sm leading-relaxed text-stone-600 dark:text-stone-400">
-            Every campaign here passed Amanah&apos;s AI triage and was approved by
+            Every campaign here passed Veracity&apos;s AI triage and was approved by
             a human reviewer. Support one directly.
           </p>
           <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-stone-500 dark:text-stone-400">

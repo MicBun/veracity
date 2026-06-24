@@ -10,7 +10,7 @@ import {
 import { cn } from "@/lib/utils";
 
 /**
- * The Amanah repo is private for now. Every link that points into it renders as
+ * The Veracity repo is private for now. Every link that points into it renders as
  * a non-navigating hint instead of a button that 404s for anyone without access.
  *
  * When the repo goes public, flip REPO_PUBLIC to true — every RepoLink becomes a

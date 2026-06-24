@@ -1,9 +1,9 @@
 # Architecture
 
-Amanah is an AI-assisted triage system for donation-based crowdfunding trust &
+Veracity is an AI-assisted triage system for donation-based crowdfunding trust &
 safety. A two-stage Claude pipeline screens every incoming campaign for fraud
-signals, policy violations, and zakat-eligibility claims, cites its evidence,
-and calibrates its own uncertainty — then a human reviewer makes every decision.
+signals and policy violations, cites its evidence, and calibrates its own
+uncertainty — then a human reviewer makes every decision.
 
 This document describes the system at the level that requires reading several
 files to understand. For the cost breakdown see [`cost-model.md`](./cost-model.md);
@@ -57,11 +57,12 @@ deep review (only when screening warrants it)
 
 ## Prompts are versioned
 
-`PROMPT_VERSION` lives in `lib/ai/prompts.ts` (current: `v3`). Any prompt change
+`PROMPT_VERSION` lives in `lib/ai/prompts.ts` (current: `v5`). Any prompt change
 must bump it — the version is recorded on every `ai_assessment` and `eval_run`,
 so a metric shift is always attributable to a specific prompt. The prompts went
-v1 → v3 against the eval set (v4 was tried and reverted). The seven-category
-risk rubric is mirrored in both the prompts and `RISK_FLAGS`; keep them aligned.
+v1 → v3 against the eval set (v4 was tried and reverted), then v5 removed the
+zakat-eligibility category. The six-category risk rubric is mirrored in both the
+prompts and `RISK_FLAGS`; keep them aligned.
 
 ## Persistence boundary
 

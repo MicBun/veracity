@@ -82,7 +82,7 @@ export default async function LandingPage() {
         <Link href="/" className="flex items-center gap-2">
           <ShieldCheck className="size-5 text-emerald-700 dark:text-emerald-400" />
           <span className="font-serif text-xl font-semibold tracking-tight">
-            Amanah
+            Veracity
           </span>
         </Link>
         <nav className="flex items-center gap-1 sm:gap-2">
@@ -134,10 +134,10 @@ export default async function LandingPage() {
               <em className="text-emerald-800 dark:text-emerald-300">People</em> make every call.
             </h1>
             <p className="rise rise-3 mt-5 max-w-xl text-base leading-relaxed text-stone-600 dark:text-stone-400">
-              Amanah (أمانة — &ldquo;trust&rdquo;) triages incoming campaigns for
-              fraud signals, policy violations, and zakat-eligibility claims. It
-              scores risk, quotes its evidence, and admits what it can&apos;t
-              verify — then hands the decision to a human reviewer. Every time.
+              Veracity triages incoming campaigns for fraud signals and policy
+              violations. It scores risk, quotes its evidence, and admits what it
+              can&apos;t verify — then hands the decision to a human reviewer.
+              Every time.
             </p>
             <div className="rise rise-4 mt-7 flex flex-wrap items-center gap-3">
               <Button asChild size="lg" className="shadow-lg shadow-emerald-900/15">
@@ -179,7 +179,7 @@ export default async function LandingPage() {
                 icon: <ScanSearch className="size-5" />,
                 step: "Stage 1 · every campaign",
                 title: "Screening",
-                body: "A fast model scores fraud risk 0–100 against a seven-category rubric — urgency manipulation, story inconsistency, financial anomalies, zakat-eligibility doubt, and more — and reports how confident it is.",
+                body: "A fast model scores fraud risk 0–100 against a six-category rubric — urgency manipulation, story inconsistency, financial anomalies, identity mismatch, and more — and reports how confident it is.",
               },
               {
                 icon: <FileSearch className="size-5" />,
@@ -261,7 +261,7 @@ export default async function LandingPage() {
               <ul className="mt-3 space-y-2 text-sm text-stone-300">
                 <li>Every approve, reject, and escalate</li>
                 <li>Judgment on genuinely ambiguous cases</li>
-                <li>Zakat-eligibility calls that need documentation</li>
+                <li>Eligibility and policy calls that need off-platform proof</li>
                 <li>Accountability — names in the audit log</li>
                 <li>The rubric itself</li>
               </ul>
@@ -272,7 +272,7 @@ export default async function LandingPage() {
                   ["100%", "decisions made by humans"],
                   ["2 stages", "of AI scrutiny"],
                   ["30 cases", "labeled eval set"],
-                  ["7", "risk categories"],
+                  ["6", "risk categories"],
                 ].map(([v, l]) => (
                   <div key={l}>
                     <p className="font-serif text-2xl font-medium text-emerald-900 dark:text-emerald-200">{v}</p>

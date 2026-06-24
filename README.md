@@ -1,12 +1,11 @@
-# Amanah — AI Triage Copilot for Campaign Trust & Safety
+# Veracity — AI Triage Copilot for Campaign Trust & Safety
 
-Amanah (Arabic: أمانة, "trust") is an AI-assisted triage system for
-donation-based crowdfunding platforms. A two-stage Claude pipeline screens
-every incoming campaign for fraud signals, policy violations, and
-zakat-eligibility claims, cites its evidence, and calibrates its own
+Veracity is an AI-assisted triage system for donation-based crowdfunding
+platforms. A two-stage Claude pipeline screens every incoming campaign for
+fraud signals and policy violations, cites its evidence, and calibrates its own
 uncertainty — then a human reviewer makes every decision.
 
-**Live demo:** https://amanah.micbun.com
+**Live demo:** https://veracity.micbun.com
 
 **The boundary is enforced in code, not just UI:** no code path lets the AI
 change a campaign's status, and AI assessments are never served to public
@@ -37,7 +36,8 @@ submission ──▶ Stage 1: screening (every campaign)
 - An eval harness (`npm run evals` or the Run button on `/admin/evals`) runs
   the pipeline against 30 labeled campaigns and reports per-class
   precision/recall, a confusion matrix, and false-negative drill-down.
-  Prompts were tuned v1 → v3 against these metrics.
+  Prompts were tuned v1 → v3 against these metrics, then bumped to v5 when the
+  zakat-eligibility category was removed.
 
 ## Documentation
 

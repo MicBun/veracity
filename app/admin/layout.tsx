@@ -22,7 +22,7 @@ export default async function AdminLayout({
             <Link href="/admin/queue" className="flex items-center gap-2">
               <ShieldCheck className="size-5 text-emerald-700 dark:text-emerald-400" />
               <span className="font-serif text-lg font-semibold tracking-tight">
-                Amanah
+                Veracity
               </span>
               <span className="text-sm font-normal text-muted-foreground">
                 · Reviewer console

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 
 // File-convention 1200x630 OpenGraph image for the whole site.
 // Brand: emerald + ShieldCheck glyph, mirroring the live site's identity.
-export const alt = "Amanah — AI triage copilot for campaign trust & safety";
+export const alt = "Veracity — AI triage copilot for campaign trust & safety";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -59,7 +59,7 @@ export default function Image() {
             </svg>
           </div>
           <div style={{ display: "flex", fontSize: 80, fontWeight: 700, marginBottom: 16 }}>
-            Amanah
+            Veracity
           </div>
           <div style={{ display: "flex", fontSize: 34, opacity: 0.95, marginBottom: 28 }}>
             AI reads every campaign. People make every call.
@@ -99,7 +99,7 @@ export default function Image() {
             opacity: 0.85,
           }}
         >
-          amanah.micbun.com
+          veracity.micbun.com
         </div>
       </div>
     ),

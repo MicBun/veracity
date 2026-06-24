@@ -31,23 +31,23 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://amanah.micbun.com"),
-  title: "Amanah — AI triage copilot for campaign trust & safety",
+  metadataBase: new URL("https://veracity.micbun.com"),
+  title: "Veracity — AI triage copilot for campaign trust & safety",
   description:
-    "Amanah screens every crowdfunding campaign with a two-stage AI pipeline, cites its evidence, and leaves every decision to a human reviewer.",
+    "Veracity screens every crowdfunding campaign with a two-stage AI pipeline, cites its evidence, and leaves every decision to a human reviewer.",
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
-    url: "https://amanah.micbun.com",
-    siteName: "Amanah",
-    title: "Amanah — AI triage copilot for campaign trust & safety",
+    url: "https://veracity.micbun.com",
+    siteName: "Veracity",
+    title: "Veracity — AI triage copilot for campaign trust & safety",
     description:
       "AI reads every crowdfunding campaign and cites its evidence. People make every decision.",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Amanah — AI triage copilot for campaign trust & safety",
+    title: "Veracity — AI triage copilot for campaign trust & safety",
     description:
       "AI reads every crowdfunding campaign and cites its evidence. People make every decision.",
   },

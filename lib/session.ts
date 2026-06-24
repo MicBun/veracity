@@ -8,7 +8,7 @@ import { SignJWT, jwtVerify } from "jose";
 // be pulled into middleware. The cookies()-based getSession lives in
 // session-cookies.ts to keep this import graph clean for the edge runtime.
 
-export const SESSION_COOKIE = "amanah_session";
+export const SESSION_COOKIE = "veracity_session";
 const SESSION_TTL_SECONDS = 60 * 60 * 24; // 24h
 
 function secretKey(): Uint8Array {
