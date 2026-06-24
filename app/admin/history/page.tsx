@@ -32,7 +32,6 @@ function HistoryRow({ entry }: { entry: HistoryEntry }) {
         <p className="mt-0.5 text-xs text-muted-foreground">
           {CATEGORY_LABELS[campaign.category] ?? campaign.category} ·{" "}
           {formatUsd(campaign.goalAmount)} · {campaign.organizerName}
-          {campaign.zakatClaimed && " · Zakat claimed"}
         </p>
       </div>
       <div className="shrink-0 text-right text-xs text-muted-foreground">

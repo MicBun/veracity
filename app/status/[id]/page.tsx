@@ -108,7 +108,6 @@ export default async function StatusPage({
             <CardDescription>
               {CATEGORY_LABELS[campaign.category] ?? campaign.category} · Goal{" "}
               {formatUsd(campaign.goalAmount)} · by {campaign.organizerName}
-              {campaign.zakatClaimed && " · Zakat-eligible (claimed)"}
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-4">

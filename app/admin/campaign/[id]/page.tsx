@@ -26,7 +26,6 @@ export default async function CampaignDetailPage({
         category: campaign.category,
         organizerName: campaign.organizerName,
         organizerHistory: campaign.organizerHistory,
-        zakatClaimed: campaign.zakatClaimed,
         status: campaign.status,
         source: campaign.source,
         createdAt: campaign.createdAt.toISOString(),

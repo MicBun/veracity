@@ -15,7 +15,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Checkbox } from "@/components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -52,7 +51,6 @@ export default function SubmitPage() {
   const [priorCampaigns, setPriorCampaigns] = useState("0");
   const [accountAge, setAccountAge] = useState("30");
   const [priorFlags, setPriorFlags] = useState("0");
-  const [zakat, setZakat] = useState(false);
 
   const [phase, setPhase] = useState<"form" | "progress" | "done">("form");
   const [steps, setSteps] = useState<ProgressStep[]>(INITIAL_STEPS);
@@ -86,7 +84,6 @@ export default function SubmitPage() {
         account_age_days: Number(accountAge),
         prior_flags: Number(priorFlags),
       },
-      zakat_claimed: zakat,
     };
 
     setPhase("progress");
@@ -375,23 +372,6 @@ export default function SubmitPage() {
                       onChange={(e) => setPriorFlags(e.target.value)}
                     />
                   </div>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-3">
-                <Checkbox
-                  id="zakat"
-                  checked={zakat}
-                  onCheckedChange={(v) => setZakat(v === true)}
-                  className="mt-0.5"
-                />
-                <div>
-                  <Label htmlFor="zakat">This campaign is zakat-eligible</Label>
-                  <p className="text-xs text-muted-foreground">
-                    Claiming zakat eligibility means donations count toward
-                    donors&apos; religious obligation — our reviewers check
-                    these claims against zakat categories.
-                  </p>
                 </div>
               </div>
 

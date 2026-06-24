@@ -3,7 +3,6 @@ import { getApprovedCampaigns } from "@/lib/data";
 import { SiteHeader } from "@/components/public/site-header";
 import { SiteFooter } from "@/components/public/site-footer";
 import { RaisedProgress } from "@/components/public/raised-progress";
-import { ZakatChip } from "@/components/public/brand";
 import { CATEGORY_LABELS } from "@/lib/format";
 import { Info } from "lucide-react";
 
@@ -50,7 +49,6 @@ export default async function CampaignsPage() {
                   <span className="rounded-md bg-emerald-50 dark:bg-emerald-950/40 px-2 py-0.5 text-[11px] font-semibold text-emerald-800 dark:text-emerald-300">
                     {CATEGORY_LABELS[campaign.category] ?? campaign.category}
                   </span>
-                  {campaign.zakatClaimed && <ZakatChip />}
                 </div>
                 <h2 className="mt-3 font-serif text-lg font-medium leading-snug">
                   {campaign.title}

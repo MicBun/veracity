@@ -69,7 +69,6 @@ type Props = {
       account_age_days: number;
       prior_flags: number;
     };
-    zakatClaimed: boolean;
     status: string;
     source: string;
     createdAt: string;
@@ -273,12 +272,6 @@ export function CampaignReview({
                 label="Organizer"
                 highlighted={highlight?.field === "organizer_name"}
                 value={campaign.organizerName}
-              />
-              <FieldRow
-                field="zakat_claimed"
-                label="Zakat claimed"
-                highlighted={highlight?.field === "zakat_claimed"}
-                value={campaign.zakatClaimed ? "Yes" : "No"}
               />
               <FieldRow
                 field="organizer_history.prior_campaigns"

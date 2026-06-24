@@ -5,7 +5,6 @@ import { SiteHeader } from "@/components/public/site-header";
 import { SiteFooter } from "@/components/public/site-footer";
 import { RaisedProgress } from "@/components/public/raised-progress";
 import { DonateForm } from "@/components/public/donate-form";
-import { ZakatChip } from "@/components/public/brand";
 import { CATEGORY_LABELS, formatUsd, formatRelativeTime } from "@/lib/format";
 
 export const dynamic = "force-dynamic";
@@ -35,9 +34,6 @@ export default async function CampaignDetailPage({
             <span className="rounded-md bg-emerald-50 px-2 py-0.5 text-[11px] font-semibold text-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300">
               {CATEGORY_LABELS[campaign.category] ?? campaign.category}
             </span>
-            {campaign.zakatClaimed && (
-              <ZakatChip label="Zakat-eligible (claimed)" />
-            )}
           </div>
           <h1 className="mt-3 font-serif text-3xl font-medium leading-tight tracking-tight">
             {campaign.title}

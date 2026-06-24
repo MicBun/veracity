@@ -67,7 +67,6 @@ function QueueCard({ entry }: { entry: QueueEntry }) {
           <p className="text-xs text-muted-foreground">
             {CATEGORY_LABELS[campaign.category] ?? campaign.category} ·{" "}
             {formatUsd(campaign.goalAmount)} · {campaign.organizerName}
-            {campaign.zakatClaimed && " · Zakat claimed"}
           </p>
           {flags.length > 0 && (
             <div className="flex flex-wrap gap-1">
