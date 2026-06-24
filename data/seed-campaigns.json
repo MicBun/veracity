@@ -4,13 +4,12 @@
     {
       "key": "seed-01",
       "class": "clean",
-      "title": "Rebuild the Al-Noor Community Center kitchen",
-      "description": "Our community kitchen at Al-Noor Community Center in Columbus, Ohio has served free Friday meals for eleven years. In March a burst pipe flooded the kitchen and we lost most of our equipment. We have a written quote from Hardin Restaurant Supply for $14,200 covering two commercial ranges, a walk-in cooler compressor, and stainless prep tables, plus $4,300 from Mendel Brothers Plumbing for repiping. The center's board has approved the repair plan and our 501(c)(3) documents and both quotes are available to any donor on request. Every meal we serve is cooked by volunteers; your help puts us back in the kitchen by Ramadan.",
+      "title": "Rebuild the Eastside Community Center kitchen",
+      "description": "Our community kitchen at the Eastside Community Center in Columbus, Ohio has served free weekday meals for eleven years. In March a burst pipe flooded the kitchen and we lost most of our equipment. We have a written quote from Hardin Restaurant Supply for $14,200 covering two commercial ranges, a walk-in cooler compressor, and stainless prep tables, plus $4,300 from Mendel Brothers Plumbing for repiping. The center's board has approved the repair plan and our 501(c)(3) documents and both quotes are available to any donor on request. Every meal we serve is cooked by volunteers; your help puts us back in the kitchen before the holidays.",
       "goal_amount": 18500,
       "category": "community",
-      "organizer_name": "Yusuf Abdallah",
+      "organizer_name": "Marcus Hale",
       "organizer_history": { "prior_campaigns": 3, "account_age_days": 1460, "prior_flags": 0 },
-      "zakat_claimed": false,
       "assessments": [
         {
           "stage": "screening",
@@ -32,13 +31,12 @@
     {
       "key": "seed-02",
       "class": "clean",
-      "title": "Help Maryam finish her final year of nursing school",
-      "description": "I am raising funds for my niece Maryam Hassan, a third-year nursing student at Wayne State University in Detroit. Her father passed away last spring and the family used their savings for funeral costs and rent. Maryam needs $4,800 to cover her final two semesters: $3,950 tuition balance (her student account statement is available on request) and $850 for clinical uniforms and licensing exam fees. She works twenty hours a week at a pharmacy but it is not enough to close the gap. Our masjid's education committee has verified the family's situation and will receive the funds directly.",
+      "title": "Help Maria finish her final year of nursing school",
+      "description": "I am raising funds for my niece Maria Reyes, a third-year nursing student at Wayne State University in Detroit. Her father passed away last spring and the family used their savings for funeral costs and rent. Maria needs $4,800 to cover her final two semesters: $3,950 tuition balance (her student account statement is available on request) and $850 for clinical uniforms and licensing exam fees. She works twenty hours a week at a pharmacy but it is not enough to close the gap. The university's dean of students office has verified the family's situation and the funds will be paid directly to the bursar.",
       "goal_amount": 4800,
       "category": "education",
-      "organizer_name": "Fatima Hassan",
+      "organizer_name": "Elena Reyes",
       "organizer_history": { "prior_campaigns": 2, "account_age_days": 980, "prior_flags": 0 },
-      "zakat_claimed": true,
       "assessments": [
         {
           "stage": "screening",
@@ -52,7 +50,7 @@
             "risk_score": 14,
             "category_flags": [],
             "confidence": 0.88,
-            "summary": "Specific, verifiable education costs with third-party verification by a masjid committee; zakat claim is consistent with a family in financial need."
+            "summary": "Specific, verifiable education costs with third-party verification by the university and direct-to-bursar disbursement; consistent with a family in financial hardship."
           }
         }
       ]
@@ -61,12 +59,11 @@
       "key": "seed-03",
       "class": "clean",
       "title": "Winter coats for 200 refugee children in Dearborn",
-      "description": "Salaam Relief Network is buying winter coats, boots, and gloves for 200 newly arrived refugee children in Dearborn, Michigan before the cold sets in. We have negotiated a bulk price of $38 per child with Hanover Outfitters, which covers a coat, boots, and a glove-and-hat set ($7,600 total), plus $1,400 for sorting, sizing days, and delivery to three resettlement apartment complexes we already serve. We are a registered 501(c)(3) (EIN available on request) and have run this drive for five winters. Donations are zakat-eligible: every family we serve is within 130% of the federal poverty line.",
+      "description": "Northgate Relief Network is buying winter coats, boots, and gloves for 200 newly arrived refugee children in Dearborn, Michigan before the cold sets in. We have negotiated a bulk price of $38 per child with Hanover Outfitters, which covers a coat, boots, and a glove-and-hat set ($7,600 total), plus $1,400 for sorting, sizing days, and delivery to three resettlement apartment complexes we already serve. We are a registered 501(c)(3) (EIN available on request) and have run this drive for five winters. Every family we serve is within 130% of the federal poverty line.",
       "goal_amount": 9000,
       "category": "emergency-relief",
-      "organizer_name": "Salaam Relief Network",
+      "organizer_name": "Northgate Relief Network",
       "organizer_history": { "prior_campaigns": 6, "account_age_days": 2100, "prior_flags": 0 },
-      "zakat_claimed": true,
       "assessments": [
         {
           "stage": "screening",
@@ -80,7 +77,7 @@
             "risk_score": 10,
             "category_flags": [],
             "confidence": 0.9,
-            "summary": "Registered organization with a five-year track record, per-unit pricing that sums to the goal, and a zakat claim grounded in stated poverty criteria."
+            "summary": "Registered organization with a five-year track record, per-unit pricing that sums to the goal, and a need grounded in stated poverty criteria."
           }
         }
       ]
@@ -88,13 +85,12 @@
     {
       "key": "seed-04",
       "class": "clean",
-      "title": "Masjid Al-Rahma roof repair after April storm",
-      "description": "The April 14 hailstorm tore through the roof membrane over our prayer hall at Masjid Al-Rahma in Tulsa. We have patched the leaks with tarps, but the engineer's inspection found the decking under two sections must be replaced before winter. Crown Roofing's written estimate is $29,400; our insurance approved only $6,000 because of the roof's age, leaving $23,400. The masjid board voted to repair rather than rebuild, and we are publishing the estimate, the insurance letter, and monthly spending updates on our website. Jumu'ah attendance is over 400 — help us keep the roof over their heads.",
+      "title": "Lincoln Heights Community Hall roof repair after April storm",
+      "description": "The April 14 hailstorm tore through the roof membrane over the main hall at Lincoln Heights Community Hall in Tulsa. We have patched the leaks with tarps, but the engineer's inspection found the decking under two sections must be replaced before winter. Crown Roofing's written estimate is $29,400; our insurance approved only $6,000 because of the roof's age, leaving $23,400. The hall's board voted to repair rather than rebuild, and we are publishing the estimate, the insurance letter, and monthly spending updates on our website. More than 400 neighbors use the hall each week — help us keep the roof over their heads.",
       "goal_amount": 23400,
       "category": "community",
-      "organizer_name": "Masjid Al-Rahma Board",
+      "organizer_name": "Lincoln Heights Hall Board",
       "organizer_history": { "prior_campaigns": 4, "account_age_days": 2350, "prior_flags": 0 },
-      "zakat_claimed": false,
       "assessments": [
         {
           "stage": "screening",
@@ -116,13 +112,12 @@
     {
       "key": "seed-05",
       "class": "subtle_fraud",
-      "title": "Emergency heart surgery for my daughter Amira",
-      "description": "My daughter Amira is six years old and was born with a ventricular septal defect. Her cardiologist says she needs corrective surgery within the next few months. We are working with the hospital's financial aid office, which quoted us $12,000 as our out-of-pocket responsibility after assistance. I am a single father working two jobs and I cannot cover it alone. Anything you give goes straight to the hospital billing department. Please keep Amira in your prayers and share this with anyone who can help us reach our goal.",
+      "title": "Emergency heart surgery for my daughter Lily",
+      "description": "My daughter Lily is six years old and was born with a ventricular septal defect. Her cardiologist says she needs corrective surgery within the next few months. We are working with the hospital's financial aid office, which quoted us $12,000 as our out-of-pocket responsibility after assistance. I am a single father working two jobs and I cannot cover it alone. Anything you give goes straight to the hospital billing department. Please keep Lily in your thoughts and share this with anyone who can help us reach our goal.",
       "goal_amount": 45000,
       "category": "medical",
-      "organizer_name": "Karim Said",
+      "organizer_name": "Brandon Cole",
       "organizer_history": { "prior_campaigns": 0, "account_age_days": 28, "prior_flags": 0 },
-      "zakat_claimed": false,
       "assessments": [
         {
           "stage": "screening",
@@ -184,13 +179,12 @@
     {
       "key": "seed-06",
       "class": "subtle_fraud",
-      "title": "School kits for 150 orphans this Eid",
-      "description": "Alhamdulillah, with your support we have done this for three years running. This Eid we are preparing school kits for 150 orphans in our care: each kit has a backpack, uniform, shoes, and a full stationery set, sourced in bulk at $38 per child. Last year's distribution reached three cities and every donor received photos. We handle everything ourselves so there are no administration fees, and one hundred percent of what you give reaches a child. Donations qualify as zakat. Give your zakat where you can see it work.",
+      "title": "School kits for 150 kids in our care this fall",
+      "description": "With your support we have done this for three years running. This fall we are preparing school kits for 150 orphans in our care: each kit has a backpack, uniform, shoes, and a full stationery set, sourced in bulk at $38 per child. Last year's distribution reached three cities and every donor received photos. We handle everything ourselves so there are no administration fees, and one hundred percent of what you give reaches a child.",
       "goal_amount": 28000,
       "category": "education",
-      "organizer_name": "Bilal Osman",
+      "organizer_name": "Devon Pierce",
       "organizer_history": { "prior_campaigns": 4, "account_age_days": 210, "prior_flags": 1 },
-      "zakat_claimed": true,
       "assessments": [
         {
           "stage": "screening",
@@ -243,7 +237,7 @@
               "Stated per-kit cost times beneficiary count covers only about 20% of the goal",
               "Organizer has run four similar campaigns in seven months, one previously flagged",
               "\"Orphans in our care\" implies an institution but none is named or registered",
-              "The zakat claim rests on the same unverifiable orphan-care claim"
+              "The appeal to donors rests on the same unverifiable orphan-care claim"
             ],
             "mitigating_factors": [
               "Per-kit pricing and donor photos suggest some real past activity",
@@ -259,12 +253,11 @@
       "key": "seed-07",
       "class": "obvious_fraud",
       "title": "URGENT: my family will be on the street in 48 hours",
-      "description": "I don't have time to make this pretty. The bank has given us 48 hours before they change the locks on our home. I have three children and my wife is pregnant. If we do not raise $85,000 by Friday we lose everything we have ever worked for. I can't share the bank documents here for privacy reasons but I swear on everything that this is real. Every minute you wait is a minute my children get closer to sleeping in our van. Please, if you are reading this, do not scroll past. Allah sees what you do. Donate now and share, there is no time.",
+      "description": "I don't have time to make this pretty. The bank has given us 48 hours before they change the locks on our home. I have three children and my wife is pregnant. If we do not raise $85,000 by Friday we lose everything we have ever worked for. I can't share the bank documents here for privacy reasons but I swear on everything that this is real. Every minute you wait is a minute my children get closer to sleeping in our van. Please, if you are reading this, do not scroll past. This is on your conscience. Donate now and share, there is no time.",
       "goal_amount": 85000,
       "category": "emergency-relief",
-      "organizer_name": "Adam Whitfield",
+      "organizer_name": "Adam Foster",
       "organizer_history": { "prior_campaigns": 0, "account_age_days": 4, "prior_flags": 0 },
-      "zakat_claimed": false,
       "assessments": [
         {
           "stage": "screening",
@@ -303,9 +296,9 @@
                 "quote": "I can't share the bank documents here for privacy reasons"
               },
               {
-                "claim": "Donors are coerced emotionally and religiously",
+                "claim": "Donors are coerced through guilt",
                 "source_field": "description",
-                "quote": "do not scroll past. Allah sees what you do"
+                "quote": "do not scroll past. This is on your conscience"
               },
               {
                 "claim": "Large round goal with no breakdown of any kind",
@@ -335,12 +328,11 @@
       "key": "seed-08",
       "class": "obvious_fraud",
       "title": "Guaranteed cure for my wife's cancer at overseas clinic",
-      "description": "Doctors here gave up on my wife but we found a clinic in Europe that guarantees complete remission with a new treatment that hospitals don't want you to know about. The clinic has a 100% success rate and has already reserved her place, but we must wire $120,000 within ten days or my sister loses her spot. We will sell our car but it is not enough. I cannot say the clinic's name publicly because the medical industry will pressure them. God will repay every donor ten times over. Please hurry, her life is literally in your hands.",
+      "description": "Doctors here gave up on my wife but we found a clinic in Europe that guarantees complete remission with a new treatment that hospitals don't want you to know about. The clinic has a 100% success rate and has already reserved her place, but we must wire $120,000 within ten days or my sister loses her spot. We will sell our car but it is not enough. I cannot say the clinic's name publicly because the medical industry will pressure them. Please hurry, her life is literally in your hands.",
       "goal_amount": 120000,
       "category": "medical",
       "organizer_name": "Daniel Okafor",
       "organizer_history": { "prior_campaigns": 1, "account_age_days": 16, "prior_flags": 2 },
-      "zakat_claimed": false,
       "assessments": [
         {
           "stage": "screening",
@@ -412,12 +404,11 @@
       "key": "seed-09",
       "class": "ambiguous",
       "title": "Help us get through the month after the fire",
-      "description": "Two weeks ago there was a fire in our apartment building and we lost almost everything in the smoke and water damage. The Red Cross put us in a hotel for three nights and since then we have been staying with my cousin, six of us in a two-bedroom apartment. I am asking for help with one month of rent and a deposit on a new place, clothes for my kids for school, and replacing my work boots and tools so I can keep doing electrical jobs. I have never asked for help like this before and I don't have paperwork from the fire department yet. May Allah reward anyone who helps us.",
+      "description": "Two weeks ago there was a fire in our apartment building and we lost almost everything in the smoke and water damage. The Red Cross put us in a hotel for three nights and since then we have been staying with my cousin, six of us in a two-bedroom apartment. I am asking for help with one month of rent and a deposit on a new place, clothes for my kids for school, and replacing my work boots and tools so I can keep doing electrical jobs. I have never asked for help like this before and I don't have paperwork from the fire department yet. Thank you to anyone who can help us.",
       "goal_amount": 7500,
       "category": "emergency-relief",
-      "organizer_name": "Hamza Aziz",
+      "organizer_name": "Hector Alvarez",
       "organizer_history": { "prior_campaigns": 0, "account_age_days": 47, "prior_flags": 0 },
-      "zakat_claimed": true,
       "assessments": [
         {
           "stage": "screening",
@@ -479,13 +470,12 @@
     {
       "key": "seed-10",
       "class": "ambiguous",
-      "title": "Zakat for my brother's dialysis transport and care",
-      "description": "My brother Idris has been on dialysis three times a week since his kidneys failed last year. Medicaid covers the sessions but not the medical transport he needs to get to them, his renal diet, or the months of bills that piled up while he could not work. I am asking for $15,000 to cover a year of transport at roughly $220 a week, help with his food costs, and part of the debt. He lives alone in Newark and I am his only family nearby. I believe this qualifies for zakat as he has no income right now, and I will share receipts with any donor who asks.",
+      "title": "Help with my brother's dialysis transport and care",
+      "description": "My brother Idris has been on dialysis three times a week since his kidneys failed last year. Medicaid covers the sessions but not the medical transport he needs to get to them, his renal diet, or the months of bills that piled up while he could not work. I am asking for $15,000 to cover a year of transport at roughly $220 a week, help with his food costs, and part of the debt. He lives alone in Newark and I am his only family nearby. He has no income right now, and I will share receipts with any donor who asks.",
       "goal_amount": 15000,
       "category": "medical",
       "organizer_name": "Salim Diallo",
       "organizer_history": { "prior_campaigns": 1, "account_age_days": 410, "prior_flags": 0 },
-      "zakat_claimed": true,
       "assessments": [
         {
           "stage": "screening",
@@ -497,9 +487,9 @@
           "latency_ms": 1480,
           "output": {
             "risk_score": 41,
-            "category_flags": ["zakat_eligibility_doubt", "unverifiable_claims"],
+            "category_flags": ["unverifiable_claims"],
             "confidence": 0.64,
-            "summary": "Coherent costs for a plausible chronic-care need, but the zakat eligibility and the underlying situation rest on unverified facts."
+            "summary": "Coherent costs for a plausible chronic-care need, but the hardship basis and the underlying situation rest on unverified facts."
           }
         },
         {
@@ -514,23 +504,18 @@
             "recommendation": "escalate",
             "evidence": [
               {
-                "claim": "Zakat eligibility depends on an income status that is asserted but not evidenced",
+                "claim": "The hardship basis depends on an income status that is asserted but not evidenced",
                 "source_field": "description",
-                "quote": "I believe this qualifies for zakat as he has no income right now"
+                "quote": "He has no income right now"
               },
               {
                 "claim": "The cost arithmetic is broadly consistent with the goal",
                 "source_field": "description",
                 "quote": "a year of transport at roughly $220 a week"
-              },
-              {
-                "claim": "The campaign is presented to donors as zakat-eligible",
-                "source_field": "zakat_claimed",
-                "quote": "true"
               }
             ],
             "risk_factors": [
-              "The beneficiary's income and debt status — the entire basis of the zakat claim — cannot be verified from the campaign",
+              "The beneficiary's income and debt status — the entire basis of the hardship claim — cannot be verified from the campaign",
               "Mixed use of funds (transport, food, unspecified debt) blurs how much goes where"
             ],
             "mitigating_factors": [
@@ -539,7 +524,7 @@
               "Account is over a year old with one prior campaign and no flags"
             ],
             "confidence": 0.55,
-            "reasoning": "The need is plausible and the arithmetic is honest, but the zakat designation raises the bar: donors fulfilling a religious obligation rely on the platform's eligibility judgment, and the facts that make this zakat-eligible (no income, qualifying debt) are asserted without evidence. Recommend escalation to request income documentation before the zakat label is shown to donors."
+            "reasoning": "The need is plausible and the arithmetic is honest, but the facts that establish genuine hardship (no income, qualifying debt) are asserted without evidence. Recommend escalation to request income and debt documentation before approval."
           }
         }
       ]
@@ -549,13 +534,12 @@
     {
       "key": "live-01",
       "class": "clean",
-      "title": "Winter heating fund for Bosnian refugee families in Utica",
+      "title": "Winter heating fund for resettled refugee families in Utica",
       "description": "Eleven resettled families on Utica's east side share aging furnaces that failed inspection this fall. Working with the Mohawk Valley Resource Center for Refugees, we have a written quote from Bartell Heating to repair or replace six units before the first freeze. MVRCR is administering the funds and every receipt is posted to our updates page.",
       "goal_amount": 12000,
       "category": "emergency-relief",
-      "organizer_name": "Selma Begovic",
+      "organizer_name": "Grace Okonkwo",
       "organizer_history": { "prior_campaigns": 2, "account_age_days": 980, "prior_flags": 0 },
-      "zakat_claimed": true,
       "assessments": [
         {
           "stage": "screening",
@@ -575,15 +559,15 @@
       ],
       "review": {
         "reviewer_name": "Aisha Rahman",
-        "note": "Verified MVRCR partnership and contractor quote. Zakat-eligible need is clear. Approved."
+        "note": "Verified MVRCR partnership and contractor quote. The need is clear. Approved."
       },
       "donations": [
         { "donor_name": null, "amount": 500, "days_ago": 9 },
-        { "donor_name": "Imran S.", "amount": 250, "days_ago": 8 },
-        { "donor_name": "Fatima K.", "amount": 100, "days_ago": 7 },
+        { "donor_name": "James P.", "amount": 250, "days_ago": 8 },
+        { "donor_name": "Grace L.", "amount": 100, "days_ago": 7 },
         { "donor_name": null, "amount": 1000, "days_ago": 6 },
-        { "donor_name": "The Yusuf family", "amount": 2000, "days_ago": 5 },
-        { "donor_name": "Bilal R.", "amount": 250, "days_ago": 5 },
+        { "donor_name": "The Alvarez family", "amount": 2000, "days_ago": 5 },
+        { "donor_name": "Devon R.", "amount": 250, "days_ago": 5 },
         { "donor_name": null, "amount": 5000, "days_ago": 3 },
         { "donor_name": "Sara M.", "amount": 450, "days_ago": 2 },
         { "donor_name": "Omar H.", "amount": 500, "days_ago": 1 },
@@ -593,13 +577,12 @@
     {
       "key": "live-02",
       "class": "clean",
-      "title": "Rebuild Masjid As-Salam's wudu facilities after the flood",
-      "description": "June flash flooding ruined the ablution area and two restrooms at our 200-family mosque in Poughkeepsie. The board approved a repair plan and we have a $26,400 bid from Hudson Valley Plumbing; insurance is covering the difference above this campaign's goal. Plans and the bid are available to any donor on request.",
+      "title": "Rebuild Grace Chapel's fellowship hall after the flood",
+      "description": "June flash flooding ruined the kitchen and two restrooms in the fellowship hall at our 200-family church in Poughkeepsie. The board approved a repair plan and we have a $26,400 bid from Hudson Valley Plumbing; insurance is covering the difference above this campaign's goal. Plans and the bid are available to any donor on request.",
       "goal_amount": 20000,
       "category": "community",
-      "organizer_name": "Tariq Mahmood",
+      "organizer_name": "Gregory Hahn",
       "organizer_history": { "prior_campaigns": 4, "account_age_days": 2100, "prior_flags": 0 },
-      "zakat_claimed": false,
       "assessments": [
         {
           "stage": "screening",
@@ -618,31 +601,30 @@
         }
       ],
       "review": {
-        "reviewer_name": "Daniyal Osei",
+        "reviewer_name": "Daniel Brooks",
         "note": "Board-approved scope, itemized bid, insurance covers the remainder. Approved."
       },
       "donations": [
         { "donor_name": null, "amount": 2000, "days_ago": 12 },
-        { "donor_name": "Hudson Valley MSA", "amount": 3000, "days_ago": 10 },
-        { "donor_name": "Nadia A.", "amount": 500, "days_ago": 8 },
+        { "donor_name": "Grace Chapel Youth Group", "amount": 3000, "days_ago": 10 },
+        { "donor_name": "Nina A.", "amount": 500, "days_ago": 8 },
         { "donor_name": null, "amount": 250, "days_ago": 6 },
-        { "donor_name": "Yousef T.", "amount": 1500, "days_ago": 5 },
-        { "donor_name": "Layla B.", "amount": 300, "days_ago": 4 },
+        { "donor_name": "Thomas T.", "amount": 1500, "days_ago": 5 },
+        { "donor_name": "Laura B.", "amount": 300, "days_ago": 4 },
         { "donor_name": null, "amount": 1000, "days_ago": 2 },
-        { "donor_name": "Kareem D.", "amount": 750, "days_ago": 1 },
+        { "donor_name": "Kevin D.", "amount": 750, "days_ago": 1 },
         { "donor_name": null, "amount": 500, "days_ago": 0 }
       ]
     },
     {
       "key": "live-03",
       "class": "clean",
-      "title": "Tuition gap for Amina's final year of nursing school",
-      "description": "Amina is a first-generation student one year from her RN at SUNY Broome. A reduction in her father's work hours left a $7,800 tuition gap for her final two semesters. The financial-aid office can confirm enrollment and the outstanding balance; funds will be paid directly to the bursar.",
+      "title": "Tuition gap for Grace's final year of nursing school",
+      "description": "Grace is a first-generation student one year from her RN at SUNY Broome. A reduction in her father's work hours left a $7,800 tuition gap for her final two semesters. The financial-aid office can confirm enrollment and the outstanding balance; funds will be paid directly to the bursar.",
       "goal_amount": 8000,
       "category": "education",
-      "organizer_name": "Halima Yusuf",
+      "organizer_name": "Patience Mensah",
       "organizer_history": { "prior_campaigns": 0, "account_age_days": 410, "prior_flags": 0 },
-      "zakat_claimed": true,
       "assessments": [
         {
           "stage": "screening",
@@ -661,28 +643,27 @@
         }
       ],
       "review": {
-        "reviewer_name": "Sana Iqbal",
-        "note": "Direct-to-bursar disbursement and verifiable enrollment offset the first-time-organizer flag. Zakat-eligible. Approved."
+        "reviewer_name": "Priya Nair",
+        "note": "Direct-to-bursar disbursement and verifiable enrollment offset the first-time-organizer flag. Approved."
       },
       "donations": [
         { "donor_name": null, "amount": 100, "days_ago": 3 },
-        { "donor_name": "Mrs. Halima", "amount": 250, "days_ago": 2 },
+        { "donor_name": "Mrs. Mensah", "amount": 250, "days_ago": 2 },
         { "donor_name": null, "amount": 50, "days_ago": 2 },
-        { "donor_name": "J. Idris", "amount": 300, "days_ago": 1 },
+        { "donor_name": "J. Owusu", "amount": 300, "days_ago": 1 },
         { "donor_name": null, "amount": 150, "days_ago": 0 },
-        { "donor_name": "Tariq", "amount": 100, "days_ago": 0 }
+        { "donor_name": "Tara", "amount": 100, "days_ago": 0 }
       ]
     },
     {
       "key": "live-04",
       "class": "clean",
-      "title": "Emergency surgery for baby Zayd's congenital heart defect",
-      "description": "Zayd was born with tetralogy of Fallot and needs corrective surgery at Boston Children's Hospital. After insurance, the family faces $14,200 in out-of-pocket costs for travel, lodging near the hospital, and the deductible. The hospital social worker can verify the treatment plan and cost estimate.",
+      "title": "Emergency surgery for baby Noah's congenital heart defect",
+      "description": "Noah was born with tetralogy of Fallot and needs corrective surgery at Boston Children's Hospital. After insurance, the family faces $14,200 in out-of-pocket costs for travel, lodging near the hospital, and the deductible. The hospital social worker can verify the treatment plan and cost estimate.",
       "goal_amount": 15000,
       "category": "medical",
-      "organizer_name": "Yasmin Al-Rashid",
+      "organizer_name": "Rachel Stern",
       "organizer_history": { "prior_campaigns": 1, "account_age_days": 1320, "prior_flags": 0 },
-      "zakat_claimed": false,
       "assessments": [
         {
           "stage": "screening",
@@ -706,13 +687,13 @@
       },
       "donations": [
         { "donor_name": null, "amount": 5000, "days_ago": 7 },
-        { "donor_name": "The Rahman family", "amount": 1000, "days_ago": 6 },
-        { "donor_name": "Dr. Suleiman", "amount": 500, "days_ago": 5 },
+        { "donor_name": "The Brooks family", "amount": 1000, "days_ago": 6 },
+        { "donor_name": "Dr. Patel", "amount": 500, "days_ago": 5 },
         { "donor_name": null, "amount": 1500, "days_ago": 4 },
-        { "donor_name": "Mariam O.", "amount": 250, "days_ago": 3 },
-        { "donor_name": "Khalid", "amount": 750, "days_ago": 2 },
+        { "donor_name": "Maria O.", "amount": 250, "days_ago": 3 },
+        { "donor_name": "Kevin", "amount": 750, "days_ago": 2 },
         { "donor_name": null, "amount": 1000, "days_ago": 1 },
-        { "donor_name": "Noor S.", "amount": 500, "days_ago": 0 }
+        { "donor_name": "Nora S.", "amount": 500, "days_ago": 0 }
       ]
     }
   ]
