@@ -60,8 +60,8 @@ deep review (only when screening warrants it)
 `PROMPT_VERSION` lives in `lib/ai/prompts.ts` (current: `v5`). Any prompt change
 must bump it — the version is recorded on every `ai_assessment` and `eval_run`,
 so a metric shift is always attributable to a specific prompt. The prompts went
-v1 → v3 against the eval set (v4 was tried and reverted), then v5 removed the
-zakat-eligibility category. The six-category risk rubric is mirrored in both the
+v1 → v3 against the eval set (v4 was tried and reverted), then v5 simplified the
+rubric to six categories. The six-category risk rubric is mirrored in both the
 prompts and `RISK_FLAGS`; keep them aligned.
 
 ## Persistence boundary

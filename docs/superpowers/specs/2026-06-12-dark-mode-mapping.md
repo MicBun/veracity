@@ -65,7 +65,7 @@ it a dark counterpart.
 | `hover:border-emerald-300` | `dark:hover:border-emerald-700` |
 | `hover:text-emerald-800` | `dark:hover:text-emerald-300` |
 
-## Amber (pending / caution / flags / zakat / gold)
+## Amber (pending / caution / flags / gold)
 
 | light | append |
 |---|---|

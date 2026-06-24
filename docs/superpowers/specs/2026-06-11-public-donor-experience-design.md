@@ -38,7 +38,7 @@ This feature must not weaken the project's core boundary ("AI recommends, humans
 ### `GET /campaigns` — "Live campaigns" gallery (public)
 - `export const dynamic = "force-dynamic"`.
 - Lists `status='approved'` campaigns, newest approved first.
-- Each card: title, category, organizer, zakat badge (if claimed), a one-line description excerpt, a **raised / goal progress bar** with `% funded` and donor count.
+- Each card: title, category, organizer, a one-line description excerpt, a **raised / goal progress bar** with `% funded` and donor count.
 - Empty state: a friendly "no live campaigns yet" message (won't appear in the seeded demo).
 - Public chrome consistent with `/` and `/status/[id]` (stone/emerald palette, serif headings, `ShieldCheck` logo linking home).
 

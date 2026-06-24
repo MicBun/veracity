@@ -36,8 +36,8 @@ submission ──▶ Stage 1: screening (every campaign)
 - An eval harness (`npm run evals` or the Run button on `/admin/evals`) runs
   the pipeline against 30 labeled campaigns and reports per-class
   precision/recall, a confusion matrix, and false-negative drill-down.
-  Prompts were tuned v1 → v3 against these metrics, then bumped to v5 when the
-  zakat-eligibility category was removed.
+  Prompts were tuned v1 → v3 against these metrics, then simplified to a
+  six-category rubric at v5.
 
 ## Documentation
 

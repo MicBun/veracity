@@ -35,7 +35,7 @@ This boundary is enforced in code and is the point of the project. When touching
 
 **Two-stage pipeline** (`lib/ai/pipeline.ts`): `assessCampaign()` runs screening (every campaign) → deep review (only when `risk_score >= 40` OR `confidence < 0.7`). Both stages call `claude-haiku-4-5`, but the models are **separate config constants** (`MODEL_SCREENING`, `MODEL_DEEP_REVIEW`) so a stronger model can be swapped into deep review without touching pipeline code — keep them separate. Structured output is enforced with Zod schemas (`lib/ai/schemas.ts`) via `messages.parse()`. Cost/tokens/latency are captured per call; `max_tokens` is capped at 1500.
 
-**Prompts are versioned** (`PROMPT_VERSION` in `lib/ai/prompts.ts`). Any prompt change must bump this constant — it is recorded on every `ai_assessment` and `eval_run` so metric changes are attributable. Current version is `v5` (tuned v1→v3 against the eval set; v4 was tried and reverted; v5 removed the zakat-eligibility category). The 6-category risk rubric lives in both the prompts and `RISK_FLAGS`; keep them aligned.
+**Prompts are versioned** (`PROMPT_VERSION` in `lib/ai/prompts.ts`). Any prompt change must bump this constant — it is recorded on every `ai_assessment` and `eval_run` so metric changes are attributable. Current version is `v5` (tuned v1→v3 against the eval set; v4 was tried and reverted; v5 simplified the rubric to six categories). The 6-category risk rubric lives in both the prompts and `RISK_FLAGS`; keep them aligned.
 
 **Persistence boundary:** `lib/ai/pipeline.ts` is pure w.r.t. the DB (returns results); callers persist via `lib/ai/persist.ts`. The submit route persists after streaming; the eval harness does not persist per-case assessments.
 
