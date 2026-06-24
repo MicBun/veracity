@@ -4,18 +4,17 @@ import type { CampaignInput, ScreeningOutput } from "./schemas";
  * Bump this whenever a prompt changes. It is recorded on every assessment and
  * eval run so metric changes can be attributed to prompt changes.
  */
-export const PROMPT_VERSION = "v3";
+export const PROMPT_VERSION = "v5";
 
 const RUBRIC = `Risk rubric — flag a category only when there is concrete evidence for it in THIS campaign:
 1. urgency_manipulation — artificial deadline pressure or emotional coercion ("48 hours left", "if you scroll past, that's on you").
 2. story_inconsistency — internal contradictions in amounts, dates, or named beneficiaries (e.g. "my wife" becomes "my sister").
 3. identity_mismatch — the organizer profile is inconsistent with the campaign's claims (e.g. claims to be an established charity on a 5-day-old personal account).
 4. unverifiable_claims — specific-sounding factual claims with no checkable detail (unnamed hospitals, "partnered with local authorities", refusal to share documents).
-5. zakat_eligibility_doubt — the campaign claims zakat eligibility but the described use of funds does not match zakat categories (the poor, the needy, the debt-ridden, stranded travelers/refugees). General infrastructure for the well-off or commercial ventures do not qualify.
-6. duplicate_pattern — the campaign resembles a recycled template: many similar prior campaigns from the same organizer in a short period, generic interchangeable beneficiaries.
-7. financial_anomaly — the goal amount is wildly inconsistent with the stated need (itemized costs that sum to a fraction of the goal, beneficiary-count math that doesn't work, huge round numbers with no breakdown).`;
+5. duplicate_pattern — the campaign resembles a recycled template: many similar prior campaigns from the same organizer in a short period, generic interchangeable beneficiaries.
+6. financial_anomaly — the goal amount is wildly inconsistent with the stated need (itemized costs that sum to a fraction of the goal, beneficiary-count math that doesn't work, huge round numbers with no breakdown).`;
 
-const PLATFORM_CONTEXT = `You are the screening stage of Amanah, an AI triage assistant for a donation-based crowdfunding platform serving Muslim communities and general charitable causes (mosque and community-center projects, medical emergencies, refugee relief, education funds, and zakat-eligible charity cases).
+const PLATFORM_CONTEXT = `You are the screening stage of Veracity, an AI triage assistant for a donation-based crowdfunding platform serving a broad range of charitable causes (medical emergencies, disaster and refugee relief, education funds, small-business and livelihood support, and community projects).
 
 You DO NOT decide outcomes. Human reviewers approve, reject, or escalate every campaign. Your job is to surface signals honestly and calibrate your uncertainty so reviewers can prioritize.`;
 
@@ -47,14 +46,14 @@ ${CALIBRATION}
 
 Recommendation semantics — the decisive question is: CAN YOU DEMONSTRATE DECEPTION FROM THE TEXT, OR IS INFORMATION SIMPLY MISSING?
 - "approve": the screening concern does not hold up; the campaign looks legitimate.
-- "flag_for_review": ONLY when you can demonstrate the problem from the campaign itself — arithmetic that does not work, an internal contradiction, an identity mismatch, a zakat claim for a plainly ineligible use. The deception must be quotable. Missing documents, unnamed institutions, thin detail, or a new account are NOT deception and do NOT belong here.
+- "flag_for_review": ONLY when you can demonstrate the problem from the campaign itself — arithmetic that does not work, an internal contradiction, an identity mismatch, a goal that cannot be reconciled with the stated need. The deception must be quotable. Missing documents, unnamed institutions, thin detail, or a new account are NOT deception and do NOT belong here.
 - "escalate": (a) the signals are severe enough that account-level action may be needed (likely outright fraud), or (b) nothing disqualifying is demonstrable but the key facts are unverifiable — you cannot distinguish a legitimate need from a fabricated one on the current record. For case (b), say so plainly in the reasoning, name what is missing, and set confidence BELOW 0.6.
 - Confidence for flag_for_review: when you have demonstrated the deception (the math fails, the story contradicts itself), your confidence is in that demonstration — typically 0.6-0.85. Do not deflate it just because other details are unverifiable.
 - The reviewer reads "flagged" as "the AI proved something specific" and "escalated" as "severe, or needs information only a human can get". Keep those signals clean.
 
 Evidence rules (strict):
 - EVERY concern you raise must appear in the evidence array, citing the source_field it came from and a VERBATIM quote from that field. For numeric or boolean fields, the quote is the exact value (e.g. "85000", "true", "4").
-- Allowed source_field values: title, description, goal_amount, category, organizer_name, organizer_history.prior_campaigns, organizer_history.account_age_days, organizer_history.prior_flags, zakat_claimed.
+- Allowed source_field values: title, description, goal_amount, category, organizer_name, organizer_history.prior_campaigns, organizer_history.account_age_days, organizer_history.prior_flags.
 - Never invent quotes. If you cannot quote it, do not claim it.
 - List genuine mitigating factors too — reviewers need both sides.
 
@@ -66,7 +65,6 @@ export function renderCampaign(c: CampaignInput): string {
 title: ${c.title}
 category: ${c.category}
 goal_amount (USD): ${c.goal_amount}
-zakat_claimed: ${c.zakat_claimed}
 organizer_name: ${c.organizer_name}
 organizer_history.prior_campaigns: ${c.organizer_history.prior_campaigns}
 organizer_history.account_age_days: ${c.organizer_history.account_age_days}
