@@ -10,13 +10,12 @@ import {
 import { cn } from "@/lib/utils";
 
 /**
- * The Veracity repo is private for now. Every link that points into it renders as
- * a non-navigating hint instead of a button that 404s for anyone without access.
+ * The Veracity repo is public — every RepoLink renders as a normal external anchor.
  *
- * When the repo goes public, flip REPO_PUBLIC to true — every RepoLink becomes a
- * normal anchor again, no other edits needed.
+ * This stays a toggle on purpose: flip REPO_PUBLIC back to false and every link
+ * becomes a non-navigating "contact me for access" hint again, no other edits needed.
  */
-export const REPO_PUBLIC = false;
+export const REPO_PUBLIC = true;
 
 const ACCESS_HINT = "Private repo — contact me for access";
 
