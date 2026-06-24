@@ -4,7 +4,6 @@ import {
   uuid,
   text,
   integer,
-  boolean,
   timestamp,
   jsonb,
   doublePrecision,
@@ -53,7 +52,6 @@ export const campaigns = pgTable("campaigns", {
   organizerHistory: jsonb("organizer_history")
     .$type<OrganizerHistory>()
     .notNull(),
-  zakatClaimed: boolean("zakat_claimed").notNull().default(false),
   status: campaignStatusEnum("status").notNull().default("pending"),
   source: campaignSourceEnum("source").notNull().default("user_submitted"),
   createdAt: timestamp("created_at", { withTimezone: true })

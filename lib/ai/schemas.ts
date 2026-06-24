@@ -1,12 +1,11 @@
 import { z } from "zod";
 
-/** The 7-category risk rubric. Used in prompts, validation, and eval labels. */
+/** The 6-category risk rubric. Used in prompts, validation, and eval labels. */
 export const RISK_FLAGS = [
   "urgency_manipulation",
   "story_inconsistency",
   "identity_mismatch",
   "unverifiable_claims",
-  "zakat_eligibility_doubt",
   "duplicate_pattern",
   "financial_anomaly",
 ] as const;
@@ -45,7 +44,7 @@ export const deepReviewOutputSchema = z.object({
         source_field: z
           .string()
           .describe(
-            "Which campaign field triggered it: title | description | goal_amount | category | organizer_name | organizer_history.prior_campaigns | organizer_history.account_age_days | organizer_history.prior_flags | zakat_claimed"
+            "Which campaign field triggered it: title | description | goal_amount | category | organizer_name | organizer_history.prior_campaigns | organizer_history.account_age_days | organizer_history.prior_flags"
           ),
         quote: z
           .string()
@@ -74,5 +73,4 @@ export type CampaignInput = {
     account_age_days: number;
     prior_flags: number;
   };
-  zakat_claimed: boolean;
 };

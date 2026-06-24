@@ -11,7 +11,6 @@ export function campaignToInput(c: Campaign): CampaignInput {
     category: c.category,
     organizer_name: c.organizerName,
     organizer_history: c.organizerHistory,
-    zakat_claimed: c.zakatClaimed,
   };
 }
 

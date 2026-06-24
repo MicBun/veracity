@@ -20,7 +20,6 @@ const submitSchema = z.object({
     account_age_days: z.number().int().min(0).max(10000),
     prior_flags: z.number().int().min(0).max(20),
   }),
-  zakat_claimed: z.boolean(),
 });
 
 const encoder = new TextEncoder();
@@ -72,7 +71,6 @@ export async function POST(request: NextRequest) {
             category: input.category,
             organizerName: input.organizer_name,
             organizerHistory: input.organizer_history,
-            zakatClaimed: input.zakat_claimed,
             status: "pending",
             source: "user_submitted",
           })

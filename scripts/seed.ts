@@ -31,7 +31,6 @@ async function main() {
         account_age_days: number;
         prior_flags: number;
       };
-      zakat_claimed: boolean;
       assessments: Array<{
         stage: "screening" | "deep_review";
         model: string;
@@ -55,7 +54,6 @@ async function main() {
         account_age_days: number;
         prior_flags: number;
       };
-      zakat_claimed: boolean;
       assessments: Array<{
         stage: "screening" | "deep_review";
         model: string;
@@ -84,7 +82,6 @@ async function main() {
         category: c.category,
         organizerName: c.organizer_name,
         organizerHistory: c.organizer_history,
-        zakatClaimed: c.zakat_claimed,
         status: "pending",
         source: "seed",
       })
@@ -118,7 +115,6 @@ async function main() {
         category: c.category,
         organizerName: c.organizer_name,
         organizerHistory: c.organizer_history,
-        zakatClaimed: c.zakat_claimed,
         status: "approved",
         source: "seed",
       })

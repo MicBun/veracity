@@ -1,0 +1,1 @@
+ALTER TABLE "campaigns" DROP COLUMN "zakat_claimed";

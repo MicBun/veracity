@@ -42,7 +42,6 @@ export const FLAG_LABELS: Record<string, string> = {
   story_inconsistency: "Story inconsistency",
   identity_mismatch: "Identity mismatch",
   unverifiable_claims: "Unverifiable claims",
-  zakat_eligibility_doubt: "Zakat eligibility doubt",
   duplicate_pattern: "Duplicate pattern",
   financial_anomaly: "Financial anomaly",
 };

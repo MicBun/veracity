@@ -30,7 +30,6 @@ async function main() {
         category: c.category,
         organizer_name: c.organizer_name,
         organizer_history: c.organizer_history,
-        zakat_claimed: c.zakat_claimed,
       },
       (e) => console.log(`  [${e.stage}] ${e.status}`)
     );
