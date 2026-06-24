@@ -25,6 +25,7 @@ identity, and the load-bearing "AI recommends, humans decide" invariant.
 | Prompt version | `v3` → **`v5`** | NOT `v4`: CLAUDE.md records "v4 was tried and reverted," so reusing `v4` would make attribution ambiguous. Jump to `v5`. |
 | Visual identity | **Unchanged** | Emerald palette + `ShieldCheck` mark are religion-neutral and carry over. Gold accent token stays (still used by the OG "demo" badge). |
 | Positioning | **Unchanged** | Remains "trust & safety for donation crowdfunding." Only the religious framing is removed. |
+| Test data | **Diversify into a general mix** | The eval + seed corpora are pervasively Islamic-themed (not just the `zakat_claimed` field). Rewrite them as a *general* crowdfunding platform: a realistic mix of medical / disaster / education / small-business / community causes, with only a few faith-based cases spread across different faiths/secular. Preserve each case's class label, structural fraud/clean signal, and difficulty. |
 
 ## Non-goals / out of scope (user-performed)
 
@@ -114,25 +115,35 @@ committee" inside `data/eval-set.json` — see Workstream C.)
 
 ## Workstream C — Test data + baseline
 
-The seed and eval fixtures are religiously themed in places and must be rewritten so the field
-removal doesn't leave dangling religious rationales, and so the dataset reads clean in a portfolio.
+**Scope correction (from the data sweep):** the Islamic framing is NOT confined to the
+`zakat_claimed` field. It is woven through almost every campaign *story* in both corpora —
+clean, subtle-fraud, and obvious-fraud alike (masjids, Jummah, Ramadan, "Assalamu alaikum",
+"Alhamdulillah", "JazakAllah khair", al-gharimin / faqir / miskin, "the Prophet (pbuh)",
+Day-of-Judgment guilt). Counts: `zakat_claimed: true` in 7/10 seed + 15/30 eval cases; the
+`zakat_eligibility_doubt` flag appears in 1 seed assessment and 2 eval rationales. Several
+obvious-fraud cases weaponize religious guilt as the fraud vector itself. So the data rewrite is
+the largest piece of work, and per the **diversify** decision it reframes the corpus as a general
+platform rather than scrubbing religion to zero.
 
-- **`data/seed-campaigns.json`** (10 campaigns, committed pre-generated assessments at `v1`):
-  - Remove `zakat_claimed` from all campaign inputs.
-  - Remove the seeded `zakat_eligibility_doubt` flag from seed-10's committed assessment (the
-    enum value no longer exists). Re-point that case's risk signal to a surviving category or
-    soften it, keeping the assessment internally consistent (evidence quotes must remain verbatim
-    substrings of the cited field, per the seeding invariant).
-  - Secularize any Islamic framing in the 5 zakat-claiming campaigns' text.
-- **`data/eval-set.json`** (30 labeled cases): remove `zakat_claimed` from all cases; **rewrite
-  the ~12 cases whose ground-truth rationale references zakat into secular equivalents that
-  preserve the same test difficulty** — e.g. the "clean because a masjid zakat committee verified
-  al-gharimin (debt-ridden) eligibility" case becomes "clean because a medical-debt case was
-  independently verified by the hospital's financial-aid office." Same trap, no religious framing.
-  Keep the 8/8/7/7 class split intact.
-- **Re-seed + re-eval:** run `npm run seed` (free, no API) and `npm run evals` (~$0.17, ~60s) to
-  produce an honest `v5` baseline. Update any metric figures quoted in copy (`app/about/page.tsx`,
-  README) to the new numbers.
+- **`data/eval-set.json`** (30 labeled cases, no committed assessments — the eval runs the live
+  pipeline): for every case, strip `zakat_claimed`, and rewrite the `campaign` story + `rationale`
+  into a **diversified, mostly-secular** equivalent. Hard invariants per case: keep the `id` and
+  `label` (class); keep the 8 clean / 8 subtle_fraud / 7 obvious_fraud / 7 ambiguous split; keep
+  the *structural* signal the rationale names (re-anchor the 2 `zakat_eligibility_doubt` cases to
+  surviving categories — `financial_anomaly` / `unverifiable_claims`, which they already partly
+  rely on); preserve goal-vs-itemization arithmetic (it drives `financial_anomaly`) and
+  `organizer_history` (it drives `identity_mismatch` / `duplicate_pattern`). Convert
+  religious-guilt manipulation → equivalent secular guilt/urgency manipulation so difficulty holds.
+- **`data/seed-campaigns.json`** (`campaigns[]` + `live_campaigns[]`, with committed assessments):
+  same diversify rewrite, **plus** the seeding invariant — every committed-assessment evidence
+  `quote` must remain a verbatim substring of its cited field. So stories and their cited quotes
+  are rewritten *in lockstep*. Remove the `zakat_eligibility_doubt` flag and the zakat evidence
+  item from seed-10's assessment and re-anchor it to `unverifiable_claims`. Committed assessments
+  are hand-edited JSON (seeding stays free/deterministic — no API regeneration).
+- **Re-seed + re-eval:** `npm run seed` (free) then `npm run evals` (~$0.17, ~60s) for an honest
+  `v5` baseline. No precise precision/recall figures are hardcoded in copy; only the rubric *count*
+  ("seven-category" → "six-category", "7 risk categories" → "6") and the prompt-lineage notes need
+  prose updates (handled in the rename/prose workstream).
 
 ## Risks & mitigations
 
@@ -162,9 +173,11 @@ removal doesn't leave dangling religious rationales, and so the dataset reads cl
   `docs/architecture.md`.
 - **Rename + de-zakat:** `app/page.tsx`, `app/about/page.tsx`, `app/campaigns/page.tsx`,
   `app/submit/page.tsx`, `CLAUDE.md`, `lib/ai/prompts.ts`.
-- **De-zakat only:** `lib/ai/schemas.ts`, `db/schema.ts`, `app/api/submit/route.ts`,
-  `scripts/seed.ts`, `scripts/test-pipeline.ts`, `app/campaigns/[id]/page.tsx`,
-  `app/admin/queue/page.tsx`, `app/admin/history/page.tsx`, `app/admin/campaign/[id]/page.tsx`,
-  `components/admin/campaign-review.tsx`, `components/public/brand.tsx`.
+- **De-zakat only:** `lib/ai/schemas.ts`, `lib/ai/persist.ts` (`campaignToInput`), `lib/format.ts`
+  (`FLAG_LABELS`), `db/schema.ts`, `app/api/submit/route.ts`, `scripts/seed.ts`,
+  `scripts/test-pipeline.ts`, `app/campaigns/[id]/page.tsx`, `app/admin/queue/page.tsx`,
+  `app/admin/history/page.tsx`, `app/admin/campaign/[id]/page.tsx`,
+  `components/admin/campaign-review.tsx`, `components/public/brand.tsx` (drop `ZakatChip` +
+  `Sparkles` import), `app/submit/page.tsx` (drop `Checkbox` import — zakat-only).
 - **Data:** `data/seed-campaigns.json`, `data/eval-set.json`.
 - **Generated:** new `drizzle/000X_*.sql` migration (via `db:generate`).
